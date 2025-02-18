@@ -1,0 +1,118 @@
+{
+  "boutique": {
+    "emoji": "🛒",
+    "data": [
+      "Alice Dupont",
+      "Bob Martin",
+      "Charlie Durand",
+      "alice.dupont@example.com",
+      "bob.martin@example.com",
+      "charlie.durand@example.com",
+      "Électronique",
+      "Vêtements",
+      "Maison",
+      "Smartphone",
+      "T-shirt",
+      "Canapé",
+      "699.99",
+      "19.99",
+      "499.99",
+      "2024-02-17",
+      "2024-02-16",
+      "2024-02-15",
+      "en cours",
+      "expédiée",
+      "livrée"
+    ]
+  },
+  "bibliotheque": {
+    "emoji": "📚",
+    "data": [
+      "George Orwell",
+      "Antoine de Saint-Exupéry",
+      "Victor Hugo",
+      "Dystopie",
+      "Conte",
+      "Roman",
+      "1984",
+      "Le Petit Prince",
+      "Les Misérables",
+      "1949",
+      "1943",
+      "1862"
+    ]
+  },
+  "openclassroom": {
+    "emoji": "🎓",
+    "data": [
+      "Algèbre avancée",
+      "Programmation en Python",
+      "Mécanique classique",
+      "Mathématiques",
+      "Informatique",
+      "Physique",
+      "Dr. Lambert",
+      "Mme. Rousseau",
+      "Mr. Morel",
+      "Alice Dupont",
+      "Bob Martin",
+      "Charlie Durand",
+      "alice.dupont@example.com",
+      "bob.martin@example.com",
+      "charlie.durand@example.com",
+      "2024-02-17 10:00:00",
+      "2024-02-17 11:00:00",
+      "2024-02-17 12:00:00",
+      "2024-02-17 13:00:00"
+    ]
+  },
+  "restaurant": {
+    "emoji": "🍽️",
+    "data": [
+      "La Trattoria",
+      "Le Gourmet",
+      "Sakura",
+      "Italienne",
+      "Française",
+      "Japonaise",
+      "Italie",
+      "France",
+      "Japon",
+      "Alice Dupont",
+      "Bob Martin",
+      "Charlie Durand",
+      "alice.dupont@example.com",
+      "bob.martin@example.com",
+      "charlie.durand@example.com",
+      "Excellente cuisine italienne !",
+      "Très bon mais un peu cher.",
+      "Un vrai délice japonais !",
+      "2024-02-17",
+      "2024-02-18",
+      "2024-02-19"
+    ]
+  },
+  "cinema": {
+    "emoji": "🎥",
+    "data": [
+      "Jurassic Park",
+      "Titanic",
+      "Interstellar",
+      "Salle 1",
+      "Salle 2",
+      "Salle 3",
+      "Alice Dupont",
+      "Bob Martin",
+      "Charlie Durand",
+      "alice.dupont@example.com",
+      "bob.martin@example.com",
+      "charlie.durand@example.com",
+      "2024-02-18 18:30:00",
+      "2024-02-18 20:00:00",
+      "2024-02-19 16:45:00",
+      "148",
+      "195",
+      "169"
+    ]
+  }
+}

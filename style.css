@@ -20,10 +20,12 @@ body {
     margin-bottom: 20px;
     width: 100%;
     max-width: 800px;
-    height: 250px; /* Increased height for each parent div */
+    height: 125px; /* Fixed height for each parent div */
     padding: 20px;
     border: 1px solid #ddd;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Hide overflow content */
+    position: relative; /* Add relative positioning to parent */
 }
 
 .parent img {
@@ -34,16 +36,28 @@ body {
 
 .parent p {
     margin: 0;
-    font-size: 64px;
+    font-size: 28px;
     color: black;
-    font-family: 'Georgia', serif;
+    font-family: 'Sono', serif;
+    font-weight: 600;
     text-align: left; /* Center align text */
     line-height: 1.5; /* Increase line height for better readability */
+    white-space: wrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflow text */
+    text-overflow: ellipsis; /* Add ellipsis for overflow text */
+    max-width: 100%; /* Ensure text does not exceed parent width */
+}
+
+.output-file {
+    position: absolute; /* Correct positioning */
+    bottom: 5px; /* Position at the bottom */
+    left: 5px; /* Position at the right */
+    font-size: 12px;
 }
 
 @media print {
     @page {
-        size: A5;
+        size: A4;
         margin:0mm;
     }
 
