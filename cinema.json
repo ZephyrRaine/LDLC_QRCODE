@@ -1,0 +1,145 @@
+[
+{"type":"header","version":"5.1.1","comment":"Export to JSON plugin for PHPMyAdmin"},
+{"type":"database","name":"cinema"},
+{"type":"table","name":"acteurs","database":"cinema","data":
+[
+{"id":"1","nom":"Reeves","prenom":"Keanu","date_naissance":"1964-09-02"},
+{"id":"2","nom":"DiCaprio","prenom":"Leonardo","date_naissance":"1974-11-11"},
+{"id":"3","nom":"Portman","prenom":"Natalie","date_naissance":"1981-06-09"},
+{"id":"4","nom":"Johansson","prenom":"Scarlett","date_naissance":"1984-11-22"},
+{"id":"5","nom":"Hanks","prenom":"Tom","date_naissance":"1956-07-09"},
+{"id":"6","nom":"Pitt","prenom":"Brad","date_naissance":"1963-12-18"},
+{"id":"7","nom":"Clooney","prenom":"George","date_naissance":"1961-05-06"},
+{"id":"8","nom":"Blanchett","prenom":"Cate","date_naissance":"1969-05-14"},
+{"id":"9","nom":"Damon","prenom":"Matt","date_naissance":"1970-10-08"},
+{"id":"10","nom":"Washington","prenom":"Denzel","date_naissance":"1954-12-28"}
+]
+}
+,{"type":"table","name":"films","database":"cinema","data":
+[
+{"id":"1","titre":"Inception","annee":"2010"},
+{"id":"2","titre":"Pulp Fiction","annee":"1994"},
+{"id":"3","titre":"Black Swan","annee":"2010"},
+{"id":"4","titre":"Forrest Gump","annee":"1994"},
+{"id":"5","titre":"The Matrix","annee":"1999"},
+{"id":"6","titre":"Fight Club","annee":"1999"},
+{"id":"7","titre":"Oceans Eleven","annee":"2001"},
+{"id":"8","titre":"The Grand Budapest Hotel","annee":"2014"},
+{"id":"9","titre":"Titanic","annee":"1997"}
+]
+}
+,{"type":"table","name":"films_acteurs","database":"cinema","data":
+[
+{"id_film":"5","id_acteur":"1"},
+{"id_film":"1","id_acteur":"2"},
+{"id_film":"3","id_acteur":"3"},
+{"id_film":"1","id_acteur":"4"},
+{"id_film":"2","id_acteur":"4"},
+{"id_film":"4","id_acteur":"5"},
+{"id_film":"2","id_acteur":"6"},
+{"id_film":"6","id_acteur":"6"},
+{"id_film":"7","id_acteur":"7"},
+{"id_film":"8","id_acteur":"8"},
+{"id_film":"7","id_acteur":"9"},
+{"id_film":"9","id_acteur":"10"}
+]
+}
+,{"type":"table","name":"films_realisateurs","database":"cinema","data":
+[
+{"id_film":"1","id_realisateur":"1"},
+{"id_film":"3","id_realisateur":"1"},
+{"id_film":"5","id_realisateur":"1"},
+{"id_film":"2","id_realisateur":"2"},
+{"id_film":"1","id_realisateur":"3"},
+{"id_film":"4","id_realisateur":"3"},
+{"id_film":"8","id_realisateur":"4"},
+{"id_film":"6","id_realisateur":"5"},
+{"id_film":"7","id_realisateur":"5"},
+{"id_film":"9","id_realisateur":"6"}
+]
+}
+,{"type":"table","name":"genres","database":"cinema","data":
+[
+{"id":"1","intitule":"Science-Fiction"},
+{"id":"2","intitule":"Action"},
+{"id":"3","intitule":"Drame"},
+{"id":"4","intitule":"Comédie"},
+{"id":"5","intitule":"Aventure"},
+{"id":"6","intitule":"Thriller"},
+{"id":"7","intitule":"Crime"},
+{"id":"8","intitule":"Romance"}
+]
+}
+,{"type":"table","name":"genres_films","database":"cinema","data":
+[
+{"id_genre":"1","id_film":"1"},
+{"id_genre":"2","id_film":"1"},
+{"id_genre":"2","id_film":"2"},
+{"id_genre":"7","id_film":"2"},
+{"id_genre":"3","id_film":"3"},
+{"id_genre":"3","id_film":"4"},
+{"id_genre":"4","id_film":"4"},
+{"id_genre":"1","id_film":"5"},
+{"id_genre":"5","id_film":"5"},
+{"id_genre":"6","id_film":"6"},
+{"id_genre":"7","id_film":"6"},
+{"id_genre":"4","id_film":"7"},
+{"id_genre":"7","id_film":"7"},
+{"id_genre":"3","id_film":"8"},
+{"id_genre":"3","id_film":"9"},
+{"id_genre":"8","id_film":"9"}
+]
+}
+,{"type":"table","name":"lieux","database":"cinema","data":
+[
+{"id":"1","salle":"Salle Gotham"},
+{"id":"2","salle":"Salle Pandora"},
+{"id":"3","salle":"Salle Mordor"}
+]
+}
+,{"type":"table","name":"realisateurs","database":"cinema","data":
+[
+{"id":"1","nom":"Nolan","prenom":"Christopher","date_naissance":"1970-07-30"},
+{"id":"2","nom":"Tarantino","prenom":"Quentin","date_naissance":"1963-03-27"},
+{"id":"3","nom":"Spielberg","prenom":"Steven","date_naissance":"1946-12-18"},
+{"id":"4","nom":"Villeneuve","prenom":"Denis","date_naissance":"1967-10-03"},
+{"id":"5","nom":"Scorsese","prenom":"Martin","date_naissance":"1942-11-17"},
+{"id":"6","nom":"Cameron","prenom":"James","date_naissance":"1954-08-16"}
+]
+}
+,{"type":"table","name":"seances","database":"cinema","data":
+[
+{"id":"1","horaires":"2025-02-21 20:00:00","id_film":"1","id_lieu":"1"},
+{"id":"2","horaires":"2025-02-22 22:00:00","id_film":"2","id_lieu":"2"},
+{"id":"3","horaires":"2025-02-23 18:30:00","id_film":"3","id_lieu":"3"},
+{"id":"4","horaires":"2025-02-24 21:00:00","id_film":"4","id_lieu":"1"},
+{"id":"5","horaires":"2025-02-25 19:45:00","id_film":"5","id_lieu":"2"},
+{"id":"6","horaires":"2025-02-26 20:00:00","id_film":"6","id_lieu":"3"},
+{"id":"7","horaires":"2025-02-27 22:00:00","id_film":"7","id_lieu":"1"},
+{"id":"8","horaires":"2025-02-28 18:30:00","id_film":"8","id_lieu":"2"},
+{"id":"9","horaires":"2025-02-28 20:30:00","id_film":"9","id_lieu":"3"}
+]
+}
+,{"type":"table","name":"seances_utilisateurs","database":"cinema","data":
+[
+{"id_seance":"1","id_utilisateur":"1"},
+{"id_seance":"5","id_utilisateur":"1"},
+{"id_seance":"2","id_utilisateur":"2"},
+{"id_seance":"7","id_utilisateur":"2"},
+{"id_seance":"3","id_utilisateur":"3"},
+{"id_seance":"8","id_utilisateur":"3"},
+{"id_seance":"4","id_utilisateur":"4"},
+{"id_seance":"9","id_utilisateur":"4"},
+{"id_seance":"6","id_utilisateur":"5"}
+]
+}
+,{"type":"table","name":"utilisateur","database":"cinema","data":
+[
+{"id":"1","mail":"alpha_92@randommail.com","nom":"Dupont","prenom":"Jean"},
+{"id":"2","mail":"bravo_x1@fakemail.net","nom":"Martin","prenom":"Sophie"},
+{"id":"3","mail":"charlie87@webmail.org","nom":"Leroy","prenom":"Paul"},
+{"id":"4","mail":"delta_Emma@tempemail.com","nom":"Bernard","prenom":"Emma"},
+{"id":"5","mail":"echo77_lucas@mailbox.com","nom":"Durand","prenom":"Lucas"}
+]
+}
+]

@@ -1,0 +1,144 @@
+[
+{"type":"header","version":"5.1.1","comment":"Export to JSON plugin for PHPMyAdmin"},
+{"type":"database","name":"magasin"},
+{"type":"table","name":"articles","database":"magasin","data":
+[
+{"id_article":"1","produit":"Smartphone X","prix":"799.99","id_fournisseur":"1","id_categorie":"1"},
+{"id_article":"2","produit":"Ordinateur portable","prix":"1200.5","id_fournisseur":"1","id_categorie":"1"},
+{"id_article":"3","produit":"Casque audio","prix":"149.99","id_fournisseur":"1","id_categorie":"1"},
+{"id_article":"4","produit":"Jeans Denim","prix":"49.99","id_fournisseur":"2","id_categorie":"2"},
+{"id_article":"5","produit":"T-shirt coton","prix":"19.99","id_fournisseur":"2","id_categorie":"2"},
+{"id_article":"6","produit":"Pâtes bio","prix":"2.5","id_fournisseur":"3","id_categorie":"3"},
+{"id_article":"7","produit":"Chocolat noir","prix":"3.99","id_fournisseur":"3","id_categorie":"3"},
+{"id_article":"8","produit":"Canapé moderne","prix":"599.99","id_fournisseur":"4","id_categorie":"4"},
+{"id_article":"9","produit":"Table en bois","prix":"299.99","id_fournisseur":"4","id_categorie":"4"},
+{"id_article":"10","produit":"Raquette de tennis","prix":"89.99","id_fournisseur":"5","id_categorie":"5"},
+{"id_article":"11","produit":"Ballon de football","prix":"24.99","id_fournisseur":"5","id_categorie":"5"},
+{"id_article":"12","produit":"Peluche ours","prix":"14.99","id_fournisseur":"6","id_categorie":"6"},
+{"id_article":"13","produit":"Livre roman","prix":"12.99","id_fournisseur":"7","id_categorie":"7"},
+{"id_article":"14","produit":"BD aventure","prix":"15.99","id_fournisseur":"7","id_categorie":"7"},
+{"id_article":"15","produit":"Perceuse électrique","prix":"79.99","id_fournisseur":"8","id_categorie":"8"},
+{"id_article":"16","produit":"Tondeuse gazon","prix":"249.99","id_fournisseur":"9","id_categorie":"9"},
+{"id_article":"17","produit":"Crème hydratante","prix":"19.99","id_fournisseur":"10","id_categorie":"10"}
+]
+}
+,{"type":"table","name":"articles_commandes","database":"magasin","data":
+[
+{"id_article":"1","id_commande":"1"},
+{"id_article":"2","id_commande":"1"},
+{"id_article":"3","id_commande":"2"},
+{"id_article":"4","id_commande":"2"},
+{"id_article":"5","id_commande":"3"},
+{"id_article":"6","id_commande":"3"},
+{"id_article":"7","id_commande":"4"},
+{"id_article":"8","id_commande":"4"},
+{"id_article":"9","id_commande":"5"},
+{"id_article":"10","id_commande":"5"},
+{"id_article":"11","id_commande":"6"},
+{"id_article":"12","id_commande":"6"},
+{"id_article":"13","id_commande":"7"},
+{"id_article":"14","id_commande":"7"},
+{"id_article":"15","id_commande":"8"},
+{"id_article":"16","id_commande":"8"},
+{"id_article":"1","id_commande":"9"},
+{"id_article":"17","id_commande":"9"},
+{"id_article":"2","id_commande":"10"},
+{"id_article":"3","id_commande":"10"},
+{"id_article":"4","id_commande":"11"},
+{"id_article":"5","id_commande":"11"},
+{"id_article":"6","id_commande":"12"},
+{"id_article":"7","id_commande":"12"},
+{"id_article":"8","id_commande":"13"},
+{"id_article":"9","id_commande":"13"},
+{"id_article":"10","id_commande":"14"},
+{"id_article":"11","id_commande":"14"},
+{"id_article":"12","id_commande":"15"},
+{"id_article":"13","id_commande":"15"}
+]
+}
+,{"type":"table","name":"categories","database":"magasin","data":
+[
+{"id_categorie":"1","nom":"Électronique"},
+{"id_categorie":"2","nom":"Vêtements"},
+{"id_categorie":"3","nom":"Alimentation"},
+{"id_categorie":"4","nom":"Meubles"},
+{"id_categorie":"5","nom":"Sports"},
+{"id_categorie":"6","nom":"Jouets"},
+{"id_categorie":"7","nom":"Livres"},
+{"id_categorie":"8","nom":"Bricolage"},
+{"id_categorie":"9","nom":"Jardinage"},
+{"id_categorie":"10","nom":"Beauté"}
+]
+}
+,{"type":"table","name":"clients","database":"magasin","data":
+[
+{"id_client":"1","nom":"Martin","email":"martin@example.com"},
+{"id_client":"2","nom":"Durand","email":"durand@example.net"},
+{"id_client":"3","nom":"Bernard","email":"bernard@example.org"},
+{"id_client":"4","nom":"Dubois","email":"dubois@example.io"},
+{"id_client":"5","nom":"Thomas","email":"thomas@example.edu"},
+{"id_client":"6","nom":"Morel","email":"morel@example.com"},
+{"id_client":"7","nom":"Lemoine","email":"lemoine@example.net"},
+{"id_client":"8","nom":"Garcia","email":"garcia@example.org"},
+{"id_client":"9","nom":"Meunier","email":"meunier@example.io"},
+{"id_client":"10","nom":"Rousseau","email":"rousseau@example.edu"}
+]
+}
+,{"type":"table","name":"commandes","database":"magasin","data":
+[
+{"id_commande":"1","date":"20250215","statut_livraison":"Expédié","id_client":"1"},
+{"id_commande":"2","date":"20250216","statut_livraison":"En attente","id_client":"2"},
+{"id_commande":"3","date":"20250217","statut_livraison":"Livré","id_client":"3"},
+{"id_commande":"4","date":"20250218","statut_livraison":"Annulé","id_client":"4"},
+{"id_commande":"5","date":"20250219","statut_livraison":"Expédié","id_client":"5"},
+{"id_commande":"6","date":"20250220","statut_livraison":"En préparation","id_client":"6"},
+{"id_commande":"7","date":"20250221","statut_livraison":"Expédié","id_client":"7"},
+{"id_commande":"8","date":"20250222","statut_livraison":"Livré","id_client":"8"},
+{"id_commande":"9","date":"20250223","statut_livraison":"En attente","id_client":"9"},
+{"id_commande":"10","date":"20250224","statut_livraison":"Annulé","id_client":"10"},
+{"id_commande":"11","date":"20250225","statut_livraison":"Livré","id_client":"3"},
+{"id_commande":"12","date":"20250226","statut_livraison":"Expédié","id_client":"6"},
+{"id_commande":"13","date":"20250227","statut_livraison":"En attente","id_client":"9"},
+{"id_commande":"14","date":"20250228","statut_livraison":"Annulé","id_client":"1"},
+{"id_commande":"15","date":"20250301","statut_livraison":"Expédié","id_client":"5"}
+]
+}
+,{"type":"table","name":"fournisseurs","database":"magasin","data":
+[
+{"id_fournisseur":"1","nom":"Tech Supply","lieu":"Paris"},
+{"id_fournisseur":"2","nom":"Mode & Co","lieu":"Lyon"},
+{"id_fournisseur":"3","nom":"Food Market","lieu":"Marseille"},
+{"id_fournisseur":"4","nom":"Home Deco","lieu":"Bordeaux"},
+{"id_fournisseur":"5","nom":"Sportive","lieu":"Toulouse"},
+{"id_fournisseur":"6","nom":"Kids World","lieu":"Nice"},
+{"id_fournisseur":"7","nom":"Book Haven","lieu":"Strasbourg"},
+{"id_fournisseur":"8","nom":"DIY Pro","lieu":"Lille"},
+{"id_fournisseur":"9","nom":"Green Thumb","lieu":"Rennes"},
+{"id_fournisseur":"10","nom":"Beauty Hub","lieu":"Nantes"}
+]
+}
+,{"type":"table","name":"notation","database":"magasin","data":
+[
+{"id_notation":"1","note":"5","avis":"Superbe produit !","id_client":"1","id_article":"1"},
+{"id_notation":"2","note":"4","avis":"Très satisfait","id_client":"2","id_article":"3"},
+{"id_notation":"3","note":"3","avis":"Correct mais pourrait être mieux","id_client":"3","id_article":"5"},
+{"id_notation":"4","note":"2","avis":"Déçu par la qualité","id_client":"4","id_article":"7"},
+{"id_notation":"5","note":"5","avis":"Parfait !","id_client":"5","id_article":"9"},
+{"id_notation":"6","note":"4","avis":"Bon rapport qualité\/prix","id_client":"6","id_article":"11"},
+{"id_notation":"7","note":"3","avis":"Moyen, sans plus","id_client":"7","id_article":"13"},
+{"id_notation":"8","note":"5","avis":"Excellent produit","id_client":"8","id_article":"15"},
+{"id_notation":"9","note":"2","avis":"Pas à la hauteur","id_client":"9","id_article":"17"},
+{"id_notation":"10","note":"4","avis":"Bien conçu","id_client":"10","id_article":"2"},
+{"id_notation":"11","note":"5","avis":"Incroyable, je recommande","id_client":"1","id_article":"4"},
+{"id_notation":"12","note":"3","avis":"Mouais, pas terrible","id_client":"2","id_article":"6"},
+{"id_notation":"13","note":"4","avis":"Fait le job","id_client":"3","id_article":"8"},
+{"id_notation":"14","note":"1","avis":"Nul, je suis déçu","id_client":"4","id_article":"10"},
+{"id_notation":"15","note":"5","avis":"J adore !","id_client":"5","id_article":"12"},
+{"id_notation":"16","note":"3","avis":"Assez bon mais peut mieux faire","id_client":"6","id_article":"14"},
+{"id_notation":"17","note":"4","avis":"Satisfait globalement","id_client":"7","id_article":"16"},
+{"id_notation":"18","note":"2","avis":"Je ne rachèterai pas","id_client":"8","id_article":"3"},
+{"id_notation":"19","note":"5","avis":"Un must-have","id_client":"9","id_article":"5"},
+{"id_notation":"20","note":"4","avis":"Plutôt bon rapport qualité\/prix","id_client":"10","id_article":"7"}
+]
+}
+]

@@ -6,4 +6,9 @@ async function generateCode(data) {
     return qrCodeImage;
 }
 
-module.exports = { generateCode };
+async function generateBuffer(data) {
+    const qrCodeBuffer = await qrcode.toBuffer(data, { width: 500, errorCorrectionLevel: 'H' });
+    return qrCodeBuffer;
+}
+
+module.exports = { generateCode, generateBuffer };

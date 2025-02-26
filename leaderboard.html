@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .leaderboard {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 80%;
+            max-width: 600px;
+        }
+        .leaderboard h1 {
+            background: #4CAF50;
+            color: #fff;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        .leaderboard ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .leaderboard li {
+            border-bottom: 1px solid #ddd;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .leaderboard li:nth-child(odd) {
+            background: #f9f9f9;
+        }
+        .queries-count {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.2em;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="leaderboard">
+        <h1>Leaderboard</h1>
+        <ul id="leaderboard-list">
+            <!-- Leaderboard items will be inserted here -->
+        </ul>
+    </div>
+
+    <script>
+        async function fetchLeaderboard() {
+            try {
+                const response = await fetch('/get-leaderboard');
+                const data = await response.json();
+                const leaderboardList = document.getElementById('leaderboard-list');
+                const leaderboardItems = await Promise.all(data.map(async (item, index) => {
+                    const listItem = document.createElement('li');
+                    const resp = await fetch(`/getID?id=${item.name}`);
+                    const id = await resp.json();
+                    const req = await fetch(`/get-all?id=${id}`);
+                    const reqs = await req.json();
+                    listItem.innerHTML = `<span>${index + 1}. ${item.name}</span><span>${item.score} (${reqs.length} requests)</span>`;
+                    return listItem;
+                }));
+                leaderboardList.innerHTML = '';
+                leaderboardItems.forEach(item => leaderboardList.appendChild(item));
+            } catch (error) {
+                console.error('Error fetching leaderboard:', error);
+            }
+        }
+
+        setInterval(fetchLeaderboard, 1000); // Fetch leaderboard every 5 seconds
+        fetchLeaderboard(); // Initial fetch
+    </script>
+</body>
+</html>

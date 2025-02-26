@@ -14,5 +14,8 @@
     "pdf-creator-node": "^2.3.5",
     "qrcode": "^1.5.3",
     "socket.io": "^4.7.5"
+  },
+  "nodemonConfig": {
+    "ignore": ["**/out/**"]
   }
 }

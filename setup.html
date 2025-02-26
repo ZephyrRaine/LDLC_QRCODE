@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setup</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #444;
+            margin-bottom: 30px;
+        }
+        .project {
+            cursor: pointer;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: inline-block;
+            width: 150px;
+        }
+        .project:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            border: 1px solid #007BFF;
+        }
+        .qr-code, .start-game {
+            display: none;
+            margin-top: 20px;
+        }
+        .qr-code img {
+            width: 200px;
+            height: 200px;
+        }
+        .start-game a {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: #fff;
+            text-decoration: none;
+            transition: background-color 0.2s;
+        }
+        .start-game a:hover {
+            background-color: #0056b3;
+        }
+        .common-qr-codes {
+            margin-bottom: 30px;
+        }
+        .common-qr-codes img {
+            width: 150px;
+            height: 150px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="common-qr-codes">
+        <h2>Setup QR Codes</h2>
+        <img src="/assets/setup-qr-code-1.png" alt="Setup QR Code 1">
+        <img src="/assets/setup-qr-code-2.png" alt="Setup QR Code 2">
+        <img src="/wifiImg" alt="Setup QR Code 3">
+    </div>
+    <h1>Select a Project</h1>
+    <div id="projects">
+        <div class="project" data-project="cinema">Cinema</div>
+        <div class="project" data-project="ecole">Ecole</div>
+        <div class="project" data-project="librairie">Librairie</div>
+        <div class="project" data-project="magasin">Magasin</div>
+        <div class="project" data-project="tripadvisor">Tripadvisor</div>
+    </div>
+    <div id="qr-code" class="qr-code">
+        <img id="qr-image" src="" alt="QR Code">
+    </div>
+    <div id="start-game" class="start-game">
+        <a id="start-game-link" href="#">Start Game</a>
+    </div>
+
+    <script>
+        const projects = document.querySelectorAll('.project');
+        const qrCode = document.getElementById('qr-code');
+        const qrImage = document.getElementById('qr-image');
+        const startGame = document.getElementById('start-game');    
+        const startGameLink = document.getElementById('start-game-link');
+
+        projects.forEach(project => {
+            project.addEventListener('click', async () => {
+                const projectNumber = project.getAttribute('data-project');
+                qrImage.src = `/urlImg?id=${projectNumber}`;
+                qrCode.style.display = 'block';
+                startGame.style.display = 'block';
+                var id = await fetch(`/getID?id=${projectNumber}`).then(res => res.text());
+                startGameLink.href = `/?id=${id}`;
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+[
+{"type":"header","version":"5.1.1","comment":"Export to JSON plugin for PHPMyAdmin"},
+{"type":"database","name":"ecole"},
+{"type":"table","name":"cours","database":"ecole","data":
+[
+{"id_cours":"1","intitule":"Algebra linéaire","date":"2024-03-10","plateforme":"Moodle","id_matiere":"1","id_prof":"1"},
+{"id_cours":"2","intitule":"Analyse mathématique","date":"2024-04-15","plateforme":"Google Classroom","id_matiere":"1","id_prof":"2"},
+{"id_cours":"3","intitule":"Mécanique classique","date":"2024-05-20","plateforme":"Google Classroom","id_matiere":"2","id_prof":"2"},
+{"id_cours":"4","intitule":"Physique quantique","date":"2024-06-25","plateforme":"EdX","id_matiere":"2","id_prof":"3"},
+{"id_cours":"5","intitule":"Chimie organique","date":"2024-07-12","plateforme":"Khan Academy","id_matiere":"3","id_prof":"3"},
+{"id_cours":"6","intitule":"Programmation Python","date":"2024-08-05","plateforme":"Udemy","id_matiere":"4","id_prof":"5"},
+{"id_cours":"7","intitule":"Analyse littéraire","date":"2024-09-18","plateforme":"Coursera","id_matiere":"5","id_prof":"7"},
+{"id_cours":"8","intitule":"Histoire médiévale","date":"2024-10-22","plateforme":"EdX","id_matiere":"6","id_prof":"9"},
+{"id_cours":"9","intitule":"Introduction à la philosophie","date":"2024-11-11","plateforme":"FutureLearn","id_matiere":"7","id_prof":"7"},
+{"id_cours":"10","intitule":"Économie politique","date":"2024-12-01","plateforme":"OpenClassrooms","id_matiere":"8","id_prof":"9"},
+{"id_cours":"11","intitule":"Biologie cellulaire","date":"2025-01-07","plateforme":"EdX","id_matiere":"9","id_prof":"1"},
+{"id_cours":"12","intitule":"Droit international","date":"2025-02-14","plateforme":"Google Classroom","id_matiere":"10","id_prof":"4"}
+]
+}
+,{"type":"table","name":"cours_etudiants","database":"ecole","data":
+[
+{"id_cours":"1","id_etudiant":"1"},
+{"id_cours":"5","id_etudiant":"1"},
+{"id_cours":"9","id_etudiant":"1"},
+{"id_cours":"1","id_etudiant":"2"},
+{"id_cours":"7","id_etudiant":"2"},
+{"id_cours":"11","id_etudiant":"2"},
+{"id_cours":"2","id_etudiant":"3"},
+{"id_cours":"5","id_etudiant":"3"},
+{"id_cours":"10","id_etudiant":"3"},
+{"id_cours":"3","id_etudiant":"4"},
+{"id_cours":"7","id_etudiant":"4"},
+{"id_cours":"12","id_etudiant":"4"},
+{"id_cours":"3","id_etudiant":"5"},
+{"id_cours":"6","id_etudiant":"5"},
+{"id_cours":"10","id_etudiant":"5"},
+{"id_cours":"4","id_etudiant":"6"},
+{"id_cours":"8","id_etudiant":"6"}
+]
+}
+,{"type":"table","name":"diplomes","database":"ecole","data":
+[
+{"id_diplome":"1","titre":"Licence en Mathématiques"},
+{"id_diplome":"2","titre":"Master en Physique"},
+{"id_diplome":"3","titre":"Doctorat en Chimie"},
+{"id_diplome":"4","titre":"Licence en Informatique"},
+{"id_diplome":"5","titre":"Master en Littérature"},
+{"id_diplome":"6","titre":"Doctorat en Histoire"},
+{"id_diplome":"7","titre":"Licence en Biologie"},
+{"id_diplome":"8","titre":"Master en Droit"}
+]
+}
+,{"type":"table","name":"diplomes_profs","database":"ecole","data":
+[
+{"id_diplome":"1","id_prof":"1"},
+{"id_diplome":"2","id_prof":"2"},
+{"id_diplome":"3","id_prof":"3"},
+{"id_diplome":"4","id_prof":"4"},
+{"id_diplome":"5","id_prof":"5"},
+{"id_diplome":"6","id_prof":"6"},
+{"id_diplome":"7","id_prof":"7"},
+{"id_diplome":"8","id_prof":"8"},
+{"id_diplome":"1","id_prof":"9"},
+{"id_diplome":"2","id_prof":"10"}
+]
+}
+,{"type":"table","name":"etudiants","database":"ecole","data":
+[
+{"id_etudiant":"1","nom":"Bernard","prenom":"Luc","email":"alpha_42@example.com","date_naissance":"2002-05-14"},
+{"id_etudiant":"2","nom":"Dupont","prenom":"Elodie","email":"beta_77@example.net","date_naissance":"2001-08-22"},
+{"id_etudiant":"3","nom":"Moreau","prenom":"Antoine","email":"gamma_88@example.org","date_naissance":"2003-02-11"},
+{"id_etudiant":"4","nom":"Fournier","prenom":"Sophie","email":"delta_99@example.io","date_naissance":"2000-07-30"},
+{"id_etudiant":"5","nom":"Girard","prenom":"Thomas","email":"epsilon_12@example.edu","date_naissance":"2002-11-05"},
+{"id_etudiant":"6","nom":"Lambert","prenom":"Camille","email":"zeta_34@example.com","date_naissance":"2001-06-18"}
+]
+}
+,{"type":"table","name":"matieres","database":"ecole","data":
+[
+{"id_matiere":"1","intitule":"Mathématiques"},
+{"id_matiere":"2","intitule":"Physique"},
+{"id_matiere":"3","intitule":"Chimie"},
+{"id_matiere":"4","intitule":"Informatique"},
+{"id_matiere":"5","intitule":"Littérature"},
+{"id_matiere":"6","intitule":"Histoire"},
+{"id_matiere":"7","intitule":"Philosophie"},
+{"id_matiere":"8","intitule":"Économie"},
+{"id_matiere":"9","intitule":"Biologie"},
+{"id_matiere":"10","intitule":"Droit"}
+]
+}
+,{"type":"table","name":"profs","database":"ecole","data":
+[
+{"id_prof":"1","nom":"Durand"},
+{"id_prof":"2","nom":"Martin"},
+{"id_prof":"3","nom":"Dubois"},
+{"id_prof":"4","nom":"Leroy"},
+{"id_prof":"5","nom":"Morel"},
+{"id_prof":"6","nom":"Garcia"},
+{"id_prof":"7","nom":"Rousseau"},
+{"id_prof":"8","nom":"Blanc"},
+{"id_prof":"9","nom":"Lemoine"},
+{"id_prof":"10","nom":"Petit"}
+]
+}
+]

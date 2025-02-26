@@ -3,49 +3,59 @@
 
 <head>
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>SQL Query Builder</title>
+  <title>Query Results</title>
   <style>
     body {
       margin: 0;
-      padding-bottom: 3rem;
+      padding: 1rem;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
 
-    #form {
-      background: rgba(0, 0, 0, 0.15);
-      padding: 0.25rem;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      display: flex;
-      height: 3rem;
-      box-sizing: border-box;
-      backdrop-filter: blur(10px);
+    .results-container {
+      margin: 1rem 0;
+      overflow-x: auto;
     }
 
-    #input {
-      border: none;
-      padding: 0 1rem;
-      flex-grow: 1;
-      border-radius: 2rem;
-      margin: 0.25rem;
+    .results-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
     }
 
-    #input:focus {
-      outline: none;
+    .results-table th,
+    .results-table td {
+      padding: 12px 15px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
     }
 
-    #form>button {
-      background: #333;
-      border: none;
-      padding: 0 1rem;
-      margin: 0.25rem;
-      border-radius: 3px;
-      outline: none;
-      color: #fff;
+    .results-table th {
+      background-color: #f5f5f5;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.9em;
+      letter-spacing: 0.5px;
     }
 
+    .results-table tbody tr:hover {
+      background-color: #f9f9f9;
+    }
+
+    .results-table td {
+      font-size: 0.95em;
+    }
+
+    .date-cell {
+      white-space: nowrap;
+    }
+
+    .no-results {
+      padding: 1rem;
+      color: #666;
+      font-style: italic;
+    }
+
+    /* Query Builder Styles */
     .query-container {
       margin: 1rem;
       padding: 1rem;
@@ -132,94 +142,39 @@
       font-weight: bold;
     }
 
-    /* Results Table Styles */
-    .results-container {
-      margin: 1rem;
-      overflow-x: auto;
-    }
-
-    .results-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 1rem;
-    }
-
-    .results-table th,
-    .results-table td {
-      padding: 12px 15px;
-      text-align: left;
-      border-bottom: 1px solid #ddd;
-    }
-
-    .results-table th {
-      background-color: #f5f5f5;
-      font-weight: 600;
-      text-transform: uppercase;
-      font-size: 0.9em;
-      letter-spacing: 0.5px;
-    }
-
-    .results-table tbody tr:hover {
-      background-color: #f9f9f9;
-    }
-
-    .results-table td {
-      font-size: 0.95em;
-    }
-
-    .date-cell {
-      white-space: nowrap;
-    }
-
-    .no-results {
-      padding: 1rem;
-      color: #666;
-      font-style: italic;
-    }
-
-    /* Add modal styles */
-    .modal {
-      display: none;
+    #form {
+      background: rgba(0, 0, 0, 0.15);
+      padding: 0.25rem;
       position: fixed;
-      z-index: 1;
+      bottom: 0;
       left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgba(0, 0, 0, 0.4);
+      right: 0;
+      display: flex;
+      height: 3rem;
+      box-sizing: border-box;
+      backdrop-filter: blur(10px);
     }
 
-    .modal-content {
-      background-color: #fefefe;
-      margin: 15% auto;
-      padding: 20px;
-      border: 1px solid #888;
-      width: 30%;
-      border-radius: 5px;
+    #input {
+      border: none;
+      padding: 0 1rem;
+      flex-grow: 1;
+      border-radius: 2rem;
+      margin: 0.25rem;
     }
 
-    .close {
-      color: #aaa;
-      float: right;
-      font-size: 28px;
-      font-weight: bold;
+    #input:focus {
+      outline: none;
     }
 
-    .close:hover,
-    .close:focus {
-      color: black;
-      text-decoration: none;
-      cursor: pointer;
-    }
-
-    .modal-body {
-      padding: 10px 0;
-    }
-
-    .modal-footer {
-      padding-top: 20px;
-      text-align: right;
+    #form>button {
+      background: #333;
+      border: none;
+      padding: 0 1rem;
+      margin: 0.25rem;
+      border-radius: 3px;
+      outline: none;
+      color: #fff;
     }
 
     .save-query-btn:disabled {
@@ -231,16 +186,16 @@
     #complexity-container {
       font-size: 42px;
     }
-
-    .check-query-btn {
-      background: green;
-      color: #fff;
-      cursor: pointer;
-    }
   </style>
 </head>
 
 <body>
+  <h1>Query Results</h1>
+  <div id="description-container">
+    <p><strong>Description:</strong> <span id="query-description"></span></p>
+  </div>
+
+  <!-- Query Builder Container -->
   <div class="query-container">
     <div class="cards-container" id="query-builder"></div>
     <button class="add-value-btn" onclick="addValueCard()">Add Value</button>
@@ -260,7 +215,6 @@
   <form id="form" action="">
     <input id="input" autocomplete="off" readonly />
     <button type="button" onclick="constructSQL()">Execute</button>
-    <button id="check-query-btn" type="button" onclick="checkQuery()" class="check-query-btn" style="display: none;">Check Query</button>
     <button id="save-query-btn" type="button" onclick="showSaveModal()" disabled="true" class="save-query-btn">Save Query</button>
     <button type="button" onclick="clearQuery()">Clear</button>
   </form>
@@ -286,8 +240,8 @@
   <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
   <script>
     const socket = io();
-    let draggedItem = null;
     let currentResults = [];
+    let draggedItem = null;
 
     // Add modal functions
     function showSaveModal() {
@@ -419,8 +373,7 @@
       }[type] || '';
     }
 
-    function clearQuery()
-    {
+    function clearQuery() {
       document.getElementById('save-query-btn').disabled = true;
       document.getElementById('query-builder').innerHTML = '';
       document.getElementById('input').value = '';
@@ -431,86 +384,81 @@
     }
 
     function updateSQLPreview() {
-  const cards = Array.from(document.querySelectorAll('#query-builder .card'));
-  let queryParts = [];
-  let currentClause = null;
+      const cards = Array.from(document.querySelectorAll('#query-builder .card'));
+      let queryParts = [];
+      let currentClause = null;
 
-  cards.forEach((card, index) => {
-    const type = [...card.classList].find(c => c.includes('-keyword'))?.split('-')[0];
-    let value = card.textContent.trim().replace('×', '').trim();
+      cards.forEach((card, index) => {
+        const type = [...card.classList].find(c => c.includes('-keyword'))?.split('-')[0];
+        let value = card.textContent.trim().replace('×', '').trim();
 
-    // Handle SQL keywords (uppercase and space before, except parentheses)
-    if (type === 'sql') {
-      if (value === '(' || value === ')') {
-        value = value; // Keep parentheses without spaces
-      } else {
-        value = ' ' + value.toUpperCase();
-        currentClause = value.trim();
+        // Handle SQL keywords (uppercase and space before, except parentheses)
+        if (type === 'sql') {
+          if (value === '(' || value === ')') {
+            value = value; // Keep parentheses without spaces
+          } else {
+            value = ' ' + value.toUpperCase();
+            currentClause = value.trim();
+          }
+        }
+        // Handle structural elements (column/table names)
+        else if (type === 'struct') {
+          // No aliasing here, move logic to constructSQL
+        }
+        // Handle values (quote dates but not pure numbers)
+        else if (type === 'value') {
+          const numericValue = value.replace(/[^0-9.]/g, '');
+          const isDate = /^\d{4}-\d{2}-\d{2}(?: \d{2}:\d{2}:\d{2})?$/.test(value);
+
+          value = isDate || isNaN(numericValue) || numericValue === ''
+            ? ` '${value}'`
+            : ` ${value}`;
+        }
+
+        // For first element, remove leading space
+        if (index === 0 && value.startsWith(' ')) {
+          value = value.substring(1);
+        }
+
+        queryParts.push(value);
+      });
+
+      // Clean up commas and spaces
+      let finalQuery = queryParts.join(' ')
+        .replace(/, ,/g, ',')      // Remove double commas
+        .replace(/ ,/g, ', ')      // Fix space before commas
+        .replace(/(WHERE|FROM|SELECT) ,/g, '$1 ')  // Fix clauses followed by comma
+        .replace(/\s+/g, ' ')     // Collapse multiple spaces
+        .replace(/ \(/g, '(')     // Remove space before opening parenthesis
+        .replace(/\) /g, ')');    // Remove space after closing parenthesis
+
+      document.getElementById('input').value = finalQuery;
+      setCookie('sqlPreview', finalQuery, 7);
+      setCookie('queryBuilder', container.innerHTML, 7);
+    }
+
+    function constructSQL() {
+      let sql = document.getElementById('input').value;
+      if (sql) {
+        let columnMap = {};
+
+        sql = sql.replace(/(SELECT\s+)([\s\S]*?)(\s+FROM\s+)/i, (match, selectKeyword, selectColumns, fromKeyword) => {
+          let modifiedColumns = selectColumns.replace(/\b(\w+)\.(\w+)\b/g, (match, table, column) => {
+            let key = `${table}.${column}`; // Ensure aliasing applies only to SELECT columns
+            if (columnMap[column]) {
+              columnMap[column]++;
+              return `${table}.${column} AS ${table}_${column}`;
+            } else {
+              columnMap[column] = 1;
+              return match;
+            }
+          });
+          return selectKeyword + modifiedColumns + fromKeyword;
+        });
+
+        socket.emit('execute', sql);
       }
     }
-    // Handle structural elements (column/table names)
-    else if (type === 'struct') {
-      // No aliasing here, move logic to constructSQL
-    }
-    // Handle values (quote dates but not pure numbers)
-    else if (type === 'value') {
-      const numericValue = value.replace(/[^0-9.]/g, '');
-      const isDate = /^\d{4}-\d{2}-\d{2}(?: \d{2}:\d{2}:\d{2})?$/.test(value);
-      
-      value = isDate || isNaN(numericValue) || numericValue === ''
-        ? ` '${value}'`
-        : ` ${value}`;
-    }
-
-    // For first element, remove leading space
-    if (index === 0 && value.startsWith(' ')) {
-      value = value.substring(1);
-    }
-
-    queryParts.push(value);
-  });
-
-  // Clean up commas and spaces
-  let finalQuery = queryParts.join(' ')
-    .replace(/, ,/g, ',')      // Remove double commas
-    .replace(/ ,/g, ', ')      // Fix space before commas
-    .replace(/(WHERE|FROM|SELECT) ,/g, '$1 ')  // Fix clauses followed by comma
-    .replace(/\s+/g, ' ')     // Collapse multiple spaces
-    .replace(/ \(/g, '(')     // Remove space before opening parenthesis
-    .replace(/\) /g, ')');    // Remove space after closing parenthesis
-
-  document.getElementById('input').value = finalQuery;
-  setCookie('sqlPreview', finalQuery, 7);
-  setCookie('queryBuilder', container.innerHTML, 7);
-}
-
-
-
-function constructSQL() {
-  let sql = document.getElementById('input').value;
-  if (sql) {
-    let columnMap = {};
-    
-    sql = sql.replace(/(SELECT\s+)([\s\S]*?)(\s+FROM\s+)/i, (match, selectKeyword, selectColumns, fromKeyword) => {
-      let modifiedColumns = selectColumns.replace(/\b(\w+)\.(\w+)\b/g, (match, table, column) => {
-        let key = `${table}.${column}`; // Ensure aliasing applies only to SELECT columns
-        if (columnMap[column]) {
-          columnMap[column]++;
-          return `${table}.${column} AS ${table}_${column}`;
-        } else {
-          columnMap[column] = 1;
-          return match;
-        }
-      });
-      return selectKeyword + modifiedColumns + fromKeyword;
-    });
-    
-    socket.emit('execute', sql);
-  }
-}
-
-
-
 
     // Function to format dates
     function formatDate(dateString) {
@@ -574,142 +522,58 @@ function constructSQL() {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const id = urlParams.get('id');
-    const solveId = urlParams.get('solveId');
-    const solveBy = urlParams.get('solveBy');
-
-    if (solveId && solveBy) {
-      fetchQuery(id, solveId, solveBy);
-      document.getElementById('save-query-btn').style.display = 'none';
-      document.getElementById('check-query-btn').style.display = 'inline-block';
-    }
-
-    function fetchQuery(id, solveId, solveBy) {
-      socket.emit('fetchQuery', { id, solveId, solveBy });
-    }
-
-    socket.on('fetchedQuery', (data) => {
-      document.getElementById('queryDesc').value = data.description;
-      displayResults(data.results);
-      document.getElementById('input').value = data.query;
-      document.getElementById('save-query-btn').disabled = false;
-    });
-
-    function checkQuery() {
-      const userQuery = document.getElementById('input').value;
-      socket.emit('checkQuery', { solveId, solveBy, userQuery });
-    }
-
-    socket.on('checkResult', (result) => {
-      if (result.correct) {
-        alert('Correct query!');
-      } else {
-        alert('Incorrect query. Try again.');
-      }
-    });
+    const solvedBy = urlParams.get('solvedBy');
+    const queryID = urlParams.get('queryID');
 
     socket.on('data ' + id, (msg) => {
-      const card = createCard(msg);
-      container.appendChild(card);
-      updateSQLPreview();
-    });
-
-    // Modify socket.on('result') handler
-    socket.on('result', (data) => {
-      displayResults(data.dbresult);
-      currentResults = data.dbresult;
-      console.log(data.complexity);
-      document.getElementById('complexity-container').innerHTML = `<p>Complexity: ${data.complexity}</p>`;
-      document.getElementById('save-query-btn').disabled = false;
+      document.getElementById('query-description').textContent = msg.description;
+      displayResults(msg.results);
     });
 
     socket.on('error', (msg) => {
       console.error('Error:', msg);
       alert('Error: ' + (msg.message || JSON.stringify(msg)));
-      document.getElementById('save-query-btn').disabled = true;
     });
 
-    socket.on('saved', (msg) => {
-      alert('Query saved successfully');
-      clearQuery();
-    });
+    socket.emit('connectDB', { id, solvedBy, queryID });
 
-    socket.emit('connectDB', id);
+    // Custom Cookie functions using '|' as a separator
+    function setCookie(name, value, days) {
+      console.log('Setting cookie:', name, value);
+      const d = new Date();
+      d.setTime(d.getTime() + days * 24 * 60 * 60 * 1000);
+      const expires = "expires=" + d.toUTCString();
 
- // Custom Cookie functions using '|' as a separator
-function setCookie(name, value, days) {
-  console.log('Setting cookie:', name, value);
-  const d = new Date();
-  d.setTime(d.getTime() + days * 24 * 60 * 60 * 1000);
-  const expires = "expires=" + d.toUTCString();
+      // Retrieve existing cookies
+      let existingCookies = document.cookie ? document.cookie.split('; ').find(row => row.startsWith('customCookies=')) : null;
+      let cookieData = existingCookies ? existingCookies.split('=')[1] : "";
 
-  // Retrieve existing cookies
-  let existingCookies = document.cookie ? document.cookie.split('; ').find(row => row.startsWith('customCookies=')) : null;
-  let cookieData = existingCookies ? existingCookies.split('=')[1] : "";
+      // Parse existing cookies and update or add new one
+      let cookieObj = cookieData ? JSON.parse(decodeURIComponent(cookieData)) : {};
+      cookieObj[name] = value;
 
-  // Parse existing cookies and update or add new one
-  let cookieObj = cookieData ? JSON.parse(decodeURIComponent(cookieData)) : {};
-  cookieObj[name] = value;
+      // Store the updated cookie data
+      document.cookie = `customCookies=${encodeURIComponent(JSON.stringify(cookieObj))}; ${expires}; path=/; SameSite=Lax`;
+    }
 
-  // Store the updated cookie data
-  document.cookie = `customCookies=${encodeURIComponent(JSON.stringify(cookieObj))}; ${expires}; path=/; SameSite=Lax`;
-}
+    function getCookie(name) {
+      console.log('Getting cookie:', name);
 
-function getCookie(name) {
-  console.log('Getting cookie:', name);
+      let existingCookies = document.cookie ? document.cookie.split('; ').find(row => row.startsWith('customCookies=')) : null;
+      if (!existingCookies) return "";
 
-  let existingCookies = document.cookie ? document.cookie.split('; ').find(row => row.startsWith('customCookies=')) : null;
-  if (!existingCookies) return "";
+      let cookieData = existingCookies.split('=')[1];
+      let cookieObj = cookieData ? JSON.parse(decodeURIComponent(cookieData)) : {};
 
-  let cookieData = existingCookies.split('=')[1];
-  let cookieObj = cookieData ? JSON.parse(decodeURIComponent(cookieData)) : {};
+      return cookieObj[name] || "";
+    }
 
-  return cookieObj[name] || "";
-}
+    function clearCookies() {
+      console.log("Clearing all cookies...");
+      document.cookie = `customCookies=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; SameSite=Lax`;
+    }
 
-function clearCookies() {
-  console.log("Clearing all cookies...");
-  document.cookie = `customCookies=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; SameSite=Lax`;
-}
-
-
-    // Load saved state from cookies
-    window.onload = function() {
-      const savedSQL = getCookie('sqlPreview');
-      const savedQueryBuilder = getCookie('queryBuilder');
-      if (savedSQL) {
-        console.log(savedSQL);
-        document.getElementById('input').value = savedSQL;
-      }
-      if (savedQueryBuilder) {
-        console.log(savedQueryBuilder);
-        container.innerHTML = savedQueryBuilder;
-        Array.from(container.children).forEach(card => {
-          card.addEventListener('dragstart', () => {
-            draggedItem = card;
-            card.classList.add('dragging');
-          });
-
-          card.addEventListener('dragend', () => {
-            draggedItem = null;
-            card.classList.remove('dragging');
-            updateSQLPreview();
-          });
-
-          card.querySelector('.delete-btn').addEventListener('click', () => {
-            card.remove();
-            updateSQLPreview();
-          });
-
-          card.addEventListener('dblclick', () => {
-            const newText = prompt('Edit value:', card.textContent.trim().replace('×', '').trim());
-            if (newText) {
-              card.firstChild.textContent = newText;
-              updateSQLPreview();
-            }
-          });
-        });
-      }
-    };
+    // Load
   </script>
 </body>
 

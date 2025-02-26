@@ -1,0 +1,136 @@
+[
+{"type":"header","version":"5.1.1","comment":"Export to JSON plugin for PHPMyAdmin"},
+{"type":"database","name":"tripadvisor"},
+{"type":"table","name":"avis","database":"tripadvisor","data":
+[
+{"id_avis":"1","date":"2025-02-10","commentaire":"Excellente cuisine !","id_restaurant":"1","id_client":"1"},
+{"id_avis":"2","date":"2025-02-12","commentaire":"Service impeccable.","id_restaurant":"1","id_client":"2"},
+{"id_avis":"3","date":"2025-02-15","commentaire":"Pizza parfaite !","id_restaurant":"2","id_client":"3"},
+{"id_avis":"4","date":"2025-02-18","commentaire":"Ambiance agréable.","id_restaurant":"2","id_client":"4"},
+{"id_avis":"5","date":"2025-02-20","commentaire":"Sushis très frais.","id_restaurant":"3","id_client":"5"},
+{"id_avis":"6","date":"2025-02-22","commentaire":"Le personnel est adorable.","id_restaurant":"3","id_client":"1"},
+{"id_avis":"7","date":"2025-02-25","commentaire":"Tacos super bons.","id_restaurant":"4","id_client":"2"},
+{"id_avis":"8","date":"2025-02-27","commentaire":"Un délice épicé !","id_restaurant":"5","id_client":"3"},
+{"id_avis":"9","date":"2025-02-28","commentaire":"Bonne expérience.","id_restaurant":"6","id_client":"4"},
+{"id_avis":"10","date":"2025-03-01","commentaire":"Viande de qualité.","id_restaurant":"7","id_client":"5"},
+{"id_avis":"11","date":"2025-03-02","commentaire":"Service trop lent.","id_restaurant":"1","id_client":"3"},
+{"id_avis":"12","date":"2025-03-03","commentaire":"Pâtes sans saveur.","id_restaurant":"2","id_client":"5"},
+{"id_avis":"13","date":"2025-03-04","commentaire":"Sushis trop chers.","id_restaurant":"3","id_client":"2"},
+{"id_avis":"14","date":"2025-03-05","commentaire":"Attente interminable.","id_restaurant":"4","id_client":"1"},
+{"id_avis":"15","date":"2025-03-06","commentaire":"Trop épicé, immangeable.","id_restaurant":"5","id_client":"4"},
+{"id_avis":"16","date":"2025-03-07","commentaire":"Tables trop serrées.","id_restaurant":"6","id_client":"1"},
+{"id_avis":"17","date":"2025-03-08","commentaire":"Viande trop cuite.","id_restaurant":"7","id_client":"3"},
+{"id_avis":"18","date":"2025-03-09","commentaire":"Burger froid et sec.","id_restaurant":"8","id_client":"6"},
+{"id_avis":"19","date":"2025-03-10","commentaire":"Trop cher pour la qualité.","id_restaurant":"9","id_client":"7"}
+]
+}
+,{"type":"table","name":"clients","database":"tripadvisor","data":
+[
+{"id_client":"1","nom":"Bernard","prenom":"Claire","mail":"claire@mail.com"},
+{"id_client":"2","nom":"Robert","prenom":"Luc","mail":"luc@mail.com"},
+{"id_client":"3","nom":"Garcia","prenom":"Elena","mail":"elena@mail.com"},
+{"id_client":"4","nom":"Fischer","prenom":"Hans","mail":"hans@mail.com"},
+{"id_client":"5","nom":"Nguyen","prenom":"Linh","mail":"linh@mail.com"},
+{"id_client":"6","nom":"Smith","prenom":"John","mail":"john@mail.com"},
+{"id_client":"7","nom":"Kim","prenom":"Soo","mail":"soo@mail.com"}
+]
+}
+,{"type":"table","name":"emplois","database":"tripadvisor","data":
+[
+{"id_restaurant":"1","id_employe":"1"},
+{"id_restaurant":"7","id_employe":"1"},
+{"id_restaurant":"1","id_employe":"2"},
+{"id_restaurant":"2","id_employe":"2"},
+{"id_restaurant":"6","id_employe":"2"},
+{"id_restaurant":"1","id_employe":"3"},
+{"id_restaurant":"3","id_employe":"3"},
+{"id_restaurant":"7","id_employe":"3"},
+{"id_restaurant":"2","id_employe":"4"},
+{"id_restaurant":"3","id_employe":"5"},
+{"id_restaurant":"9","id_employe":"5"},
+{"id_restaurant":"4","id_employe":"6"},
+{"id_restaurant":"9","id_employe":"6"},
+{"id_restaurant":"5","id_employe":"7"},
+{"id_restaurant":"6","id_employe":"8"},
+{"id_restaurant":"8","id_employe":"9"},
+{"id_restaurant":"8","id_employe":"10"}
+]
+}
+,{"type":"table","name":"employes","database":"tripadvisor","data":
+[
+{"id_employe":"1","nom":"Dupont","prenom":"Jean","id_poste":"1"},
+{"id_employe":"2","nom":"Martin","prenom":"Sophie","id_poste":"2"},
+{"id_employe":"3","nom":"Leroy","prenom":"Paul","id_poste":"3"},
+{"id_employe":"4","nom":"Rossi","prenom":"Marco","id_poste":"1"},
+{"id_employe":"5","nom":"Tanaka","prenom":"Yuki","id_poste":"1"},
+{"id_employe":"6","nom":"Lopez","prenom":"Carlos","id_poste":"2"},
+{"id_employe":"7","nom":"Sharma","prenom":"Anika","id_poste":"3"},
+{"id_employe":"8","nom":"Durand","prenom":"Alice","id_poste":"4"},
+{"id_employe":"9","nom":"Johnson","prenom":"Mike","id_poste":"5"},
+{"id_employe":"10","nom":"Wong","prenom":"Lisa","id_poste":"6"}
+]
+}
+,{"type":"table","name":"origines","database":"tripadvisor","data":
+[
+{"id_origine":"1","pays":"France"},
+{"id_origine":"2","pays":"Italie"},
+{"id_origine":"3","pays":"Japon"},
+{"id_origine":"4","pays":"Mexique"},
+{"id_origine":"5","pays":"Inde"},
+{"id_origine":"6","pays":"États-Unis"},
+{"id_origine":"7","pays":"Thaïlande"}
+]
+}
+,{"type":"table","name":"postes","database":"tripadvisor","data":
+[
+{"id_poste":"1","intitule":"Chef cuisinier"},
+{"id_poste":"2","intitule":"Serveur"},
+{"id_poste":"3","intitule":"Barman"},
+{"id_poste":"4","intitule":"Manager"},
+{"id_poste":"5","intitule":"Plongeur"},
+{"id_poste":"6","intitule":"Pâtissier"}
+]
+}
+,{"type":"table","name":"restaurants","database":"tripadvisor","data":
+[
+{"id_restaurant":"1","nom":"Le Gourmet","id_origine":"1"},
+{"id_restaurant":"2","nom":"Pasta Bella","id_origine":"2"},
+{"id_restaurant":"3","nom":"Sakura Sushi","id_origine":"3"},
+{"id_restaurant":"4","nom":"El Tacon","id_origine":"4"},
+{"id_restaurant":"5","nom":"Spicy Masala","id_origine":"5"},
+{"id_restaurant":"6","nom":"Le Bistrot Lyonnais","id_origine":"1"},
+{"id_restaurant":"7","nom":"Steak House","id_origine":"6"},
+{"id_restaurant":"8","nom":"Green Eat","id_origine":"4"},
+{"id_restaurant":"9","nom":"Bangkok Wok","id_origine":"7"}
+]
+}
+,{"type":"table","name":"types","database":"tripadvisor","data":
+[
+{"id_type":"1","intitule":"Gastronomique"},
+{"id_type":"2","intitule":"Pizzeria"},
+{"id_type":"3","intitule":"Sushi"},
+{"id_type":"4","intitule":"Tacos"},
+{"id_type":"5","intitule":"Curry"},
+{"id_type":"6","intitule":"Bistrot"},
+{"id_type":"7","intitule":"Grillades"},
+{"id_type":"8","intitule":"Fast Food"},
+{"id_type":"9","intitule":"Vegan"}
+]
+}
+,{"type":"table","name":"types_restaurants","database":"tripadvisor","data":
+[
+{"id_type":"1","id_restaurant":"1"},
+{"id_type":"6","id_restaurant":"1"},
+{"id_type":"2","id_restaurant":"2"},
+{"id_type":"6","id_restaurant":"2"},
+{"id_type":"3","id_restaurant":"3"},
+{"id_type":"4","id_restaurant":"4"},
+{"id_type":"6","id_restaurant":"4"},
+{"id_type":"5","id_restaurant":"5"},
+{"id_type":"6","id_restaurant":"6"},
+{"id_type":"7","id_restaurant":"7"},
+{"id_type":"8","id_restaurant":"8"},
+{"id_type":"9","id_restaurant":"9"}
+]
+}
+]

@@ -1,0 +1,110 @@
+[
+{"type":"header","version":"5.1.1","comment":"Export to JSON plugin for PHPMyAdmin"},
+{"type":"database","name":"librairie"},
+{"type":"table","name":"auteurs","database":"librairie","data":
+[
+{"id_auteur":"1","nom":"Hugo","prenom":"Victor","date_naissance":"1802-02-26"},
+{"id_auteur":"2","nom":"Camus","prenom":"Albert","date_naissance":"1913-11-07"},
+{"id_auteur":"3","nom":"Orwell","prenom":"George","date_naissance":"1903-06-25"},
+{"id_auteur":"4","nom":"Dumas","prenom":"Alexandre","date_naissance":"1802-07-24"},
+{"id_auteur":"5","nom":"Christie","prenom":"Agatha","date_naissance":"1890-09-15"},
+{"id_auteur":"6","nom":"Sartre","prenom":"Jean-Paul","date_naissance":"1905-06-21"},
+{"id_auteur":"7","nom":"Proust","prenom":"Marcel","date_naissance":"1871-07-10"},
+{"id_auteur":"8","nom":"Verne","prenom":"Jules","date_naissance":"1828-02-08"},
+{"id_auteur":"9","nom":"Lemoine","prenom":"Arthur","date_naissance":"1980-03-15"},
+{"id_auteur":"10","nom":"Durand","prenom":"Sophie","date_naissance":"1975-09-22"}
+]
+}
+,{"type":"table","name":"auteurs_livres","database":"librairie","data":
+[
+{"id_auteur":"1","id_livre":"1"},
+{"id_auteur":"2","id_livre":"1"},
+{"id_auteur":"3","id_livre":"2"},
+{"id_auteur":"4","id_livre":"3"},
+{"id_auteur":"5","id_livre":"4"},
+{"id_auteur":"6","id_livre":"5"},
+{"id_auteur":"7","id_livre":"6"},
+{"id_auteur":"8","id_livre":"7"},
+{"id_auteur":"3","id_livre":"8"},
+{"id_auteur":"9","id_livre":"8"},
+{"id_auteur":"7","id_livre":"9"},
+{"id_auteur":"10","id_livre":"9"},
+{"id_auteur":"1","id_livre":"10"},
+{"id_auteur":"4","id_livre":"10"},
+{"id_auteur":"2","id_livre":"11"},
+{"id_auteur":"6","id_livre":"11"},
+{"id_auteur":"5","id_livre":"12"},
+{"id_auteur":"9","id_livre":"12"},
+{"id_auteur":"8","id_livre":"13"},
+{"id_auteur":"10","id_livre":"13"},
+{"id_auteur":"1","id_livre":"14"},
+{"id_auteur":"7","id_livre":"14"}
+]
+}
+,{"type":"table","name":"clients","database":"librairie","data":
+[
+{"id_client":"1","nom":"Dubois","prenom":"Marc","email":"marc.dubois@example.com"},
+{"id_client":"2","nom":"Leroy","prenom":"Anna","email":"anna.leroy@example.net"},
+{"id_client":"3","nom":"Simon","prenom":"Paul","email":"paul.simon@example.org"},
+{"id_client":"4","nom":"Chevalier","prenom":"Claire","email":"claire.chevalier@example.io"},
+{"id_client":"5","nom":"Renaud","prenom":"Jean","email":"jean.renaud@example.edu"},
+{"id_client":"6","nom":"Gautier","prenom":"Nathalie","email":"nathalie.gautier@example.com"}
+]
+}
+,{"type":"table","name":"emprunts","database":"librairie","data":
+[
+{"id_client":"1","id_livre":"1","date_emprunt":"2025-01-15","duree_emprunt":"14"},
+{"id_client":"1","id_livre":"3","date_emprunt":"2025-01-18","duree_emprunt":"21"},
+{"id_client":"1","id_livre":"10","date_emprunt":"2025-01-20","duree_emprunt":"30"},
+{"id_client":"2","id_livre":"2","date_emprunt":"2025-02-01","duree_emprunt":"30"},
+{"id_client":"2","id_livre":"4","date_emprunt":"2025-02-05","duree_emprunt":"15"},
+{"id_client":"2","id_livre":"12","date_emprunt":"2025-02-08","duree_emprunt":"21"},
+{"id_client":"3","id_livre":"5","date_emprunt":"2025-01-25","duree_emprunt":"20"},
+{"id_client":"3","id_livre":"7","date_emprunt":"2025-01-28","duree_emprunt":"10"},
+{"id_client":"3","id_livre":"9","date_emprunt":"2025-01-30","duree_emprunt":"14"},
+{"id_client":"4","id_livre":"6","date_emprunt":"2025-02-10","duree_emprunt":"7"},
+{"id_client":"4","id_livre":"8","date_emprunt":"2025-02-12","duree_emprunt":"14"},
+{"id_client":"4","id_livre":"13","date_emprunt":"2025-02-14","duree_emprunt":"10"},
+{"id_client":"5","id_livre":"1","date_emprunt":"2025-02-14","duree_emprunt":"14"},
+{"id_client":"5","id_livre":"2","date_emprunt":"2025-02-16","duree_emprunt":"10"},
+{"id_client":"5","id_livre":"9","date_emprunt":"2025-02-12","duree_emprunt":"21"},
+{"id_client":"5","id_livre":"14","date_emprunt":"2025-02-18","duree_emprunt":"14"},
+{"id_client":"6","id_livre":"3","date_emprunt":"2025-02-14","duree_emprunt":"21"},
+{"id_client":"6","id_livre":"5","date_emprunt":"2025-02-16","duree_emprunt":"14"},
+{"id_client":"6","id_livre":"7","date_emprunt":"2025-02-18","duree_emprunt":"20"},
+{"id_client":"6","id_livre":"11","date_emprunt":"2025-02-20","duree_emprunt":"25"}
+]
+}
+,{"type":"table","name":"genres","database":"librairie","data":
+[
+{"id_genre":"1","intitule":"Science-fiction"},
+{"id_genre":"2","intitule":"Fantastique"},
+{"id_genre":"3","intitule":"Roman historique"},
+{"id_genre":"4","intitule":"Policier"},
+{"id_genre":"5","intitule":"Philosophie"},
+{"id_genre":"6","intitule":"Essai"},
+{"id_genre":"7","intitule":"Biographie"},
+{"id_genre":"8","intitule":"Poésie"},
+{"id_genre":"9","intitule":"Théâtre"},
+{"id_genre":"10","intitule":"Psychologie"}
+]
+}
+,{"type":"table","name":"livres","database":"librairie","data":
+[
+{"id_livre":"1","titre":"Les Miserables","annee":"1862","id_genre":"3"},
+{"id_livre":"2","titre":"1984","annee":"1949","id_genre":"1"},
+{"id_livre":"3","titre":"Le Comte de Monte Cristo","annee":"1844","id_genre":"3"},
+{"id_livre":"4","titre":"Meurtre sur le Nil","annee":"1937","id_genre":"4"},
+{"id_livre":"5","titre":"Huis Clos","annee":"1944","id_genre":"9"},
+{"id_livre":"6","titre":"A la Recherche du Temps Perdu","annee":"1913","id_genre":"8"},
+{"id_livre":"7","titre":"Vingt Mille Lieues sous les Mers","annee":"1870","id_genre":"1"},
+{"id_livre":"8","titre":"Les Ombres du Futur","annee":"2024","id_genre":"1"},
+{"id_livre":"9","titre":"Le Dernier Secret","annee":"2023","id_genre":"2"},
+{"id_livre":"10","titre":"L Heritage des Anciens","annee":"2022","id_genre":"3"},
+{"id_livre":"11","titre":"La Revolution Silencieuse","annee":"2021","id_genre":"5"},
+{"id_livre":"12","titre":"Le Mystere du Manuscrit","annee":"2020","id_genre":"4"},
+{"id_livre":"13","titre":"Les Voyages Inattendus","annee":"2019","id_genre":"1"},
+{"id_livre":"14","titre":"Chroniques du Temps Perdu","annee":"2018","id_genre":"8"}
+]
+}
+]
