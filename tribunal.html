@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flagged Queries</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #4682b4;
+        }
+        .query-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .query-card {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 10px;
+            width: 80%;
+            max-width: 600px;
+        }
+        .query-card h2 {
+            margin-top: 0;
+        }
+        .query-card p {
+            margin: 5px 0;
+        }
+        .actions {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .actions button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .actions button.punish {
+            background-color: #ff4c4c;
+            color: #fff;
+        }
+        .actions button.pardon {
+            background-color: #4caf50;
+            color: #fff;
+        }
+        .remaining-queries {
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Flagged Queries</h1>
+    <div class="query-container" id="currentQueryContainer">
+        <!-- Current query will be displayed here -->
+    </div>
+    <div class="remaining-queries">
+        <h2>Remaining Queries: <span id="remainingQueriesCount"></span></h2>
+    </div>
+
+    <script>
+        let queries = [];
+        let currentIndex = 0;
+
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('/get-flagged')
+                .then(response => response.json())
+                .then(data => {
+                    queries = data;
+                    displayCurrentQuery();
+                    displayRemainingQueriesCount();
+                });
+        });
+
+        function displayCurrentQuery() {
+            const currentQueryContainer = document.getElementById('currentQueryContainer');
+            currentQueryContainer.innerHTML = '';
+            if (currentIndex < queries.length) {
+                const query = queries[currentIndex];
+                const queryCard = document.createElement('div');
+                queryCard.className = 'query-card';
+                queryCard.innerHTML = `
+                    <h2>${query.query}</h2>
+                    <p><strong>Database:</strong> ${query.dbName}</p>
+                    <p><strong>Description:</strong> ${query.description}</p>
+                    <p><strong>Results:</strong> <pre>${JSON.stringify(query.results, null, 2)}</pre></p>
+                    <p><strong>Flagged By:</strong> ${query.flaggedBy}</p>
+                    <p><strong>Solved By:</strong> ${query.solvedBy}</p>
+                    <div class="actions">
+                        <button class="punish" onclick="judgeQuery('PUNISH')">PUNISH</button>
+                        <button class="pardon" onclick="judgeQuery('PARDON')">PARDON</button>
+                    </div>
+                `;
+                currentQueryContainer.appendChild(queryCard);
+            } else {
+                currentQueryContainer.innerHTML = '<p>No more queries to display.</p>';
+            }
+        }
+
+        function displayRemainingQueriesCount() {
+            const remainingQueriesCount = document.getElementById('remainingQueriesCount');
+            remainingQueriesCount.textContent = queries.length - currentIndex - 1;
+        }
+
+        function judgeQuery(action) {
+            const query = queries[currentIndex];
+            console.log(`Query: ${query.query}, Action: ${action}`);
+            fetch(`/judge-query?dbName=${query.dbName}&solveId=${currentIndex}&action=${action}`)
+                .then(response => {
+                    if (response.ok) {
+                        currentIndex++;
+                        displayCurrentQuery();
+                        displayRemainingQueriesCount();
+                    } else {
+                        console.error('Error judging query');
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>

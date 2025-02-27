@@ -20,7 +20,11 @@
       }
     ],
     "description": "je veux séléctionner le client et ses commentaires par rapport au restaurant ",
-    "complexity": 3
+    "complexity": 3,
+    "flaggedBy": [
+      "3",
+      "2"
+    ]
   },
   {
     "query": "SELECT * FROM types_restaurants WHERE types_restaurants.id_type AND types_restaurants.id_restaurant > 1 < 6",
@@ -75,7 +79,14 @@
       }
     ],
     "description": "récupérer les id_type et id_restaurant qui sont supérieur à 1 et inférieur à 6",
-    "complexity": 5
+    "complexity": 5,
+    "solvedBy": [
+      "3",
+      "2"
+    ],
+    "flaggedBy": [
+      "2"
+    ]
   },
   {
     "query": "SELECT * FROM restaurants JOIN emplois ON restaurants.id_restaurant = emplois.id_restaurant JOIN employes ON emplois.id_employe = employes.id_employe WHERE restaurants.nom = 'Steak House'",
@@ -98,7 +109,11 @@
       }
     ],
     "description": "on cherche les epmloyer qui travaille au steakhouse",
-    "complexity": 6
+    "complexity": 6,
+    "solvedBy": [
+      "3",
+      "2"
+    ]
   },
   {
     "query": "SELECT * FROM restaurants JOIN origines ON restaurants.id_origine = origines.id_origine WHERE origines.id_origine = restaurants.id_restaurant",
@@ -134,8 +149,11 @@
         "pays": "Inde"
       }
     ],
-    "description": "relier les restaurants à leur origine",
-    "complexity": 6
+    "description": "relier les restaurants à leur origine et n'afficher que les restaurants dont l'ID est le même que l'origine",
+    "complexity": 6,
+    "solvedBy": [
+      "3"
+    ]
   },
   {
     "query": "SELECT * FROM restaurants WHERE restaurants.id_origine = 4",
@@ -152,7 +170,11 @@
       }
     ],
     "description": "trouver les restaurants mexicains",
-    "complexity": 3
+    "complexity": 3,
+    "solvedBy": [
+      "3",
+      "2"
+    ]
   },
   {
     "query": "SELECT * FROM employes WHERE employes.id_poste = 1",
@@ -177,7 +199,11 @@
       }
     ],
     "description": "trouver les chefs cuisto",
-    "complexity": 3
+    "complexity": 3,
+    "solvedBy": [
+      "3",
+      "2"
+    ]
   },
   {
     "query": "SELECT * FROM types JOIN types_restaurants ON types.id_type = types_restaurants.id_type JOIN restaurants ON types_restaurants.id_restaurant = restaurants.id_restaurant WHERE types.id_type = 1",
@@ -191,7 +217,11 @@
       }
     ],
     "description": "trouver les restaurants gastronomique",
-    "complexity": 6
+    "complexity": 6,
+    "solvedBy": [
+      "3",
+      "2"
+    ]
   },
   {
     "query": "SELECT * FROM avis JOIN clients ON avis.id_client = clients.id_client WHERE avis.id_client = 1",
@@ -238,7 +268,10 @@
       }
     ],
     "description": "trouver les avis de Claire",
-    "complexity": 6
+    "complexity": 6,
+    "solvedBy": [
+      "3"
+    ]
   },
   {
     "query": "SELECT * FROM avis JOIN restaurants ON avis.id_restaurant = restaurants.id_restaurant WHERE restaurants.id_restaurant = 3",
@@ -272,7 +305,10 @@
       }
     ],
     "description": "trouver les avis sur le Sakura",
-    "complexity": 6
+    "complexity": 6,
+    "solvedBy": [
+      "3"
+    ]
   },
   {
     "query": "SELECT * FROM restaurants JOIN origines ON restaurants.id_origine = origines.id_origine WHERE origines.id_origine = 2",
@@ -285,7 +321,11 @@
       }
     ],
     "description": "chercher les resto italiens (il y en a qu'un)",
-    "complexity": 6
+    "complexity": 6,
+    "solvedBy": [
+      "3",
+      "2"
+    ]
   },
   {
     "query": "SELECT * FROM origines WHERE origines.pays != 'États-Unis'",
@@ -316,7 +356,13 @@
       }
     ],
     "description": "trouver tous les restaurants sauf les états unis",
-    "complexity": 4
+    "complexity": 4,
+    "solvedBy": [
+      "3"
+    ],
+    "flaggedBy": [
+      "2"
+    ]
   },
   {
     "query": "SELECT clients.mail FROM clients JOIN avis ON clients.id_client = avis.id_client JOIN restaurants ON avis.id_restaurant = restaurants.id_restaurant WHERE avis.id_restaurant = 4",
@@ -329,7 +375,10 @@
       }
     ],
     "description": "récupérer les mails des clients qui ont laissé un avis le restaurant ayant l'id 4",
-    "complexity": 6
+    "complexity": 6,
+    "solvedBy": [
+      "3"
+    ]
   },
   {
     "query": "SELECT * FROM clients JOIN avis ON clients.id_client = avis.id_client JOIN restaurants ON avis.id_restaurant = restaurants.id_restaurant WHERE avis.id_client = 2",
@@ -369,7 +418,11 @@
       }
     ],
     "description": "les avis de luc",
-    "complexity": 6
+    "complexity": 6,
+    "solvedBy": [
+      "3",
+      "2"
+    ]
   },
   {
     "query": "SELECT * FROM avis JOIN clients ON avis.id_client = clients.id_client WHERE clients.id_client = 3",
@@ -416,7 +469,11 @@
       }
     ],
     "description": "les avis de elena",
-    "complexity": 6
+    "complexity": 6,
+    "solvedBy": [
+      "3",
+      "2"
+    ]
   },
   {
     "query": "SELECT * FROM avis JOIN clients ON avis.id_client = clients.id_client WHERE clients.id_client = 4",
@@ -453,7 +510,11 @@
       }
     ],
     "description": "les avis de Hans",
-    "complexity": 6
+    "complexity": 6,
+    "solvedBy": [
+      "3",
+      "2"
+    ]
   },
   {
     "query": "SELECT * FROM avis JOIN clients ON avis.id_client = clients.id_client WHERE clients.id_client = 7",
@@ -470,7 +531,11 @@
       }
     ],
     "description": "l'avis de Soo",
-    "complexity": 6
+    "complexity": 6,
+    "solvedBy": [
+      "3",
+      "2"
+    ]
   },
   {
     "query": "SELECT restaurants.id_restaurant FROM restaurants JOIN emplois ON restaurants.id_restaurant = emplois.id_restaurant JOIN employes ON emplois.id_employe = employes.id_employe GROUP BY restaurants.id_restaurant , restaurants.nom HAVING COUNT( employes.id_employe )>= 2",
@@ -498,7 +563,10 @@
       }
     ],
     "description": "il me trouve les id restaurants contenant au minimum 2 emplyés",
-    "complexity": 11
+    "complexity": 11,
+    "solvedBy": [
+      "3"
+    ]
   },
   {
     "query": "SELECT restaurants.id_restaurant FROM restaurants JOIN avis ON restaurants.id_restaurant = avis.id_restaurant GROUP BY restaurants.id_restaurant HAVING COUNT( avis.id_restaurant )>= 2 ;",
@@ -526,7 +594,10 @@
       }
     ],
     "description": "les id restaurant qui ont plus de 2 avis",
-    "complexity": 11
+    "complexity": 11,
+    "solvedBy": [
+      "3"
+    ]
   },
   {
     "query": "SELECT * FROM types JOIN types_restaurants ON types.id_type = types_restaurants.id_type WHERE types_restaurants.id_type = 6",
@@ -553,7 +624,11 @@
       }
     ],
     "description": "tous les restaurants qui sont des bistrots",
-    "complexity": 6
+    "complexity": 6,
+    "solvedBy": [
+      "3",
+      "1"
+    ]
   },
   {
     "query": "SELECT * FROM avis WHERE avis.date < '2025-02-28'",
@@ -616,7 +691,10 @@
       }
     ],
     "description": "tous les avis en février",
-    "complexity": 4
+    "complexity": 4,
+    "solvedBy": [
+      "3"
+    ]
   },
   {
     "query": "SELECT * FROM avis WHERE avis.date > '2025-02-28'",
@@ -693,7 +771,10 @@
       }
     ],
     "description": "tous les avis sauf février",
-    "complexity": 4
+    "complexity": 4,
+    "solvedBy": [
+      "3"
+    ]
   },
   {
     "query": "SELECT * FROM types JOIN types_restaurants ON types.id_type = types_restaurants.id_restaurant JOIN restaurants ON types_restaurants.id_restaurant = restaurants.id_restaurant WHERE types.id_type = 8",
@@ -707,7 +788,10 @@
       }
     ],
     "description": "les restaurants qui sont des fast food",
-    "complexity": 6
+    "complexity": 6,
+    "solvedBy": [
+      "3"
+    ]
   },
   {
     "query": "SELECT * FROM types JOIN types_restaurants ON types.id_type = types_restaurants.id_type JOIN restaurants ON types_restaurants.id_restaurant = restaurants.id_restaurant WHERE types.id_type = 5",
@@ -721,7 +805,10 @@
       }
     ],
     "description": "tous les types de restaurant qui sont des curry",
-    "complexity": 6
+    "complexity": 6,
+    "solvedBy": [
+      "3"
+    ]
   },
   {
     "query": "SELECT * FROM postes JOIN employes ON postes.id_poste = employes.id_poste WHERE postes.id_poste = 6",
@@ -735,7 +822,10 @@
       }
     ],
     "description": "tous les patissier",
-    "complexity": 6
+    "complexity": 6,
+    "solvedBy": [
+      "3"
+    ]
   },
   {
     "query": "SELECT * FROM postes JOIN employes ON postes.id_poste = employes.id_poste WHERE postes.id_poste = 4",
@@ -749,6 +839,9 @@
       }
     ],
     "description": "tous les manager",
-    "complexity": 6
+    "complexity": 6,
+    "solvedBy": [
+      "3"
+    ]
   }
 ]

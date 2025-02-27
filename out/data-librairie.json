@@ -64,7 +64,12 @@
       }
     ],
     "description": "Séléctionne les auteurs avec toute les infos (id_auteur, nom, date de naissance...)",
-    "complexity": 3
+    "complexity": 3,
+    "solvedBy": [
+      "1",
+      "0",
+      "4"
+    ]
   },
   {
     "query": "SELECT * FROM livres WHERE livres.titre = 'Les Miserables'",
@@ -78,7 +83,11 @@
       }
     ],
     "description": "Séléctionne seulement le titre Les Misérables avec toute ses informations",
-    "complexity": 3
+    "complexity": 3,
+    "solvedBy": [
+      "1",
+      "0"
+    ]
   },
   {
     "query": "SELECT * FROM emprunts JOIN clients ON clients.id_client = emprunts.id_client",
@@ -265,7 +274,11 @@
       }
     ],
     "description": "Séléctionne dans les emprunts les clients et leurs infos",
-    "complexity": 6
+    "complexity": 6,
+    "solvedBy": [
+      "1",
+      "0"
+    ]
   },
   {
     "query": "SELECT clients.nom , livres.titre , clients.prenom FROM emprunts JOIN clients ON emprunts.id_client = clients.id_client JOIN livres ON emprunts.id_livre = livres.id_livre",
@@ -372,7 +385,11 @@
       }
     ],
     "description": "Sélectionne dans emprunts les noms des clients avec les livres qu'ils ont empruntés et leur prénoms.",
-    "complexity": 6
+    "complexity": 6,
+    "solvedBy": [
+      "1",
+      "0"
+    ]
   },
   {
     "query": "SELECT livres.annee , livres.titre FROM livres WHERE livres.annee > 1944",
@@ -411,7 +428,11 @@
       }
     ],
     "description": "Sélectionne les titres et années des livres paru après 1944 ",
-    "complexity": 3
+    "complexity": 3,
+    "solvedBy": [
+      "1",
+      "0"
+    ]
   },
   {
     "query": "SELECT emprunts.duree_emprunt , clients.nom , clients.prenom FROM emprunts JOIN clients ON emprunts.id_client = clients.id_client WHERE emprunts.duree_emprunt IS NOT NULL",
@@ -518,7 +539,11 @@
       }
     ],
     "description": "Sélectionne la durée des emprunts ainsi que le nom et le prénom des clients qui ont une date d'emprunt non nul.",
-    "complexity": 8
+    "complexity": 8,
+    "solvedBy": [
+      "1",
+      "0"
+    ]
   },
   {
     "query": "SELECT auteurs.nom , auteurs.prenom , auteurs.date_naissance , livres.titre FROM auteurs JOIN auteurs_livres ON auteurs.id_auteur = auteurs_livres.id_auteur JOIN livres ON auteurs_livres.id_livre = livres.id_livre",
@@ -657,7 +682,11 @@
       }
     ],
     "description": "Sélectionne le nom, le prénom, et la date de naissance des auteurs, ainsi que le titre des livres qu'ils ont écrits",
-    "complexity": 6
+    "complexity": 6,
+    "solvedBy": [
+      "1",
+      "0"
+    ]
   },
   {
     "query": "SELECT emprunts.duree_emprunt , clients.nom , clients.prenom , clients.email FROM clients JOIN emprunts ON clients.id_client = emprunts.id_client WHERE emprunts.duree_emprunt > 25",
@@ -676,7 +705,11 @@
       }
     ],
     "description": "Sélectionne le nom, le prénom, et l'email des clients qui ont une durée d'emprunt supérieur à 25 jours.",
-    "complexity": 6
+    "complexity": 6,
+    "solvedBy": [
+      "1",
+      "0"
+    ]
   },
   {
     "query": "SELECT auteurs.nom , auteurs.prenom , auteurs.date_naissance , livres.titre FROM auteurs JOIN auteurs_livres ON auteurs.id_auteur = auteurs_livres.id_auteur JOIN livres ON auteurs_livres.id_livre = livres.id_livre ORDER BY auteurs.nom ASC , auteurs.date_naissance DESC",
@@ -815,7 +848,11 @@
       }
     ],
     "description": "sélectionne le nom, prénom, date de naissance des auteurs et les titres de leurs livres. Les résultats sont trié par le nom des auteurs (ordre alphabétique croissant) et, en cas d'égalité, par leur date de naissance.",
-    "complexity": 8
+    "complexity": 8,
+    "solvedBy": [
+      "1",
+      "0"
+    ]
   },
   {
     "query": "SELECT livres.titre , livres.annee , genres.intitule FROM livres JOIN genres ON livres.id_genre = genres.id_genre",
@@ -892,7 +929,11 @@
       }
     ],
     "description": "Sélectionne le titre et l'année des livres ainsi que l'intitulé de leur genre.",
-    "complexity": 6
+    "complexity": 6,
+    "solvedBy": [
+      "1",
+      "0"
+    ]
   },
   {
     "query": "SELECT clients.nom , clients.prenom , auteurs.nom , auteurs.prenom FROM auteurs JOIN auteurs_livres ON auteurs.id_auteur = auteurs_livres.id_auteur JOIN livres ON auteurs_livres.id_livre = livres.id_livre JOIN emprunts ON livres.id_livre = emprunts.id_livre JOIN clients ON emprunts.id_client = clients.id_client",
@@ -1079,7 +1120,11 @@
       }
     ],
     "description": "Affiche le nom et le prénom des clients avec le nom et le prénom des auteurs des livres qu'ils ont pris ",
-    "complexity": 6
+    "complexity": 6,
+    "solvedBy": [
+      "1",
+      "0"
+    ]
   },
   {
     "query": "SELECT auteurs.nom , auteurs.prenom , livres.titre , livres.annee FROM auteurs JOIN auteurs_livres ON auteurs.id_auteur = auteurs_livres.id_auteur JOIN livres ON auteurs_livres.id_livre = livres.id_livre ORDER BY livres.annee",
@@ -1218,7 +1263,10 @@
       }
     ],
     "description": "Affiche le nom et le prénom des auteurs ainsi que le titre et l'année de parution de la sortie de leurs oeuvres dans l'ordre chronologique",
-    "complexity": 8
+    "complexity": 8,
+    "solvedBy": [
+      "1"
+    ]
   },
   {
     "query": "SELECT clients.nom , clients.prenom , auteurs.nom , auteurs.prenom , emprunts.duree_emprunt FROM auteurs JOIN auteurs_livres ON auteurs.id_auteur = auteurs_livres.id_auteur JOIN livres ON auteurs_livres.id_livre = livres.id_livre JOIN emprunts ON livres.id_livre = emprunts.id_livre JOIN clients ON emprunts.id_client = clients.id_client GROUP BY clients.id_client , auteurs.id_auteur ORDER BY clients.nom ASC , auteurs.nom ASC",
@@ -1393,7 +1441,10 @@
       }
     ],
     "description": "Ce code récupère les noms et prénoms des clients et des auteurs, ainsi que la durée des emprunts, en regroupant les résultats par client et auteur, et en triant les résultats par le nom des clients puis des auteurs par ordre alphabétique croissant.",
-    "complexity": 8
+    "complexity": 8,
+    "solvedBy": [
+      "1"
+    ]
   },
   {
     "query": "SELECT clients.nom , clients.prenom , livres.titre , livres.annee FROM clients JOIN emprunts ON emprunts.id_client = clients.id_client JOIN livres ON emprunts.id_livre = livres.id_livre WHERE livres.annee > 1949 AND emprunts.duree_emprunt > 10 ORDER BY clients.nom ASC",
@@ -1442,7 +1493,10 @@
       }
     ],
     "description": "Cette requête sélectionne les clients ayant emprunté des livres publiés après 1950 pour une durée supérieure à 10 jours, et trie les résultats par le nom des clients en affichant le nom et prénom des clients ainsi que le titre et l'année de publication des livres",
-    "complexity": 10
+    "complexity": 10,
+    "solvedBy": [
+      "1"
+    ]
   },
   {
     "query": "SELECT clients.nom , clients.prenom , livres.titre , livres.annee , emprunts.date_emprunt FROM clients JOIN emprunts ON clients.id_client = emprunts.id_client JOIN livres ON emprunts.id_livre = livres.id_livre JOIN auteurs_livres ON livres.id_livre = auteurs_livres.id_livre JOIN auteurs ON auteurs_livres.id_auteur = auteurs.id_auteur WHERE livres.annee > 1949 AND emprunts.duree_emprunt > 10 ORDER BY clients.nom ASC , livres.titre ASC",
@@ -1547,7 +1601,10 @@
       }
     ],
     "description": "Affiche les clients ayant emprunté des livres publiés aapprréss 1950 pour une durée sup de 10 jours,  elle affiche le nom et prénom des clients, le titre et l'année de publication des livres, ainsi que la date d'emprunt, et trie les résultats par le nom des clients et le titre des livres",
-    "complexity": 10
+    "complexity": 10,
+    "flaggedBy": [
+      "1"
+    ]
   },
   {
     "query": "SELECT clients.nom , clients.prenom , emprunts.date_emprunt FROM clients JOIN emprunts ON clients.id_client = emprunts.id_client JOIN livres ON emprunts.id_livre = livres.id_livre JOIN genres ON livres.id_genre = genres.id_genre WHERE genres.intitule = 'Roman historique' GROUP BY clients.id_client , emprunts.date_emprunt HAVING COUNT( livres.id_livre )>= 1 ORDER BY clients.nom ASC , emprunts.date_emprunt ASC",
@@ -1579,7 +1636,11 @@
       }
     ],
     "description": "Cette requête sélectionne les clients ayant emprunté au moins 1 livres historiques, et affiche pour chaque client la date de l'emprunt des livres. Les résultats sont triés par nom des clients et date d'emprunt",
-    "complexity": 11
+    "complexity": 11,
+    "solvedBy": [
+      "1",
+      "0"
+    ]
   },
   {
     "query": "SELECT auteurs.nom , auteurs.prenom , auteurs.date_naissance , livres.titre FROM auteurs JOIN auteurs_livres ON auteurs.id_auteur = auteurs_livres.id_auteur JOIN livres ON livres.id_livre = auteurs_livres.id_livre ORDER BY auteurs.date_naissance",
@@ -1718,7 +1779,10 @@
       }
     ],
     "description": "Affiche le nom, prénom date de naissance de l'auteur ainsi que le titre de son livre, trié par la date de naissance des auteurs  ",
-    "complexity": 8
+    "complexity": 8,
+    "solvedBy": [
+      "1"
+    ]
   },
   {
     "query": "SELECT clients.prenom , clients.nom , emprunts.date_emprunt FROM clients JOIN emprunts ON clients.id_client = emprunts.id_client JOIN livres ON emprunts.id_livre = livres.id_livre JOIN genres ON livres.id_genre = genres.id_genre WHERE genres.intitule = 'Policier' GROUP BY clients.id_client HAVING COUNT( livres.id_livre )>= 1 ORDER BY clients.nom",
@@ -1730,7 +1794,13 @@
       }
     ],
     "description": "les clients ayant emprunté au moins 1 livre de genre policier et affiche la date d'emprunt des livres, le nom et le prénom des clients et cela trie par le nom des clients ",
-    "complexity": 11
+    "complexity": 11,
+    "flaggedBy": [
+      "1"
+    ],
+    "solvedBy": [
+      "1"
+    ]
   },
   {
     "query": "SELECT auteurs.nom , auteurs.prenom , livres.titre , genres.intitule FROM auteurs JOIN auteurs_livres ON auteurs.id_auteur = auteurs_livres.id_auteur JOIN livres ON auteurs_livres.id_livre = livres.id_livre JOIN genres ON livres.id_genre = genres.id_genre",
@@ -1869,7 +1939,11 @@
       }
     ],
     "description": "affiche le nom et le prénom de l'auteur ainsi que le titre de son livre et son  intitulé ",
-    "complexity": 6
+    "complexity": 6,
+    "solvedBy": [
+      "1",
+      "0"
+    ]
   },
   {
     "query": "SELECT genres.intitule , auteurs.nom , auteurs.prenom FROM auteurs JOIN auteurs_livres ON auteurs.id_auteur = auteurs_livres.id_auteur JOIN livres ON auteurs_livres.id_livre = livres.id_livre JOIN genres ON livres.id_genre = genres.id_genre",
@@ -1986,6 +2060,9 @@
       }
     ],
     "description": "Sélectionne le nom et prénom de l'auteur avec le l'intitulé du genre.",
-    "complexity": 6
+    "complexity": 6,
+    "solvedBy": [
+      "1"
+    ]
   }
 ]

@@ -94,7 +94,11 @@
       }
     ],
     "description": "Sélectionne tout dans la table commandes",
-    "complexity": 3
+    "complexity": 3,
+    "solvedBy": [
+      "2",
+      "1"
+    ]
   },
   {
     "query": "SELECT notation.note FROM notation WHERE notation.note > 4",
@@ -119,7 +123,10 @@
       }
     ],
     "description": "Permis d'afficher les notes supérieurs à 4",
-    "complexity": 3
+    "complexity": 3,
+    "solvedBy": [
+      "2"
+    ]
   },
   {
     "query": "SELECT * FROM notation WHERE notation.note > 4",
@@ -168,7 +175,10 @@
       }
     ],
     "description": "Permis d'afficher les notes supérieurs à 4 avec toutes les colonnes",
-    "complexity": 3
+    "complexity": 3,
+    "solvedBy": [
+      "2"
+    ]
   },
   {
     "query": "SELECT notation.note , notation.avis FROM notation WHERE notation.note > 4",
@@ -217,7 +227,10 @@
       }
     ],
     "description": "Permis d'afficher les notes supérieurs à 4 avec les colonnes avis et notes",
-    "complexity": 3
+    "complexity": 3,
+    "solvedBy": [
+      "2"
+    ]
   },
   {
     "query": "SELECT clients.nom , notation.note , notation.avis FROM clients JOIN notation ON clients.id_client = notation.id_client",
@@ -324,7 +337,12 @@
       }
     ],
     "description": "on a permis d'avoir quels clients a publié quel avis et quelle note",
-    "complexity": 6
+    "complexity": 6,
+    "solvedBy": [
+      "2",
+      "1",
+      "0"
+    ]
   },
   {
     "query": "SELECT articles.produit , articles.prix FROM articles WHERE articles.prix > 100 ORDER BY articles.produit",
@@ -359,7 +377,11 @@
       }
     ],
     "description": "prends les prix supérieurs à  100 et trie les produits par ordre alphabétique",
-    "complexity": 5
+    "complexity": 5,
+    "solvedBy": [
+      "2",
+      "1"
+    ]
   },
   {
     "query": "SELECT articles.prix FROM articles WHERE articles.prix < 100",
@@ -399,7 +421,10 @@
       }
     ],
     "description": "affiche les prix inférieurs à 100€",
-    "complexity": 3
+    "complexity": 3,
+    "solvedBy": [
+      "2"
+    ]
   },
   {
     "query": "SELECT articles.prix , articles.produit FROM articles WHERE articles.prix < 100",
@@ -450,7 +475,10 @@
       }
     ],
     "description": "affiche les prix inférieurs à 100€ et associe à un produit",
-    "complexity": 3
+    "complexity": 3,
+    "solvedBy": [
+      "2"
+    ]
   },
   {
     "query": "SELECT * FROM notation ORDER BY notation.note",
@@ -597,7 +625,11 @@
       }
     ],
     "description": "trie les notes par ordre croissant",
-    "complexity": 5
+    "complexity": 5,
+    "solvedBy": [
+      "2",
+      "1"
+    ]
   },
   {
     "query": "SELECT clients.id_client , clients.nom , commandes.id_commande , notation.note FROM clients JOIN notation ON clients.id_client = notation.id_client JOIN commandes ON clients.id_client = commandes.id_client",
@@ -784,7 +816,10 @@
       }
     ],
     "description": "liaison des tables clients, notation et commandes avec les id_clients",
-    "complexity": 6
+    "complexity": 6,
+    "solvedBy": [
+      "2"
+    ]
   },
   {
     "query": "SELECT clients.id_client , clients.nom , commandes.id_commande , notation.note FROM clients JOIN notation ON clients.id_client = notation.id_client JOIN commandes ON clients.id_client = commandes.id_client ORDER BY clients.nom",
@@ -971,7 +1006,10 @@
       }
     ],
     "description": "liaison des tables clients, notation et commandes avec les id_clients et trier les noms par odre alphabétiques\n",
-    "complexity": 8
+    "complexity": 8,
+    "solvedBy": [
+      "2"
+    ]
   },
   {
     "query": "SELECT clients.id_client , clients.nom , commandes.id_commande , notation.note FROM clients JOIN notation ON clients.id_client = notation.id_client JOIN commandes ON clients.id_client = commandes.id_client ORDER BY clients.nom AND notation.note",
@@ -1158,7 +1196,15 @@
       }
     ],
     "description": "liaison des tables clients, notation et commandes avec les id_clients et trier les noms par odre alphabétiques en plus de trier par note par ordre décroissant",
-    "complexity": 10
+    "complexity": 10,
+    "solvedBy": [
+      "2",
+      "1"
+    ],
+    "flaggedBy": [
+      "2",
+      "1"
+    ]
   },
   {
     "query": "SELECT articles.id_article , articles.produit , notation.id_article , notation.note , notation.avis FROM notation JOIN articles ON articles.id_article = notation.id_article",
@@ -1285,7 +1331,11 @@
       }
     ],
     "description": "associe les produits à leurs notations et leurs avis",
-    "complexity": 6
+    "complexity": 6,
+    "solvedBy": [
+      "2",
+      "1"
+    ]
   },
   {
     "query": "SELECT articles.id_article , articles.produit , articles.prix , notation.id_article , notation.note , notation.avis FROM notation JOIN articles ON articles.id_article = notation.id_article WHERE articles.prix > 100 ORDER BY notation.note",
@@ -1341,7 +1391,10 @@
       }
     ],
     "description": "associe les produits à leurs notations et leurs avis par ordre croissant des notes, et prix supérieur à 100€",
-    "complexity": 8
+    "complexity": 8,
+    "solvedBy": [
+      "2"
+    ]
   },
   {
     "query": "SELECT articles.id_article , articles.produit , articles.prix , notation.id_article , notation.note , notation.avis FROM notation JOIN articles ON articles.id_article = notation.id_article WHERE articles.prix > 100 ORDER BY notation.note AND articles.prix",
@@ -1397,7 +1450,14 @@
       }
     ],
     "description": "associe les produits à leurs notations et leurs avis par ordre croissant des notes, et prix supérieur à 100€ trier par ordre croissant",
-    "complexity": 10
+    "complexity": 10,
+    "solvedBy": [
+      "2",
+      "1"
+    ],
+    "flaggedBy": [
+      "1"
+    ]
   },
   {
     "query": "SELECT * FROM fournisseurs JOIN articles ON fournisseurs.id_fournisseur = articles.id_fournisseur",
@@ -1557,7 +1617,11 @@
       }
     ],
     "description": "ce code sert à trier le nom des fournisseurs et de savoir quelle article vient de quelle fournisseur. ",
-    "complexity": 6
+    "complexity": 6,
+    "solvedBy": [
+      "2",
+      "0"
+    ]
   },
   {
     "query": "SELECT clients.nom , notation.avis FROM clients JOIN notation ON clients.id_client = notation.id_client",
@@ -1664,7 +1728,11 @@
       }
     ],
     "description": "on a permis d'avoir quels clients a publié quel avis",
-    "complexity": 6
+    "complexity": 6,
+    "solvedBy": [
+      "2",
+      "1"
+    ]
   },
   {
     "query": "SELECT * FROM categories ORDER BY categories.nom",
@@ -1711,7 +1779,10 @@
       }
     ],
     "description": "ranger les noms de catégories par ordre alphabétique",
-    "complexity": 5
+    "complexity": 5,
+    "solvedBy": [
+      "2"
+    ]
   },
   {
     "query": "SELECT categories.nom , articles.produit , articles.prix FROM categories JOIN articles ON categories.id_categorie = articles.id_categorie ORDER BY articles.prix AND articles.produit",
@@ -1803,7 +1874,13 @@
       }
     ],
     "description": "intégrer les noms de catégories à la table des articles articles en utilisant produit et prix, puis en triant les prix par ordre croissant et les produits par ordre alphabétique",
-    "complexity": 10
+    "complexity": 10,
+    "solvedBy": [
+      "1"
+    ],
+    "flaggedBy": [
+      "1"
+    ]
   },
   {
     "query": "SELECT clients.nom , notation.avis FROM notation JOIN clients ON notation.id_client = clients.id_client ORDER BY notation.avis AND clients.nom",
@@ -1890,7 +1967,13 @@
       }
     ],
     "description": "Associé les avis à la colonne nom des clients, en triant les avis et les noms par ordre alphabétique",
-    "complexity": 10
+    "complexity": 10,
+    "solvedBy": [
+      "1"
+    ],
+    "flaggedBy": [
+      "1"
+    ]
   },
   {
     "query": "SELECT COUNT( * )FROM clients",
@@ -1900,7 +1983,10 @@
       }
     ],
     "description": "compte le nombre de lignes de la table cleints",
-    "complexity": 6
+    "complexity": 6,
+    "solvedBy": [
+      "2"
+    ]
   },
   {
     "query": "SELECT AVG( articles.prix )FROM articles",
@@ -1910,7 +1996,10 @@
       }
     ],
     "description": "calcule la moyenne des prix des artricles",
-    "complexity": 6
+    "complexity": 6,
+    "solvedBy": [
+      "2"
+    ]
   },
   {
     "query": "SELECT clients.id_client , clients.nom , clients.email , commandes.id_commande FROM clients JOIN commandes ON clients.id_client = commandes.id_client ORDER BY commandes.id_commande",
@@ -2007,7 +2096,11 @@
       }
     ],
     "description": "joint l'ID commande à la table client en triant les id commandes par ordre croissant. en gardant l'id client, le nom l'email et l'id commande",
-    "complexity": 8
+    "complexity": 8,
+    "solvedBy": [
+      "2",
+      "1"
+    ]
   },
   {
     "query": "SELECT MIN( articles.prix )FROM articles",
@@ -2017,7 +2110,10 @@
       }
     ],
     "description": "trouve le  prix minimal des articles",
-    "complexity": 6
+    "complexity": 6,
+    "solvedBy": [
+      "2"
+    ]
   },
   {
     "query": "SELECT SUM( notation.note )FROM notation",
@@ -2027,7 +2123,10 @@
       }
     ],
     "description": "trouve la somme des notes dans notation",
-    "complexity": 6
+    "complexity": 6,
+    "solvedBy": [
+      "2"
+    ]
   },
   {
     "query": "SELECT * FROM commandes WHERE commandes.statut_livraison = 'Livré'",
@@ -2052,6 +2151,9 @@
       }
     ],
     "description": "afficher uniquement les commandes livrés",
-    "complexity": 3
+    "complexity": 3,
+    "solvedBy": [
+      "2"
+    ]
   }
 ]

@@ -50,11 +50,16 @@
             font-size: 1.2em;
             color: #333;
         }
+        #flagged-count {
+            color: #f00;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
     <div class="leaderboard">
         <h1>Leaderboard</h1>
+        <h2 id="flagged-count"></h2>
         <ul id="leaderboard-list">
             <!-- Leaderboard items will be inserted here -->
         </ul>
@@ -63,6 +68,11 @@
     <script>
         async function fetchLeaderboard() {
             try {
+                const fl = await fetch('/get-flagged');
+                const flagCount = await fl.json();
+                document.getElementById('flagged-count').textContent = `Flagged Queries: ${flagCount.length}`;
+
+
                 const response = await fetch('/get-leaderboard');
                 const data = await response.json();
                 const leaderboardList = document.getElementById('leaderboard-list');
@@ -72,7 +82,9 @@
                     const id = await resp.json();
                     const req = await fetch(`/get-all?id=${id}`);
                     const reqs = await req.json();
-                    listItem.innerHTML = `<span>${index + 1}. ${item.name}</span><span>${item.score} (${reqs.length} requests)</span>`;
+                    const sol = await fetch(`/get-solved?id=${id}`);
+                    const solved = await sol.json();
+                    listItem.innerHTML = `<span>${index + 1}. ${item.name}</span><span>${item.score} (${reqs.length} requests)</span><span> (${solved} solved)`;
                     return listItem;
                 }));
                 leaderboardList.innerHTML = '';

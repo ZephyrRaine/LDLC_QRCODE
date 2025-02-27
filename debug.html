@@ -46,6 +46,15 @@
             cursor: pointer;
             margin-top: 10px;
         }
+        .flag-button {
+            background-color: #FF5733;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            margin-top: 10px;
+            margin-left: 10px;
+        }
     </style>
 </head>
 <body>
@@ -95,6 +104,12 @@
                         solveButton.onclick = () => solveQuery(index, solveBy);
                         queryDiv.appendChild(solveButton);
                     }
+                        const flagButton = document.createElement('button');
+                        flagButton.className = 'flag-button';
+                        flagButton.textContent = 'Flag';
+                        flagButton.onclick = () => flagQuery(index, solveBy);
+                        queryDiv.appendChild(flagButton);
+                    
                     queriesContainer.appendChild(queryDiv);
                 });
             } catch (error) {
@@ -116,6 +131,18 @@
         function solveQuery(solveId, solveBy) {
             const id = getQueryParam('id');
             window.location.href = `/?id=${id}&solveId=${solveId}&solveBy=${solveBy}`;
+        }
+
+        function flagQuery(solveId, solveBy) {
+            const id = getQueryParam('id');
+            fetch(`/flag-query?id=${id}&solveId=${solveId}&flaggedBy=${solveBy}`)
+            .then(data => {
+                alert('Query flagged successfully');
+            })
+            .catch(error => {
+                console.error('Error flagging query:', error);
+                alert('Error flagging query');
+            });
         }
 
         fetchQueries();

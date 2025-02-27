@@ -64,7 +64,12 @@
       }
     ],
     "description": "afficher le nom et prénom des acteurs ainsi que leurs films",
-    "complexity": 6
+    "complexity": 6,
+    "solvedBy": [
+      "4",
+      "3",
+      "2"
+    ]
   },
   {
     "query": "SELECT films.titre , genres.intitule FROM genres_films JOIN films ON films.id = genres_films.id_film JOIN genres ON genres.id = genres_films.id_genre",
@@ -135,7 +140,11 @@
       }
     ],
     "description": "afficher les films et leurs genres",
-    "complexity": 6
+    "complexity": 6,
+    "solvedBy": [
+      "4",
+      "3"
+    ]
   },
   {
     "query": "SELECT utilisateur.nom , utilisateur.prenom , utilisateur.mail , seances.horaires , lieux.salle FROM seances_utilisateurs JOIN utilisateur ON seances_utilisateurs.id_utilisateur = utilisateur.id JOIN seances ON seances_utilisateurs.id_seance = seances.id JOIN lieux ON lieux.id = seances.id_lieu",
@@ -205,7 +214,10 @@
       }
     ],
     "description": "afficher nom prénom mail utilisateur ainsi que l'horaire de la seance et la salle qui leurs sont associées",
-    "complexity": 6
+    "complexity": 6,
+    "solvedBy": [
+      "3"
+    ]
   },
   {
     "query": "SELECT realisateurs.nom , realisateurs.prenom , realisateurs.date_naissance , films.titre FROM films_realisateurs JOIN realisateurs ON realisateurs.id = films_realisateurs.id_realisateur JOIN films ON films.id = films_realisateurs.id_film",
@@ -272,7 +284,10 @@
       }
     ],
     "description": "Afficher nom prénom date de naissance réalisateur ainsi que leur film",
-    "complexity": 6
+    "complexity": 6,
+    "solvedBy": [
+      "3"
+    ]
   },
   {
     "query": "SELECT acteurs.prenom , acteurs.date_naissance , acteurs.nom FROM acteurs WHERE acteurs.date_naissance > '1954-08-16'",
@@ -329,7 +344,11 @@
       }
     ],
     "description": "nom, prénom, date de naissance des acteurs nés après janvier 1954",
-    "complexity": 4
+    "complexity": 4,
+    "solvedBy": [
+      "4",
+      "3"
+    ]
   },
   {
     "query": "SELECT films.titre , films.annee FROM films WHERE films.annee > 1999",
@@ -352,7 +371,11 @@
       }
     ],
     "description": "Titre et année des films sortis après 1999",
-    "complexity": 3
+    "complexity": 3,
+    "solvedBy": [
+      "4",
+      "3"
+    ]
   },
   {
     "query": "SELECT films.annee , COUNT( * )FROM films GROUP BY films.annee HAVING COUNT( * )< 2",
@@ -371,7 +394,10 @@
       }
     ],
     "description": "afficher uniquement les années de sorti de film qui n'apparaissant pas plus de 1x",
-    "complexity": 8
+    "complexity": 8,
+    "solvedBy": [
+      "3"
+    ]
   },
   {
     "query": "SELECT films.annee , COUNT( * )FROM films GROUP BY films.annee HAVING COUNT( * )>= 2",
@@ -390,7 +416,11 @@
       }
     ],
     "description": "afficher uniquement les années de sorti de film qui apparaissent 2x",
-    "complexity": 8
+    "complexity": 8,
+    "solvedBy": [
+      "4",
+      "3"
+    ]
   },
   {
     "query": "SELECT COUNT( * )FROM films",
@@ -400,7 +430,10 @@
       }
     ],
     "description": "afficher le nombre de film",
-    "complexity": 6
+    "complexity": 6,
+    "solvedBy": [
+      "3"
+    ]
   },
   {
     "query": "SELECT MIN( realisateurs.date_naissance )FROM realisateurs",
@@ -410,7 +443,10 @@
       }
     ],
     "description": "afficher la date de naissance du réalisateur le plus vieux",
-    "complexity": 6
+    "complexity": 6,
+    "solvedBy": [
+      "3"
+    ]
   },
   {
     "query": "SELECT utilisateur.nom , utilisateur.prenom , films.titre FROM utilisateur JOIN seances_utilisateurs ON utilisateur.id = seances_utilisateurs.id_utilisateur JOIN seances ON seances.id = seances_utilisateurs.id_seance JOIN films ON seances.id_film = films.id WHERE films.titre = 'Fight Club'",
@@ -422,7 +458,10 @@
       }
     ],
     "description": "Nom, prénom des personnes allant voir Fight Club",
-    "complexity": 6
+    "complexity": 6,
+    "solvedBy": [
+      "3"
+    ]
   },
   {
     "query": "SELECT SUM( seances.id )FROM seances",
@@ -432,7 +471,10 @@
       }
     ],
     "description": "Calcule la somme de la colonne id seance ",
-    "complexity": 6
+    "complexity": 6,
+    "solvedBy": [
+      "3"
+    ]
   },
   {
     "query": "SELECT AVG( films.annee )FROM films",
@@ -442,7 +484,10 @@
       }
     ],
     "description": "Calcule la moyenne de sortie des films",
-    "complexity": 6
+    "complexity": 6,
+    "solvedBy": [
+      "3"
+    ]
   },
   {
     "query": "SELECT MIN( films.annee )FROM films",
@@ -452,7 +497,10 @@
       }
     ],
     "description": "Calcule le premier film sorti",
-    "complexity": 6
+    "complexity": 6,
+    "solvedBy": [
+      "3"
+    ]
   },
   {
     "query": "SELECT MAX( films.annee )FROM films",
@@ -462,7 +510,10 @@
       }
     ],
     "description": "Calcule le dernier film sorti",
-    "complexity": 6
+    "complexity": 6,
+    "solvedBy": [
+      "3"
+    ]
   },
   {
     "query": "SELECT * FROM films WHERE films.annee = 2014 OR films.annee = 2010",
@@ -484,7 +535,11 @@
       }
     ],
     "description": "Sélectionne les films qui sont de 2010 ou de 2014 ",
-    "complexity": 5
+    "complexity": 5,
+    "solvedBy": [
+      "4",
+      "3"
+    ]
   },
   {
     "query": "SELECT * FROM films WHERE films.annee = 2001 OR films.annee = 1997",
@@ -501,7 +556,11 @@
       }
     ],
     "description": "Sélectionne les films qui sont de 2001 ou de 1997 ",
-    "complexity": 5
+    "complexity": 5,
+    "solvedBy": [
+      "4",
+      "3"
+    ]
   },
   {
     "query": "SELECT * FROM utilisateur WHERE utilisateur.nom = 'Martin'",
@@ -514,7 +573,11 @@
       }
     ],
     "description": "id mail nom prénom de Mme Martin",
-    "complexity": 3
+    "complexity": 3,
+    "solvedBy": [
+      "4",
+      "3"
+    ]
   },
   {
     "query": "SELECT films.titre , genres.intitule FROM genres_films JOIN genres ON genres_films.id_genre = genres.id JOIN films ON films.id = genres_films.id_film WHERE genres.intitule = 'Action' OR 'Science-Fiction'",
@@ -529,7 +592,13 @@
       }
     ],
     "description": "Sélectionne uniquement titre et genre des films ayant le genre SF ou Action",
-    "complexity": 9
+    "complexity": 9,
+    "solvedBy": [
+      "3"
+    ],
+    "flaggedBy": [
+      "3"
+    ]
   },
   {
     "query": "SELECT acteurs.date_naissance , acteurs.nom , acteurs.prenom FROM acteurs ORDER BY acteurs.date_naissance ASC",
@@ -586,7 +655,10 @@
       }
     ],
     "description": "afficher nom prenom et date de naissance des acteurs trier dans l'ordre croissant des dates de naissance",
-    "complexity": 5
+    "complexity": 5,
+    "solvedBy": [
+      "3"
+    ]
   },
   {
     "query": "SELECT acteurs.date_naissance , seances.horaires , acteurs.nom , acteurs.prenom , films.titre FROM films_acteurs JOIN acteurs ON acteurs.id = films_acteurs.id_acteur JOIN films ON films_acteurs.id_film = films.id JOIN seances ON films.id = seances.id_film WHERE acteurs.date_naissance > '1970-01-01'",
@@ -628,7 +700,13 @@
       }
     ],
     "description": "afficher le titre, le nom, le prenom, l'horaire et la date de naissance. La date de naissance doit etre d'après le 1er janvier 1970",
-    "complexity": 7
+    "complexity": 7,
+    "flaggedBy": [
+      "4"
+    ],
+    "solvedBy": [
+      "3"
+    ]
   },
   {
     "query": "SELECT * FROM seances",
@@ -689,7 +767,11 @@
       }
     ],
     "description": "selectionne toutes les seances",
-    "complexity": 3
+    "complexity": 3,
+    "solvedBy": [
+      "4",
+      "3"
+    ]
   },
   {
     "query": "SELECT films.titre FROM films WHERE films.titre = 'Black Swan'",
@@ -699,7 +781,11 @@
       }
     ],
     "description": "Sélectionne le film Black swan",
-    "complexity": 3
+    "complexity": 3,
+    "solvedBy": [
+      "4",
+      "3"
+    ]
   },
   {
     "query": "SELECT films.titre FROM films WHERE films.titre LIKE '%t%'",

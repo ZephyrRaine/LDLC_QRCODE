@@ -41,7 +41,12 @@
     ],
     "description": "selectionne tous les éléments de la table diplomes\n",
     "complexity": 3,
-    "solvedBy": [0]
+    "solvedBy": [
+      0,
+      "0",
+      "4",
+      "3"
+    ]
   },
   {
     "query": "SELECT FROM cours.date matieres.intitule",
@@ -84,7 +89,12 @@
       }
     ],
     "description": "selectionne tous les éléments de la table diplomes\n",
-    "complexity": 3
+    "complexity": 3,
+    "solvedBy": [
+      "0",
+      "4",
+      "3"
+    ]
   },
   {
     "query": "SELECT cours.date , matieres.intitule FROM cours JOIN matieres ON cours.id_matiere = matieres.id_matiere ;",
@@ -139,7 +149,12 @@
       }
     ],
     "description": "séléctionnez les intitulés de matières correspondants aux dates de cours ",
-    "complexity": 6
+    "complexity": 6,
+    "solvedBy": [
+      "0",
+      "4",
+      "3"
+    ]
   },
   {
     "query": "SELECT diplomes.titre , profs.nom FROM profs JOIN diplomes_profs ON profs.id_prof = diplomes_profs.id_prof JOIN diplomes ON diplomes.id_diplome = diplomes_profs.id_diplome",
@@ -186,7 +201,12 @@
       }
     ],
     "description": "joindre le nom des professeurs avec leurs diplômes ",
-    "complexity": 6
+    "complexity": 6,
+    "solvedBy": [
+      "0",
+      "4",
+      "3"
+    ]
   },
   {
     "query": "SELECT cours.date , etudiants.nom , etudiants.prenom , cours.intitule FROM cours JOIN cours_etudiants ON cours_etudiants.id_cours = cours.id_cours JOIN etudiants ON etudiants.id_etudiant = cours_etudiants.id_etudiant ;",
@@ -295,7 +315,12 @@
       }
     ],
     "description": "Joindre le prenom et nom de l'élève avec l'intitulé du cours et la date ",
-    "complexity": 6
+    "complexity": 6,
+    "solvedBy": [
+      "0",
+      "4",
+      "3"
+    ]
   },
   {
     "query": "SELECT cours.date, profs.nom FROM cours JOIN profs ON cours.id_prof = profs.id_prof WHERE cours.date <  '2024-07-12'",
@@ -318,7 +343,12 @@
       }
     ],
     "description": "Récupère la date du cours et le nom du professeur pour les cours dont la date commence avant le 12 juillet 2024",
-    "complexity": 7
+    "complexity": 7,
+    "solvedBy": [
+      "0",
+      "4",
+      "3"
+    ]
   },
   {
     "query": "SELECT cours.intitule , profs.nom FROM cours JOIN profs ON cours.id_prof = profs.id_prof ORDER BY profs.nom ;",
@@ -373,7 +403,12 @@
       }
     ],
     "description": "Associez les intitulés des cours avec le nom des professeurs en triant leur nom par ordre alphabétique ",
-    "complexity": 8
+    "complexity": 8,
+    "solvedBy": [
+      "0",
+      "4",
+      "3"
+    ]
   },
   {
     "query": "SELECT diplomes.titre , profs.nom FROM diplomes JOIN diplomes_profs ON diplomes_profs.id_diplome = diplomes.id_diplome JOIN profs ON profs.id_prof = diplomes_profs.id_prof WHERE diplomes.titre LIKE '%Master%' OR diplomes.titre LIKE '%Doctorat%'",
@@ -404,7 +439,10 @@
       }
     ],
     "description": "On prend tous les noms des professeurs ayant un master ou un doctorat avec l'intitulé de leur diplôme.",
-    "complexity": 8
+    "complexity": 8,
+    "solvedBy": [
+      "0"
+    ]
   },
   {
     "query": "SELECT cours.date , etudiants.nom FROM etudiants JOIN cours_etudiants ON etudiants.id_etudiant = cours_etudiants.id_etudiant JOIN cours ON cours_etudiants.id_cours = cours.id_cours WHERE cours.date >= '2024-07-12' AND cours.date <= '2024-12-31' ;",
@@ -447,7 +485,10 @@
       }
     ],
     "description": "On sélectionne tous les cours proposés entre début juillet et fin décembre, en affichant en face les noms des élèves qui ont choisit ce cours.",
-    "complexity": 9
+    "complexity": 9,
+    "solvedBy": [
+      "0"
+    ]
   },
   {
     "query": "SELECT profs.nom , etudiants.nom , etudiants.prenom FROM profs JOIN cours ON profs.id_prof = cours.id_prof JOIN cours_etudiants ON cours_etudiants.id_cours = cours.id_cours JOIN etudiants ON etudiants.id_etudiant = cours_etudiants.id_etudiant ORDER BY profs.nom ;",
@@ -539,6 +580,10 @@
       }
     ],
     "description": "On constitue une liste des étudiants avec le professeur auquel ils ont affaire, en triant les noms de professeurs par ordre alphabétique.",
-    "complexity": 8
+    "complexity": 8,
+    "solvedBy": [
+      "0",
+      "4"
+    ]
   }
 ]

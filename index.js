@@ -290,6 +290,7 @@ app.get('/get-query', async (req, res) => {
     const data = JSON.parse(fs.readFileSync
       (path));
     const query = data[req.query.solveId];
+    query.query = "SECRET";
     console.log(query);
     res.setHeader('Content-Type', 'application/json');
     res.send(JSON.stringify(query, null, 2));
@@ -351,9 +352,9 @@ app.get('/send', async (req, res) => {
 
 app.get('/getID', async (req, res) => {
   try {
-    console.log(req.query.id);
+    // console.log(req.query.id);
     const id = names.indexOf(req.query.id);
-    console.log(id);
+    // console.log(id);
     res.status(200).send(id.toString());
   } catch (err) {
     console.error('Error sending data:', err);
@@ -363,9 +364,9 @@ app.get('/getID', async (req, res) => {
 
 app.get('/get-name', async (req, res) => {
   try {
-    console.log(req.query.id);
+    // console.log(req.query.id);
     const id = req.query.id;
-    console.log(id);
+    // console.log(id);
     res.status(200).send(names[id]);
   } catch (err) {
     console.error('Error sending data:', err);
@@ -422,6 +423,23 @@ app.get('/leaderboard', async (req, res) => {
   res.sendFile(join(__dirname, 'leaderboard.html'));
 });
 
+app.get('/get-solved', async (req, res) => {
+  try {
+    var solveNumber = 0;
+    for(var i = 0; i < names.length; i++)
+    {
+      const path = `out/data-${names[i]}.json`;
+      const data = JSON.parse(fs.readFileSync(path));
+      solveNumber += data.filter(q => 
+        (q.solvedBy && q.solvedBy.indexOf(req.query.id) != -1)).length;
+    }
+    res.status(200).send(solveNumber.toString());
+  } catch (err) {
+    console.error('Error getting solve number:', err);
+    res.status(500).send('Internal Server Error');
+  }
+});
+
 app.get('/get-leaderboard', async (req, res) => {
   try {
     const leaderboard = names.map(name => {
@@ -439,6 +457,105 @@ app.get('/get-leaderboard', async (req, res) => {
     res.send(JSON.stringify(leaderboard, null, 2));
   } catch (err) {
     console.error('Error generating leaderboard:', err);
+    res.status(500).send('Internal Server Error');
+  }
+});
+
+app.get('/flag-query', async (req, res) => {
+  try {
+    const id = req.query.id;
+    const path = `out/data-${names[id]}.json`;
+    const data = JSON.parse(fs.readFileSync(path));
+    const query = data[req.query.solveId];
+    if(!query.flaggedBy)
+      query.flaggedBy = [];
+
+    if(query.flaggedBy.includes(req.query.flaggedBy))
+      throw "Query already flagged";
+
+    query.flaggedBy.push(req.query.flaggedBy);
+    fs.writeFileSync(path, JSON.stringify(data, null, 2));
+    res.status(200).send("Flagged");
+    }
+  catch (err) {
+    console.error('Error getting data:', err);
+    res.status(500).send(err);
+  }
+});
+
+app.get('/judge-query', async (req, res) => {
+  try {
+    const name = req.query.dbName;
+    console.log(req.query.dbName);
+    const path = `out/data-${name}.json`;
+    const data = JSON.parse(fs.readFileSync(path));
+    const query = data[req.query.solveId];
+    console.log(query);
+
+    query.resolved = true;
+    if(req.query.action == "PUNISH")
+    {
+      console.log(names);
+      const pathScore = `out/score-${req.query.dbName}.json`;
+    console.log(pathScore);
+
+      let score = parseInt(fs.readFileSync(pathScore));
+      score -= 0; // CHANGE PUNITION
+      fs.writeFileSync
+        (pathScore, score.toString());
+      console.log("PUNISHING " + req.query.dbName);
+    }
+    else if(req.query.action == "PARDON")
+    {
+      foreach(id in query.flaggedBy)
+      {
+        const pathScore = `out/score-${names[id]}.json`;
+        let score = parseInt(fs.readFileSync
+          (pathScore));
+        score -= 0; //CHANGE PUNITION
+        fs.writeFileSync(pathScore,
+          score.toString());
+
+      }
+      console.log("PARDONNING " + names[req.query.dbName]);
+    }
+    // fs.writeFileSync(path, JSON.stringify(data, null, 2));
+    res.status(200).send("Judged");
+  }
+  catch (err) {
+    console.error('Error getting data:', err);
+    res.status(500).send('Internal Server Error');
+  }
+});
+
+app.get('/tribunal', async (req, res) => {
+  res.sendFile(join(__dirname, 'tribunal.html'));
+});
+
+app.get('/get-flagged', async (req, res) => {
+  try {
+    var allFlagged = [];
+    names.forEach(n => {
+      const path = `out/data-${n}.json`;
+      const data = JSON.parse(fs.readFileSync(path));
+      var flagged = data.filter(q => q.flaggedBy && q.flaggedBy.length > 0 && (!q.resolved || q.resolved == false));
+      flagged.forEach(q => {
+        if(!q.solvedBy)
+          q.solvedBy = [];
+        if(!q.flaggedBy)
+          q.flaggedBy = [];
+        q.solvedBy = q.solvedBy.map(s => names[s]);
+        q.flaggedBy = q.flaggedBy.map(f => names[f]);
+        q.dbName = n;
+      });
+      allFlagged = allFlagged.concat(flagged);
+    });
+    // console.log(allFlagged);
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify(allFlagged, null, 2));
+  }
+  catch (err) {
+    console.error('Error getting data:', err);
     res.status(500).send('Internal Server Error');
   }
 });
