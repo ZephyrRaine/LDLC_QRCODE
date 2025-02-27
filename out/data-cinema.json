@@ -1,0 +1,767 @@
+[
+  {
+    "query": "SELECT acteurs.nom , acteurs.prenom , films.titre FROM films_acteurs JOIN acteurs ON films_acteurs.id_acteur = acteurs.id JOIN films ON films.id = films_acteurs.id_film",
+    "results": [
+      {
+        "nom": "DiCaprio",
+        "prenom": "Leonardo",
+        "titre": "Inception"
+      },
+      {
+        "nom": "Johansson",
+        "prenom": "Scarlett",
+        "titre": "Inception"
+      },
+      {
+        "nom": "Johansson",
+        "prenom": "Scarlett",
+        "titre": "Pulp Fiction"
+      },
+      {
+        "nom": "Pitt",
+        "prenom": "Brad",
+        "titre": "Pulp Fiction"
+      },
+      {
+        "nom": "Portman",
+        "prenom": "Natalie",
+        "titre": "Black Swan"
+      },
+      {
+        "nom": "Hanks",
+        "prenom": "Tom",
+        "titre": "Forrest Gump"
+      },
+      {
+        "nom": "Reeves",
+        "prenom": "Keanu",
+        "titre": "The Matrix"
+      },
+      {
+        "nom": "Pitt",
+        "prenom": "Brad",
+        "titre": "Fight Club"
+      },
+      {
+        "nom": "Clooney",
+        "prenom": "George",
+        "titre": "Oceans Eleven"
+      },
+      {
+        "nom": "Damon",
+        "prenom": "Matt",
+        "titre": "Oceans Eleven"
+      },
+      {
+        "nom": "Blanchett",
+        "prenom": "Cate",
+        "titre": "The Grand Budapest Hotel"
+      },
+      {
+        "nom": "Washington",
+        "prenom": "Denzel",
+        "titre": "Titanic"
+      }
+    ],
+    "description": "afficher le nom et prénom des acteurs ainsi que leurs films",
+    "complexity": 6
+  },
+  {
+    "query": "SELECT films.titre , genres.intitule FROM genres_films JOIN films ON films.id = genres_films.id_film JOIN genres ON genres.id = genres_films.id_genre",
+    "results": [
+      {
+        "titre": "Inception",
+        "intitule": "Science-Fiction"
+      },
+      {
+        "titre": "The Matrix",
+        "intitule": "Science-Fiction"
+      },
+      {
+        "titre": "Inception",
+        "intitule": "Action"
+      },
+      {
+        "titre": "Pulp Fiction",
+        "intitule": "Action"
+      },
+      {
+        "titre": "Black Swan",
+        "intitule": "Drame"
+      },
+      {
+        "titre": "Forrest Gump",
+        "intitule": "Drame"
+      },
+      {
+        "titre": "The Grand Budapest Hotel",
+        "intitule": "Drame"
+      },
+      {
+        "titre": "Titanic",
+        "intitule": "Drame"
+      },
+      {
+        "titre": "Forrest Gump",
+        "intitule": "Comédie"
+      },
+      {
+        "titre": "Oceans Eleven",
+        "intitule": "Comédie"
+      },
+      {
+        "titre": "The Matrix",
+        "intitule": "Aventure"
+      },
+      {
+        "titre": "Fight Club",
+        "intitule": "Thriller"
+      },
+      {
+        "titre": "Pulp Fiction",
+        "intitule": "Crime"
+      },
+      {
+        "titre": "Fight Club",
+        "intitule": "Crime"
+      },
+      {
+        "titre": "Oceans Eleven",
+        "intitule": "Crime"
+      },
+      {
+        "titre": "Titanic",
+        "intitule": "Romance"
+      }
+    ],
+    "description": "afficher les films et leurs genres",
+    "complexity": 6
+  },
+  {
+    "query": "SELECT utilisateur.nom , utilisateur.prenom , utilisateur.mail , seances.horaires , lieux.salle FROM seances_utilisateurs JOIN utilisateur ON seances_utilisateurs.id_utilisateur = utilisateur.id JOIN seances ON seances_utilisateurs.id_seance = seances.id JOIN lieux ON lieux.id = seances.id_lieu",
+    "results": [
+      {
+        "nom": "Bernard",
+        "prenom": "Emma",
+        "mail": "delta_Emma@tempemail.com",
+        "horaires": "2025-02-24T20:00:00.000Z",
+        "salle": "Salle Gotham"
+      },
+      {
+        "nom": "Martin",
+        "prenom": "Sophie",
+        "mail": "bravo_x1@fakemail.net",
+        "horaires": "2025-02-27T21:00:00.000Z",
+        "salle": "Salle Gotham"
+      },
+      {
+        "nom": "Dupont",
+        "prenom": "Jean",
+        "mail": "alpha_92@randommail.com",
+        "horaires": "2025-02-21T19:00:00.000Z",
+        "salle": "Salle Gotham"
+      },
+      {
+        "nom": "Leroy",
+        "prenom": "Paul",
+        "mail": "charlie87@webmail.org",
+        "horaires": "2025-02-28T17:30:00.000Z",
+        "salle": "Salle Pandora"
+      },
+      {
+        "nom": "Martin",
+        "prenom": "Sophie",
+        "mail": "bravo_x1@fakemail.net",
+        "horaires": "2025-02-22T21:00:00.000Z",
+        "salle": "Salle Pandora"
+      },
+      {
+        "nom": "Dupont",
+        "prenom": "Jean",
+        "mail": "alpha_92@randommail.com",
+        "horaires": "2025-02-25T18:45:00.000Z",
+        "salle": "Salle Pandora"
+      },
+      {
+        "nom": "Durand",
+        "prenom": "Lucas",
+        "mail": "echo77_lucas@mailbox.com",
+        "horaires": "2025-02-26T19:00:00.000Z",
+        "salle": "Salle Mordor"
+      },
+      {
+        "nom": "Bernard",
+        "prenom": "Emma",
+        "mail": "delta_Emma@tempemail.com",
+        "horaires": "2025-02-28T19:30:00.000Z",
+        "salle": "Salle Mordor"
+      },
+      {
+        "nom": "Leroy",
+        "prenom": "Paul",
+        "mail": "charlie87@webmail.org",
+        "horaires": "2025-02-23T17:30:00.000Z",
+        "salle": "Salle Mordor"
+      }
+    ],
+    "description": "afficher nom prénom mail utilisateur ainsi que l'horaire de la seance et la salle qui leurs sont associées",
+    "complexity": 6
+  },
+  {
+    "query": "SELECT realisateurs.nom , realisateurs.prenom , realisateurs.date_naissance , films.titre FROM films_realisateurs JOIN realisateurs ON realisateurs.id = films_realisateurs.id_realisateur JOIN films ON films.id = films_realisateurs.id_film",
+    "results": [
+      {
+        "nom": "Nolan",
+        "prenom": "Christopher",
+        "date_naissance": "1970-07-29T23:00:00.000Z",
+        "titre": "Inception"
+      },
+      {
+        "nom": "Nolan",
+        "prenom": "Christopher",
+        "date_naissance": "1970-07-29T23:00:00.000Z",
+        "titre": "Black Swan"
+      },
+      {
+        "nom": "Nolan",
+        "prenom": "Christopher",
+        "date_naissance": "1970-07-29T23:00:00.000Z",
+        "titre": "The Matrix"
+      },
+      {
+        "nom": "Tarantino",
+        "prenom": "Quentin",
+        "date_naissance": "1963-03-26T23:00:00.000Z",
+        "titre": "Pulp Fiction"
+      },
+      {
+        "nom": "Spielberg",
+        "prenom": "Steven",
+        "date_naissance": "1946-12-17T23:00:00.000Z",
+        "titre": "Inception"
+      },
+      {
+        "nom": "Spielberg",
+        "prenom": "Steven",
+        "date_naissance": "1946-12-17T23:00:00.000Z",
+        "titre": "Forrest Gump"
+      },
+      {
+        "nom": "Villeneuve",
+        "prenom": "Denis",
+        "date_naissance": "1967-10-02T23:00:00.000Z",
+        "titre": "The Grand Budapest Hotel"
+      },
+      {
+        "nom": "Scorsese",
+        "prenom": "Martin",
+        "date_naissance": "1942-11-16T23:00:00.000Z",
+        "titre": "Fight Club"
+      },
+      {
+        "nom": "Scorsese",
+        "prenom": "Martin",
+        "date_naissance": "1942-11-16T23:00:00.000Z",
+        "titre": "Oceans Eleven"
+      },
+      {
+        "nom": "Cameron",
+        "prenom": "James",
+        "date_naissance": "1954-08-15T23:00:00.000Z",
+        "titre": "Titanic"
+      }
+    ],
+    "description": "Afficher nom prénom date de naissance réalisateur ainsi que leur film",
+    "complexity": 6
+  },
+  {
+    "query": "SELECT acteurs.prenom , acteurs.date_naissance , acteurs.nom FROM acteurs WHERE acteurs.date_naissance > '1954-08-16'",
+    "results": [
+      {
+        "prenom": "Keanu",
+        "date_naissance": "1964-09-01T23:00:00.000Z",
+        "nom": "Reeves"
+      },
+      {
+        "prenom": "Leonardo",
+        "date_naissance": "1974-11-10T23:00:00.000Z",
+        "nom": "DiCaprio"
+      },
+      {
+        "prenom": "Natalie",
+        "date_naissance": "1981-06-08T22:00:00.000Z",
+        "nom": "Portman"
+      },
+      {
+        "prenom": "Scarlett",
+        "date_naissance": "1984-11-21T23:00:00.000Z",
+        "nom": "Johansson"
+      },
+      {
+        "prenom": "Tom",
+        "date_naissance": "1956-07-08T23:00:00.000Z",
+        "nom": "Hanks"
+      },
+      {
+        "prenom": "Brad",
+        "date_naissance": "1963-12-17T23:00:00.000Z",
+        "nom": "Pitt"
+      },
+      {
+        "prenom": "George",
+        "date_naissance": "1961-05-05T23:00:00.000Z",
+        "nom": "Clooney"
+      },
+      {
+        "prenom": "Cate",
+        "date_naissance": "1969-05-13T23:00:00.000Z",
+        "nom": "Blanchett"
+      },
+      {
+        "prenom": "Matt",
+        "date_naissance": "1970-10-07T23:00:00.000Z",
+        "nom": "Damon"
+      },
+      {
+        "prenom": "Denzel",
+        "date_naissance": "1954-12-27T23:00:00.000Z",
+        "nom": "Washington"
+      }
+    ],
+    "description": "nom, prénom, date de naissance des acteurs nés après janvier 1954",
+    "complexity": 4
+  },
+  {
+    "query": "SELECT films.titre , films.annee FROM films WHERE films.annee > 1999",
+    "results": [
+      {
+        "titre": "Inception",
+        "annee": 2010
+      },
+      {
+        "titre": "Black Swan",
+        "annee": 2010
+      },
+      {
+        "titre": "Oceans Eleven",
+        "annee": 2001
+      },
+      {
+        "titre": "The Grand Budapest Hotel",
+        "annee": 2014
+      }
+    ],
+    "description": "Titre et année des films sortis après 1999",
+    "complexity": 3
+  },
+  {
+    "query": "SELECT films.annee , COUNT( * )FROM films GROUP BY films.annee HAVING COUNT( * )< 2",
+    "results": [
+      {
+        "annee": 2001,
+        "COUNT( * )": 1
+      },
+      {
+        "annee": 2014,
+        "COUNT( * )": 1
+      },
+      {
+        "annee": 1997,
+        "COUNT( * )": 1
+      }
+    ],
+    "description": "afficher uniquement les années de sorti de film qui n'apparaissant pas plus de 1x",
+    "complexity": 8
+  },
+  {
+    "query": "SELECT films.annee , COUNT( * )FROM films GROUP BY films.annee HAVING COUNT( * )>= 2",
+    "results": [
+      {
+        "annee": 2010,
+        "COUNT( * )": 2
+      },
+      {
+        "annee": 1994,
+        "COUNT( * )": 2
+      },
+      {
+        "annee": 1999,
+        "COUNT( * )": 2
+      }
+    ],
+    "description": "afficher uniquement les années de sorti de film qui apparaissent 2x",
+    "complexity": 8
+  },
+  {
+    "query": "SELECT COUNT( * )FROM films",
+    "results": [
+      {
+        "COUNT( * )": 9
+      }
+    ],
+    "description": "afficher le nombre de film",
+    "complexity": 6
+  },
+  {
+    "query": "SELECT MIN( realisateurs.date_naissance )FROM realisateurs",
+    "results": [
+      {
+        "MIN( realisateurs.date_naissance )": "1942-11-16T23:00:00.000Z"
+      }
+    ],
+    "description": "afficher la date de naissance du réalisateur le plus vieux",
+    "complexity": 6
+  },
+  {
+    "query": "SELECT utilisateur.nom , utilisateur.prenom , films.titre FROM utilisateur JOIN seances_utilisateurs ON utilisateur.id = seances_utilisateurs.id_utilisateur JOIN seances ON seances.id = seances_utilisateurs.id_seance JOIN films ON seances.id_film = films.id WHERE films.titre = 'Fight Club'",
+    "results": [
+      {
+        "nom": "Durand",
+        "prenom": "Lucas",
+        "titre": "Fight Club"
+      }
+    ],
+    "description": "Nom, prénom des personnes allant voir Fight Club",
+    "complexity": 6
+  },
+  {
+    "query": "SELECT SUM( seances.id )FROM seances",
+    "results": [
+      {
+        "SUM( seances.id )": 45
+      }
+    ],
+    "description": "Calcule la somme de la colonne id seance ",
+    "complexity": 6
+  },
+  {
+    "query": "SELECT AVG( films.annee )FROM films",
+    "results": [
+      {
+        "AVG( films.annee )": 2002
+      }
+    ],
+    "description": "Calcule la moyenne de sortie des films",
+    "complexity": 6
+  },
+  {
+    "query": "SELECT MIN( films.annee )FROM films",
+    "results": [
+      {
+        "MIN( films.annee )": 1994
+      }
+    ],
+    "description": "Calcule le premier film sorti",
+    "complexity": 6
+  },
+  {
+    "query": "SELECT MAX( films.annee )FROM films",
+    "results": [
+      {
+        "MAX( films.annee )": 2014
+      }
+    ],
+    "description": "Calcule le dernier film sorti",
+    "complexity": 6
+  },
+  {
+    "query": "SELECT * FROM films WHERE films.annee = 2014 OR films.annee = 2010",
+    "results": [
+      {
+        "id": 1,
+        "titre": "Inception",
+        "annee": 2010
+      },
+      {
+        "id": 3,
+        "titre": "Black Swan",
+        "annee": 2010
+      },
+      {
+        "id": 8,
+        "titre": "The Grand Budapest Hotel",
+        "annee": 2014
+      }
+    ],
+    "description": "Sélectionne les films qui sont de 2010 ou de 2014 ",
+    "complexity": 5
+  },
+  {
+    "query": "SELECT * FROM films WHERE films.annee = 2001 OR films.annee = 1997",
+    "results": [
+      {
+        "id": 7,
+        "titre": "Oceans Eleven",
+        "annee": 2001
+      },
+      {
+        "id": 9,
+        "titre": "Titanic",
+        "annee": 1997
+      }
+    ],
+    "description": "Sélectionne les films qui sont de 2001 ou de 1997 ",
+    "complexity": 5
+  },
+  {
+    "query": "SELECT * FROM utilisateur WHERE utilisateur.nom = 'Martin'",
+    "results": [
+      {
+        "id": 2,
+        "mail": "bravo_x1@fakemail.net",
+        "nom": "Martin",
+        "prenom": "Sophie"
+      }
+    ],
+    "description": "id mail nom prénom de Mme Martin",
+    "complexity": 3
+  },
+  {
+    "query": "SELECT films.titre , genres.intitule FROM genres_films JOIN genres ON genres_films.id_genre = genres.id JOIN films ON films.id = genres_films.id_film WHERE genres.intitule = 'Action' OR 'Science-Fiction'",
+    "results": [
+      {
+        "titre": "Inception",
+        "intitule": "Action"
+      },
+      {
+        "titre": "Pulp Fiction",
+        "intitule": "Action"
+      }
+    ],
+    "description": "Sélectionne uniquement titre et genre des films ayant le genre SF ou Action",
+    "complexity": 9
+  },
+  {
+    "query": "SELECT acteurs.date_naissance , acteurs.nom , acteurs.prenom FROM acteurs ORDER BY acteurs.date_naissance ASC",
+    "results": [
+      {
+        "date_naissance": "1954-12-27T23:00:00.000Z",
+        "nom": "Washington",
+        "prenom": "Denzel"
+      },
+      {
+        "date_naissance": "1956-07-08T23:00:00.000Z",
+        "nom": "Hanks",
+        "prenom": "Tom"
+      },
+      {
+        "date_naissance": "1961-05-05T23:00:00.000Z",
+        "nom": "Clooney",
+        "prenom": "George"
+      },
+      {
+        "date_naissance": "1963-12-17T23:00:00.000Z",
+        "nom": "Pitt",
+        "prenom": "Brad"
+      },
+      {
+        "date_naissance": "1964-09-01T23:00:00.000Z",
+        "nom": "Reeves",
+        "prenom": "Keanu"
+      },
+      {
+        "date_naissance": "1969-05-13T23:00:00.000Z",
+        "nom": "Blanchett",
+        "prenom": "Cate"
+      },
+      {
+        "date_naissance": "1970-10-07T23:00:00.000Z",
+        "nom": "Damon",
+        "prenom": "Matt"
+      },
+      {
+        "date_naissance": "1974-11-10T23:00:00.000Z",
+        "nom": "DiCaprio",
+        "prenom": "Leonardo"
+      },
+      {
+        "date_naissance": "1981-06-08T22:00:00.000Z",
+        "nom": "Portman",
+        "prenom": "Natalie"
+      },
+      {
+        "date_naissance": "1984-11-21T23:00:00.000Z",
+        "nom": "Johansson",
+        "prenom": "Scarlett"
+      }
+    ],
+    "description": "afficher nom prenom et date de naissance des acteurs trier dans l'ordre croissant des dates de naissance",
+    "complexity": 5
+  },
+  {
+    "query": "SELECT acteurs.date_naissance , seances.horaires , acteurs.nom , acteurs.prenom , films.titre FROM films_acteurs JOIN acteurs ON acteurs.id = films_acteurs.id_acteur JOIN films ON films_acteurs.id_film = films.id JOIN seances ON films.id = seances.id_film WHERE acteurs.date_naissance > '1970-01-01'",
+    "results": [
+      {
+        "date_naissance": "1974-11-10T23:00:00.000Z",
+        "horaires": "2025-02-21T19:00:00.000Z",
+        "nom": "DiCaprio",
+        "prenom": "Leonardo",
+        "titre": "Inception"
+      },
+      {
+        "date_naissance": "1981-06-08T22:00:00.000Z",
+        "horaires": "2025-02-23T17:30:00.000Z",
+        "nom": "Portman",
+        "prenom": "Natalie",
+        "titre": "Black Swan"
+      },
+      {
+        "date_naissance": "1984-11-21T23:00:00.000Z",
+        "horaires": "2025-02-21T19:00:00.000Z",
+        "nom": "Johansson",
+        "prenom": "Scarlett",
+        "titre": "Inception"
+      },
+      {
+        "date_naissance": "1984-11-21T23:00:00.000Z",
+        "horaires": "2025-02-22T21:00:00.000Z",
+        "nom": "Johansson",
+        "prenom": "Scarlett",
+        "titre": "Pulp Fiction"
+      },
+      {
+        "date_naissance": "1970-10-07T23:00:00.000Z",
+        "horaires": "2025-02-27T21:00:00.000Z",
+        "nom": "Damon",
+        "prenom": "Matt",
+        "titre": "Oceans Eleven"
+      }
+    ],
+    "description": "afficher le titre, le nom, le prenom, l'horaire et la date de naissance. La date de naissance doit etre d'après le 1er janvier 1970",
+    "complexity": 7
+  },
+  {
+    "query": "SELECT * FROM seances",
+    "results": [
+      {
+        "id": 1,
+        "horaires": "2025-02-21T19:00:00.000Z",
+        "id_film": 1,
+        "id_lieu": 1
+      },
+      {
+        "id": 2,
+        "horaires": "2025-02-22T21:00:00.000Z",
+        "id_film": 2,
+        "id_lieu": 2
+      },
+      {
+        "id": 3,
+        "horaires": "2025-02-23T17:30:00.000Z",
+        "id_film": 3,
+        "id_lieu": 3
+      },
+      {
+        "id": 4,
+        "horaires": "2025-02-24T20:00:00.000Z",
+        "id_film": 4,
+        "id_lieu": 1
+      },
+      {
+        "id": 5,
+        "horaires": "2025-02-25T18:45:00.000Z",
+        "id_film": 5,
+        "id_lieu": 2
+      },
+      {
+        "id": 6,
+        "horaires": "2025-02-26T19:00:00.000Z",
+        "id_film": 6,
+        "id_lieu": 3
+      },
+      {
+        "id": 7,
+        "horaires": "2025-02-27T21:00:00.000Z",
+        "id_film": 7,
+        "id_lieu": 1
+      },
+      {
+        "id": 8,
+        "horaires": "2025-02-28T17:30:00.000Z",
+        "id_film": 8,
+        "id_lieu": 2
+      },
+      {
+        "id": 9,
+        "horaires": "2025-02-28T19:30:00.000Z",
+        "id_film": 9,
+        "id_lieu": 3
+      }
+    ],
+    "description": "selectionne toutes les seances",
+    "complexity": 3
+  },
+  {
+    "query": "SELECT films.titre FROM films WHERE films.titre = 'Black Swan'",
+    "results": [
+      {
+        "titre": "Black Swan"
+      }
+    ],
+    "description": "Sélectionne le film Black swan",
+    "complexity": 3
+  },
+  {
+    "query": "SELECT films.titre FROM films WHERE films.titre LIKE '%t%'",
+    "results": [
+      {
+        "titre": "Inception"
+      },
+      {
+        "titre": "Pulp Fiction"
+      },
+      {
+        "titre": "Forrest Gump"
+      },
+      {
+        "titre": "The Matrix"
+      },
+      {
+        "titre": "Fight Club"
+      },
+      {
+        "titre": "The Grand Budapest Hotel"
+      },
+      {
+        "titre": "Titanic"
+      }
+    ],
+    "description": "Sélectionne les films qui ont un \"t\"",
+    "complexity": 3
+  },
+  {
+    "query": "SELECT utilisateur.mail FROM utilisateur WHERE utilisateur.mail LIKE '%.com%'",
+    "results": [
+      {
+        "mail": "alpha_92@randommail.com"
+      },
+      {
+        "mail": "delta_Emma@tempemail.com"
+      },
+      {
+        "mail": "echo77_lucas@mailbox.com"
+      }
+    ],
+    "description": "Afficher les email des utilisateurs qui sont en .com\n",
+    "complexity": 3
+  },
+  {
+    "query": "SELECT lieux.salle , films.titre FROM seances JOIN lieux ON lieux.id = seances.id_lieu JOIN films ON seances.id_film = films.id WHERE lieux.salle = 'Salle Gotham'",
+    "results": [
+      {
+        "salle": "Salle Gotham",
+        "titre": "Inception"
+      },
+      {
+        "salle": "Salle Gotham",
+        "titre": "Forrest Gump"
+      },
+      {
+        "salle": "Salle Gotham",
+        "titre": "Oceans Eleven"
+      }
+    ],
+    "description": "Afficher le titre des films qui sont dans la salle gotham\n",
+    "complexity": 6
+  }
+]

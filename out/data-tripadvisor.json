@@ -1,0 +1,754 @@
+[
+  {
+    "query": "SELECT avis.commentaire , avis.id_restaurant FROM avis WHERE avis.id_client = 1",
+    "results": [
+      {
+        "commentaire": "Excellente cuisine !",
+        "id_restaurant": 1
+      },
+      {
+        "commentaire": "Le personnel est adorable.",
+        "id_restaurant": 3
+      },
+      {
+        "commentaire": "Attente interminable.",
+        "id_restaurant": 4
+      },
+      {
+        "commentaire": "Tables trop serrées.",
+        "id_restaurant": 6
+      }
+    ],
+    "description": "je veux séléctionner le client et ses commentaires par rapport au restaurant ",
+    "complexity": 3
+  },
+  {
+    "query": "SELECT * FROM types_restaurants WHERE types_restaurants.id_type AND types_restaurants.id_restaurant > 1 < 6",
+    "results": [
+      {
+        "id_type": 1,
+        "id_restaurant": 1
+      },
+      {
+        "id_type": 2,
+        "id_restaurant": 2
+      },
+      {
+        "id_type": 3,
+        "id_restaurant": 3
+      },
+      {
+        "id_type": 4,
+        "id_restaurant": 4
+      },
+      {
+        "id_type": 5,
+        "id_restaurant": 5
+      },
+      {
+        "id_type": 6,
+        "id_restaurant": 1
+      },
+      {
+        "id_type": 6,
+        "id_restaurant": 2
+      },
+      {
+        "id_type": 6,
+        "id_restaurant": 4
+      },
+      {
+        "id_type": 6,
+        "id_restaurant": 6
+      },
+      {
+        "id_type": 7,
+        "id_restaurant": 7
+      },
+      {
+        "id_type": 8,
+        "id_restaurant": 8
+      },
+      {
+        "id_type": 9,
+        "id_restaurant": 9
+      }
+    ],
+    "description": "récupérer les id_type et id_restaurant qui sont supérieur à 1 et inférieur à 6",
+    "complexity": 5
+  },
+  {
+    "query": "SELECT * FROM restaurants JOIN emplois ON restaurants.id_restaurant = emplois.id_restaurant JOIN employes ON emplois.id_employe = employes.id_employe WHERE restaurants.nom = 'Steak House'",
+    "results": [
+      {
+        "id_restaurant": 7,
+        "nom": "Dupont",
+        "id_origine": 6,
+        "id_employe": 1,
+        "prenom": "Jean",
+        "id_poste": 1
+      },
+      {
+        "id_restaurant": 7,
+        "nom": "Leroy",
+        "id_origine": 6,
+        "id_employe": 3,
+        "prenom": "Paul",
+        "id_poste": 3
+      }
+    ],
+    "description": "on cherche les epmloyer qui travaille au steakhouse",
+    "complexity": 6
+  },
+  {
+    "query": "SELECT * FROM restaurants JOIN origines ON restaurants.id_origine = origines.id_origine WHERE origines.id_origine = restaurants.id_restaurant",
+    "results": [
+      {
+        "id_restaurant": 1,
+        "nom": "Le Gourmet",
+        "id_origine": 1,
+        "pays": "France"
+      },
+      {
+        "id_restaurant": 2,
+        "nom": "Pasta Bella",
+        "id_origine": 2,
+        "pays": "Italie"
+      },
+      {
+        "id_restaurant": 3,
+        "nom": "Sakura Sushi",
+        "id_origine": 3,
+        "pays": "Japon"
+      },
+      {
+        "id_restaurant": 4,
+        "nom": "El Tacon",
+        "id_origine": 4,
+        "pays": "Mexique"
+      },
+      {
+        "id_restaurant": 5,
+        "nom": "Spicy Masala",
+        "id_origine": 5,
+        "pays": "Inde"
+      }
+    ],
+    "description": "relier les restaurants à leur origine",
+    "complexity": 6
+  },
+  {
+    "query": "SELECT * FROM restaurants WHERE restaurants.id_origine = 4",
+    "results": [
+      {
+        "id_restaurant": 4,
+        "nom": "El Tacon",
+        "id_origine": 4
+      },
+      {
+        "id_restaurant": 8,
+        "nom": "Green Eat",
+        "id_origine": 4
+      }
+    ],
+    "description": "trouver les restaurants mexicains",
+    "complexity": 3
+  },
+  {
+    "query": "SELECT * FROM employes WHERE employes.id_poste = 1",
+    "results": [
+      {
+        "id_employe": 1,
+        "nom": "Dupont",
+        "prenom": "Jean",
+        "id_poste": 1
+      },
+      {
+        "id_employe": 4,
+        "nom": "Rossi",
+        "prenom": "Marco",
+        "id_poste": 1
+      },
+      {
+        "id_employe": 5,
+        "nom": "Tanaka",
+        "prenom": "Yuki",
+        "id_poste": 1
+      }
+    ],
+    "description": "trouver les chefs cuisto",
+    "complexity": 3
+  },
+  {
+    "query": "SELECT * FROM types JOIN types_restaurants ON types.id_type = types_restaurants.id_type JOIN restaurants ON types_restaurants.id_restaurant = restaurants.id_restaurant WHERE types.id_type = 1",
+    "results": [
+      {
+        "id_type": 1,
+        "intitule": "Gastronomique",
+        "id_restaurant": 1,
+        "nom": "Le Gourmet",
+        "id_origine": 1
+      }
+    ],
+    "description": "trouver les restaurants gastronomique",
+    "complexity": 6
+  },
+  {
+    "query": "SELECT * FROM avis JOIN clients ON avis.id_client = clients.id_client WHERE avis.id_client = 1",
+    "results": [
+      {
+        "id_avis": 1,
+        "date": "2025-02-09T23:00:00.000Z",
+        "commentaire": "Excellente cuisine !",
+        "id_restaurant": 1,
+        "id_client": 1,
+        "nom": "Bernard",
+        "prenom": "Claire",
+        "mail": "claire@mail.com"
+      },
+      {
+        "id_avis": 6,
+        "date": "2025-02-21T23:00:00.000Z",
+        "commentaire": "Le personnel est adorable.",
+        "id_restaurant": 3,
+        "id_client": 1,
+        "nom": "Bernard",
+        "prenom": "Claire",
+        "mail": "claire@mail.com"
+      },
+      {
+        "id_avis": 14,
+        "date": "2025-03-04T23:00:00.000Z",
+        "commentaire": "Attente interminable.",
+        "id_restaurant": 4,
+        "id_client": 1,
+        "nom": "Bernard",
+        "prenom": "Claire",
+        "mail": "claire@mail.com"
+      },
+      {
+        "id_avis": 16,
+        "date": "2025-03-06T23:00:00.000Z",
+        "commentaire": "Tables trop serrées.",
+        "id_restaurant": 6,
+        "id_client": 1,
+        "nom": "Bernard",
+        "prenom": "Claire",
+        "mail": "claire@mail.com"
+      }
+    ],
+    "description": "trouver les avis de Claire",
+    "complexity": 6
+  },
+  {
+    "query": "SELECT * FROM avis JOIN restaurants ON avis.id_restaurant = restaurants.id_restaurant WHERE restaurants.id_restaurant = 3",
+    "results": [
+      {
+        "id_avis": 5,
+        "date": "2025-02-19T23:00:00.000Z",
+        "commentaire": "Sushis très frais.",
+        "id_restaurant": 3,
+        "id_client": 5,
+        "nom": "Sakura Sushi",
+        "id_origine": 3
+      },
+      {
+        "id_avis": 6,
+        "date": "2025-02-21T23:00:00.000Z",
+        "commentaire": "Le personnel est adorable.",
+        "id_restaurant": 3,
+        "id_client": 1,
+        "nom": "Sakura Sushi",
+        "id_origine": 3
+      },
+      {
+        "id_avis": 13,
+        "date": "2025-03-03T23:00:00.000Z",
+        "commentaire": "Sushis trop chers.",
+        "id_restaurant": 3,
+        "id_client": 2,
+        "nom": "Sakura Sushi",
+        "id_origine": 3
+      }
+    ],
+    "description": "trouver les avis sur le Sakura",
+    "complexity": 6
+  },
+  {
+    "query": "SELECT * FROM restaurants JOIN origines ON restaurants.id_origine = origines.id_origine WHERE origines.id_origine = 2",
+    "results": [
+      {
+        "id_restaurant": 2,
+        "nom": "Pasta Bella",
+        "id_origine": 2,
+        "pays": "Italie"
+      }
+    ],
+    "description": "chercher les resto italiens (il y en a qu'un)",
+    "complexity": 6
+  },
+  {
+    "query": "SELECT * FROM origines WHERE origines.pays != 'États-Unis'",
+    "results": [
+      {
+        "id_origine": 1,
+        "pays": "France"
+      },
+      {
+        "id_origine": 2,
+        "pays": "Italie"
+      },
+      {
+        "id_origine": 3,
+        "pays": "Japon"
+      },
+      {
+        "id_origine": 4,
+        "pays": "Mexique"
+      },
+      {
+        "id_origine": 5,
+        "pays": "Inde"
+      },
+      {
+        "id_origine": 7,
+        "pays": "Thaïlande"
+      }
+    ],
+    "description": "trouver tous les restaurants sauf les états unis",
+    "complexity": 4
+  },
+  {
+    "query": "SELECT clients.mail FROM clients JOIN avis ON clients.id_client = avis.id_client JOIN restaurants ON avis.id_restaurant = restaurants.id_restaurant WHERE avis.id_restaurant = 4",
+    "results": [
+      {
+        "mail": "luc@mail.com"
+      },
+      {
+        "mail": "claire@mail.com"
+      }
+    ],
+    "description": "récupérer les mails des clients qui ont laissé un avis le restaurant ayant l'id 4",
+    "complexity": 6
+  },
+  {
+    "query": "SELECT * FROM clients JOIN avis ON clients.id_client = avis.id_client JOIN restaurants ON avis.id_restaurant = restaurants.id_restaurant WHERE avis.id_client = 2",
+    "results": [
+      {
+        "id_client": 2,
+        "nom": "Le Gourmet",
+        "prenom": "Luc",
+        "mail": "luc@mail.com",
+        "id_avis": 2,
+        "date": "2025-02-11T23:00:00.000Z",
+        "commentaire": "Service impeccable.",
+        "id_restaurant": 1,
+        "id_origine": 1
+      },
+      {
+        "id_client": 2,
+        "nom": "El Tacon",
+        "prenom": "Luc",
+        "mail": "luc@mail.com",
+        "id_avis": 7,
+        "date": "2025-02-24T23:00:00.000Z",
+        "commentaire": "Tacos super bons.",
+        "id_restaurant": 4,
+        "id_origine": 4
+      },
+      {
+        "id_client": 2,
+        "nom": "Sakura Sushi",
+        "prenom": "Luc",
+        "mail": "luc@mail.com",
+        "id_avis": 13,
+        "date": "2025-03-03T23:00:00.000Z",
+        "commentaire": "Sushis trop chers.",
+        "id_restaurant": 3,
+        "id_origine": 3
+      }
+    ],
+    "description": "les avis de luc",
+    "complexity": 6
+  },
+  {
+    "query": "SELECT * FROM avis JOIN clients ON avis.id_client = clients.id_client WHERE clients.id_client = 3",
+    "results": [
+      {
+        "id_avis": 3,
+        "date": "2025-02-14T23:00:00.000Z",
+        "commentaire": "Pizza parfaite !",
+        "id_restaurant": 2,
+        "id_client": 3,
+        "nom": "Garcia",
+        "prenom": "Elena",
+        "mail": "elena@mail.com"
+      },
+      {
+        "id_avis": 8,
+        "date": "2025-02-26T23:00:00.000Z",
+        "commentaire": "Un délice épicé !",
+        "id_restaurant": 5,
+        "id_client": 3,
+        "nom": "Garcia",
+        "prenom": "Elena",
+        "mail": "elena@mail.com"
+      },
+      {
+        "id_avis": 11,
+        "date": "2025-03-01T23:00:00.000Z",
+        "commentaire": "Service trop lent.",
+        "id_restaurant": 1,
+        "id_client": 3,
+        "nom": "Garcia",
+        "prenom": "Elena",
+        "mail": "elena@mail.com"
+      },
+      {
+        "id_avis": 17,
+        "date": "2025-03-07T23:00:00.000Z",
+        "commentaire": "Viande trop cuite.",
+        "id_restaurant": 7,
+        "id_client": 3,
+        "nom": "Garcia",
+        "prenom": "Elena",
+        "mail": "elena@mail.com"
+      }
+    ],
+    "description": "les avis de elena",
+    "complexity": 6
+  },
+  {
+    "query": "SELECT * FROM avis JOIN clients ON avis.id_client = clients.id_client WHERE clients.id_client = 4",
+    "results": [
+      {
+        "id_avis": 4,
+        "date": "2025-02-17T23:00:00.000Z",
+        "commentaire": "Ambiance agréable.",
+        "id_restaurant": 2,
+        "id_client": 4,
+        "nom": "Fischer",
+        "prenom": "Hans",
+        "mail": "hans@mail.com"
+      },
+      {
+        "id_avis": 9,
+        "date": "2025-02-27T23:00:00.000Z",
+        "commentaire": "Bonne expérience.",
+        "id_restaurant": 6,
+        "id_client": 4,
+        "nom": "Fischer",
+        "prenom": "Hans",
+        "mail": "hans@mail.com"
+      },
+      {
+        "id_avis": 15,
+        "date": "2025-03-05T23:00:00.000Z",
+        "commentaire": "Trop épicé, immangeable.",
+        "id_restaurant": 5,
+        "id_client": 4,
+        "nom": "Fischer",
+        "prenom": "Hans",
+        "mail": "hans@mail.com"
+      }
+    ],
+    "description": "les avis de Hans",
+    "complexity": 6
+  },
+  {
+    "query": "SELECT * FROM avis JOIN clients ON avis.id_client = clients.id_client WHERE clients.id_client = 7",
+    "results": [
+      {
+        "id_avis": 19,
+        "date": "2025-03-09T23:00:00.000Z",
+        "commentaire": "Trop cher pour la qualité.",
+        "id_restaurant": 9,
+        "id_client": 7,
+        "nom": "Kim",
+        "prenom": "Soo",
+        "mail": "soo@mail.com"
+      }
+    ],
+    "description": "l'avis de Soo",
+    "complexity": 6
+  },
+  {
+    "query": "SELECT restaurants.id_restaurant FROM restaurants JOIN emplois ON restaurants.id_restaurant = emplois.id_restaurant JOIN employes ON emplois.id_employe = employes.id_employe GROUP BY restaurants.id_restaurant , restaurants.nom HAVING COUNT( employes.id_employe )>= 2",
+    "results": [
+      {
+        "id_restaurant": 1
+      },
+      {
+        "id_restaurant": 2
+      },
+      {
+        "id_restaurant": 3
+      },
+      {
+        "id_restaurant": 6
+      },
+      {
+        "id_restaurant": 7
+      },
+      {
+        "id_restaurant": 8
+      },
+      {
+        "id_restaurant": 9
+      }
+    ],
+    "description": "il me trouve les id restaurants contenant au minimum 2 emplyés",
+    "complexity": 11
+  },
+  {
+    "query": "SELECT restaurants.id_restaurant FROM restaurants JOIN avis ON restaurants.id_restaurant = avis.id_restaurant GROUP BY restaurants.id_restaurant HAVING COUNT( avis.id_restaurant )>= 2 ;",
+    "results": [
+      {
+        "id_restaurant": 1
+      },
+      {
+        "id_restaurant": 2
+      },
+      {
+        "id_restaurant": 3
+      },
+      {
+        "id_restaurant": 4
+      },
+      {
+        "id_restaurant": 5
+      },
+      {
+        "id_restaurant": 6
+      },
+      {
+        "id_restaurant": 7
+      }
+    ],
+    "description": "les id restaurant qui ont plus de 2 avis",
+    "complexity": 11
+  },
+  {
+    "query": "SELECT * FROM types JOIN types_restaurants ON types.id_type = types_restaurants.id_type WHERE types_restaurants.id_type = 6",
+    "results": [
+      {
+        "id_type": 6,
+        "intitule": "Bistrot",
+        "id_restaurant": 1
+      },
+      {
+        "id_type": 6,
+        "intitule": "Bistrot",
+        "id_restaurant": 2
+      },
+      {
+        "id_type": 6,
+        "intitule": "Bistrot",
+        "id_restaurant": 4
+      },
+      {
+        "id_type": 6,
+        "intitule": "Bistrot",
+        "id_restaurant": 6
+      }
+    ],
+    "description": "tous les restaurants qui sont des bistrots",
+    "complexity": 6
+  },
+  {
+    "query": "SELECT * FROM avis WHERE avis.date < '2025-02-28'",
+    "results": [
+      {
+        "id_avis": 1,
+        "date": "2025-02-09T23:00:00.000Z",
+        "commentaire": "Excellente cuisine !",
+        "id_restaurant": 1,
+        "id_client": 1
+      },
+      {
+        "id_avis": 2,
+        "date": "2025-02-11T23:00:00.000Z",
+        "commentaire": "Service impeccable.",
+        "id_restaurant": 1,
+        "id_client": 2
+      },
+      {
+        "id_avis": 3,
+        "date": "2025-02-14T23:00:00.000Z",
+        "commentaire": "Pizza parfaite !",
+        "id_restaurant": 2,
+        "id_client": 3
+      },
+      {
+        "id_avis": 4,
+        "date": "2025-02-17T23:00:00.000Z",
+        "commentaire": "Ambiance agréable.",
+        "id_restaurant": 2,
+        "id_client": 4
+      },
+      {
+        "id_avis": 5,
+        "date": "2025-02-19T23:00:00.000Z",
+        "commentaire": "Sushis très frais.",
+        "id_restaurant": 3,
+        "id_client": 5
+      },
+      {
+        "id_avis": 6,
+        "date": "2025-02-21T23:00:00.000Z",
+        "commentaire": "Le personnel est adorable.",
+        "id_restaurant": 3,
+        "id_client": 1
+      },
+      {
+        "id_avis": 7,
+        "date": "2025-02-24T23:00:00.000Z",
+        "commentaire": "Tacos super bons.",
+        "id_restaurant": 4,
+        "id_client": 2
+      },
+      {
+        "id_avis": 8,
+        "date": "2025-02-26T23:00:00.000Z",
+        "commentaire": "Un délice épicé !",
+        "id_restaurant": 5,
+        "id_client": 3
+      }
+    ],
+    "description": "tous les avis en février",
+    "complexity": 4
+  },
+  {
+    "query": "SELECT * FROM avis WHERE avis.date > '2025-02-28'",
+    "results": [
+      {
+        "id_avis": 10,
+        "date": "2025-02-28T23:00:00.000Z",
+        "commentaire": "Viande de qualité.",
+        "id_restaurant": 7,
+        "id_client": 5
+      },
+      {
+        "id_avis": 11,
+        "date": "2025-03-01T23:00:00.000Z",
+        "commentaire": "Service trop lent.",
+        "id_restaurant": 1,
+        "id_client": 3
+      },
+      {
+        "id_avis": 12,
+        "date": "2025-03-02T23:00:00.000Z",
+        "commentaire": "Pâtes sans saveur.",
+        "id_restaurant": 2,
+        "id_client": 5
+      },
+      {
+        "id_avis": 13,
+        "date": "2025-03-03T23:00:00.000Z",
+        "commentaire": "Sushis trop chers.",
+        "id_restaurant": 3,
+        "id_client": 2
+      },
+      {
+        "id_avis": 14,
+        "date": "2025-03-04T23:00:00.000Z",
+        "commentaire": "Attente interminable.",
+        "id_restaurant": 4,
+        "id_client": 1
+      },
+      {
+        "id_avis": 15,
+        "date": "2025-03-05T23:00:00.000Z",
+        "commentaire": "Trop épicé, immangeable.",
+        "id_restaurant": 5,
+        "id_client": 4
+      },
+      {
+        "id_avis": 16,
+        "date": "2025-03-06T23:00:00.000Z",
+        "commentaire": "Tables trop serrées.",
+        "id_restaurant": 6,
+        "id_client": 1
+      },
+      {
+        "id_avis": 17,
+        "date": "2025-03-07T23:00:00.000Z",
+        "commentaire": "Viande trop cuite.",
+        "id_restaurant": 7,
+        "id_client": 3
+      },
+      {
+        "id_avis": 18,
+        "date": "2025-03-08T23:00:00.000Z",
+        "commentaire": "Burger froid et sec.",
+        "id_restaurant": 8,
+        "id_client": 6
+      },
+      {
+        "id_avis": 19,
+        "date": "2025-03-09T23:00:00.000Z",
+        "commentaire": "Trop cher pour la qualité.",
+        "id_restaurant": 9,
+        "id_client": 7
+      }
+    ],
+    "description": "tous les avis sauf février",
+    "complexity": 4
+  },
+  {
+    "query": "SELECT * FROM types JOIN types_restaurants ON types.id_type = types_restaurants.id_restaurant JOIN restaurants ON types_restaurants.id_restaurant = restaurants.id_restaurant WHERE types.id_type = 8",
+    "results": [
+      {
+        "id_type": 8,
+        "intitule": "Fast Food",
+        "id_restaurant": 8,
+        "nom": "Green Eat",
+        "id_origine": 4
+      }
+    ],
+    "description": "les restaurants qui sont des fast food",
+    "complexity": 6
+  },
+  {
+    "query": "SELECT * FROM types JOIN types_restaurants ON types.id_type = types_restaurants.id_type JOIN restaurants ON types_restaurants.id_restaurant = restaurants.id_restaurant WHERE types.id_type = 5",
+    "results": [
+      {
+        "id_type": 5,
+        "intitule": "Curry",
+        "id_restaurant": 5,
+        "nom": "Spicy Masala",
+        "id_origine": 5
+      }
+    ],
+    "description": "tous les types de restaurant qui sont des curry",
+    "complexity": 6
+  },
+  {
+    "query": "SELECT * FROM postes JOIN employes ON postes.id_poste = employes.id_poste WHERE postes.id_poste = 6",
+    "results": [
+      {
+        "id_poste": 6,
+        "intitule": "Pâtissier",
+        "id_employe": 10,
+        "nom": "Wong",
+        "prenom": "Lisa"
+      }
+    ],
+    "description": "tous les patissier",
+    "complexity": 6
+  },
+  {
+    "query": "SELECT * FROM postes JOIN employes ON postes.id_poste = employes.id_poste WHERE postes.id_poste = 4",
+    "results": [
+      {
+        "id_poste": 4,
+        "intitule": "Manager",
+        "id_employe": 8,
+        "nom": "Durand",
+        "prenom": "Alice"
+      }
+    ],
+    "description": "tous les manager",
+    "complexity": 6
+  }
+]

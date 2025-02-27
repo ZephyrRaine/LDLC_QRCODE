@@ -237,6 +237,16 @@
       color: #fff;
       cursor: pointer;
     }
+
+    .comparison-container {
+      display: flex;
+      justify-content: space-between;
+      margin: 1rem;
+    }
+
+    .comparison-section {
+      width: 48%;
+    }
   </style>
 </head>
 
@@ -251,10 +261,31 @@
     <p>Complexity : 0</p>
   </div>
 
+  <div id="solve-desc-container">
+    <h2>Description</h2>
+    <p id="solve-desc"></p>
+  </div>
   <!-- Results Container -->
   <div class="results-container">
     <table class="results-table" id="results-table"></table>
     <div class="no-results" id="no-results">No results to display</div>
+  </div>
+
+  <div class="comparison-container" id="comparison-container" style="display: none;">
+    <div class="comparison-section">
+      <h3>Fetched Query Results</h3>
+      <div class="results-container">
+        <table class="results-table" id="fetched-results-table"></table>
+        <div class="no-results" id="fetched-no-results">No results to display</div>
+      </div>
+    </div>
+    <div class="comparison-section">
+      <h3>Your Query Results</h3>
+      <div class="results-container">
+        <table class="results-table" id="user-results-table"></table>
+        <div class="no-results" id="user-no-results">No results to display</div>
+      </div>
+    </div>
   </div>
 
   <form id="form" action="">
@@ -524,9 +555,9 @@ function constructSQL() {
     }
 
     // Function to display results
-    function displayResults(data) {
-      const table = document.getElementById('results-table');
-      const noResults = document.getElementById('no-results');
+    function displayResults(data, type = 'user') {
+      const table = document.getElementById(`${type}-results-table`);
+      const noResults = document.getElementById(`${type}-no-results`);
 
       // Clear previous results
       table.innerHTML = '';
@@ -578,25 +609,48 @@ function constructSQL() {
     const solveBy = urlParams.get('solveBy');
 
     if (solveId && solveBy) {
+      console.log("Fetching query...");
       fetchQuery(id, solveId, solveBy);
+      document.getElementById('solve-desc-container').style.display = 'block';
       document.getElementById('save-query-btn').style.display = 'none';
       document.getElementById('check-query-btn').style.display = 'inline-block';
+      document.getElementById('input').readOnly = false;
+      document.getElementById('comparison-container').style.display = 'flex';
+    }
+    else
+    {
+      document.getElementById('input').readOnly = true;
+      document.getElementById('solve-desc-container').style.display = 'none';
+      document.getElementById('save-query-btn').style.display = 'inline-block';
+      document.getElementById('check-query-btn').style.display = 'none';
+      document.getElementById('comparison-container').style.display = 'none';
     }
 
     function fetchQuery(id, solveId, solveBy) {
-      socket.emit('fetchQuery', { id, solveId, solveBy });
+      fetch(`/get-query?id=${id}&solveId=${solveId}&solveBy=${solveBy}`)
+        .then(response => response.json())
+        .then(data => {
+          document.getElementById('solve-desc').innerHTML = data.description;
+          displayResults(data.results, 'fetched');
+          document.getElementById('complexity-container').innerHTML = `<p>Complexity: ${data.complexity}</p>`;
+      document.getElementById('save-query-btn').style.display = 'none';
+      document.getElementById('check-query-btn').style.display = 'inline-block';
+        })
+        .catch(error => {
+          console.error('Error fetching query:', error);
+          alert('Error fetching query');
+        });
     }
-
-    socket.on('fetchedQuery', (data) => {
-      document.getElementById('queryDesc').value = data.description;
-      displayResults(data.results);
-      document.getElementById('input').value = data.query;
-      document.getElementById('save-query-btn').disabled = false;
-    });
 
     function checkQuery() {
       const userQuery = document.getElementById('input').value;
-      socket.emit('checkQuery', { solveId, solveBy, userQuery });
+      const checkData = {
+        query: userQuery,
+        results: currentResults,
+        solveId : solveId,
+        solveBy : solveBy,
+      };
+      socket.emit('checkQuery', checkData);
     }
 
     socket.on('checkResult', (result) => {
@@ -615,7 +669,7 @@ function constructSQL() {
 
     // Modify socket.on('result') handler
     socket.on('result', (data) => {
-      displayResults(data.dbresult);
+      displayResults(data.dbresult, 'user');
       currentResults = data.dbresult;
       console.log(data.complexity);
       document.getElementById('complexity-container').innerHTML = `<p>Complexity: ${data.complexity}</p>`;
@@ -625,12 +679,21 @@ function constructSQL() {
     socket.on('error', (msg) => {
       console.error('Error:', msg);
       alert('Error: ' + (msg.message || JSON.stringify(msg)));
+      if(msg.includes('already solved'))
+    {
+      window.location.href = '/debug?id=' + id + '&solveBy=' + solveBy;
+    }
       document.getElementById('save-query-btn').disabled = true;
     });
 
     socket.on('saved', (msg) => {
       alert('Query saved successfully');
       clearQuery();
+    });
+
+    socket.on('correct', (msg) => {
+      alert('Correct query!');
+      window.location.href = '/debug?id=' + id + '&solveBy=' + solveBy;
     });
 
     socket.emit('connectDB', id);

@@ -60,6 +60,12 @@
             height: 150px;
             margin: 10px;
         }
+        .group-selection {
+            margin: 20px 0;
+        }
+        .group-selection label {
+            margin-right: 10px;
+        }
     </style>
 </head>
 <body>
@@ -77,6 +83,16 @@
         <div class="project" data-project="magasin">Magasin</div>
         <div class="project" data-project="tripadvisor">Tripadvisor</div>
     </div>
+
+    <div class="group-selection">
+        <h2>Select Your Group</h2>
+        <label><input type="radio" name="group" value="0"> Group 1</label>
+        <label><input type="radio" name="group" value="1"> Group 2</label>
+        <label><input type="radio" name="group" value="2"> Group 3</label>
+        <label><input type="radio" name="group" value="3"> Group 4</label>
+        <label><input type="radio" name="group" value="4"> Group 5</label>
+    </div>
+
     <div id="qr-code" class="qr-code">
         <img id="qr-image" src="" alt="QR Code">
     </div>
@@ -90,15 +106,22 @@
         const qrImage = document.getElementById('qr-image');
         const startGame = document.getElementById('start-game');    
         const startGameLink = document.getElementById('start-game-link');
+        const groupSelection = document.querySelectorAll('input[name="group"]');
 
         projects.forEach(project => {
             project.addEventListener('click', async () => {
                 const projectNumber = project.getAttribute('data-project');
+                const selectedGroup = document.querySelector('input[name="group"]:checked');
+                if (!selectedGroup) {
+                    alert('Please select a group first.');
+                    return;
+                }
+                const groupId = selectedGroup.value;
                 qrImage.src = `/urlImg?id=${projectNumber}`;
                 qrCode.style.display = 'block';
                 startGame.style.display = 'block';
                 var id = await fetch(`/getID?id=${projectNumber}`).then(res => res.text());
-                startGameLink.href = `/?id=${id}`;
+                startGameLink.href = `/debug?id=${id}&solveBy=${groupId}`;
             });
         });
     </script>

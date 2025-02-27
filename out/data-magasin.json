@@ -1,0 +1,2057 @@
+[
+  {
+    "query": "SELECT * FROM commandes",
+    "results": [
+      {
+        "id_commande": 1,
+        "date": 20250215,
+        "statut_livraison": "Expédié",
+        "id_client": 1
+      },
+      {
+        "id_commande": 2,
+        "date": 20250216,
+        "statut_livraison": "En attente",
+        "id_client": 2
+      },
+      {
+        "id_commande": 3,
+        "date": 20250217,
+        "statut_livraison": "Livré",
+        "id_client": 3
+      },
+      {
+        "id_commande": 4,
+        "date": 20250218,
+        "statut_livraison": "Annulé",
+        "id_client": 4
+      },
+      {
+        "id_commande": 5,
+        "date": 20250219,
+        "statut_livraison": "Expédié",
+        "id_client": 5
+      },
+      {
+        "id_commande": 6,
+        "date": 20250220,
+        "statut_livraison": "En préparation",
+        "id_client": 6
+      },
+      {
+        "id_commande": 7,
+        "date": 20250221,
+        "statut_livraison": "Expédié",
+        "id_client": 7
+      },
+      {
+        "id_commande": 8,
+        "date": 20250222,
+        "statut_livraison": "Livré",
+        "id_client": 8
+      },
+      {
+        "id_commande": 9,
+        "date": 20250223,
+        "statut_livraison": "En attente",
+        "id_client": 9
+      },
+      {
+        "id_commande": 10,
+        "date": 20250224,
+        "statut_livraison": "Annulé",
+        "id_client": 10
+      },
+      {
+        "id_commande": 11,
+        "date": 20250225,
+        "statut_livraison": "Livré",
+        "id_client": 3
+      },
+      {
+        "id_commande": 12,
+        "date": 20250226,
+        "statut_livraison": "Expédié",
+        "id_client": 6
+      },
+      {
+        "id_commande": 13,
+        "date": 20250227,
+        "statut_livraison": "En attente",
+        "id_client": 9
+      },
+      {
+        "id_commande": 14,
+        "date": 20250228,
+        "statut_livraison": "Annulé",
+        "id_client": 1
+      },
+      {
+        "id_commande": 15,
+        "date": 20250301,
+        "statut_livraison": "Expédié",
+        "id_client": 5
+      }
+    ],
+    "description": "Sélectionne tout dans la table commandes",
+    "complexity": 3
+  },
+  {
+    "query": "SELECT notation.note FROM notation WHERE notation.note > 4",
+    "results": [
+      {
+        "note": 5
+      },
+      {
+        "note": 5
+      },
+      {
+        "note": 5
+      },
+      {
+        "note": 5
+      },
+      {
+        "note": 5
+      },
+      {
+        "note": 5
+      }
+    ],
+    "description": "Permis d'afficher les notes supérieurs à 4",
+    "complexity": 3
+  },
+  {
+    "query": "SELECT * FROM notation WHERE notation.note > 4",
+    "results": [
+      {
+        "id_notation": 1,
+        "note": 5,
+        "avis": "Superbe produit !",
+        "id_client": 1,
+        "id_article": 1
+      },
+      {
+        "id_notation": 5,
+        "note": 5,
+        "avis": "Parfait !",
+        "id_client": 5,
+        "id_article": 9
+      },
+      {
+        "id_notation": 8,
+        "note": 5,
+        "avis": "Excellent produit",
+        "id_client": 8,
+        "id_article": 15
+      },
+      {
+        "id_notation": 11,
+        "note": 5,
+        "avis": "Incroyable, je recommande",
+        "id_client": 1,
+        "id_article": 4
+      },
+      {
+        "id_notation": 15,
+        "note": 5,
+        "avis": "J adore !",
+        "id_client": 5,
+        "id_article": 12
+      },
+      {
+        "id_notation": 19,
+        "note": 5,
+        "avis": "Un must-have",
+        "id_client": 9,
+        "id_article": 5
+      }
+    ],
+    "description": "Permis d'afficher les notes supérieurs à 4 avec toutes les colonnes",
+    "complexity": 3
+  },
+  {
+    "query": "SELECT notation.note , notation.avis FROM notation WHERE notation.note > 4",
+    "results": [
+      {
+        "id_notation": 1,
+        "note": 5,
+        "avis": "Superbe produit !",
+        "id_client": 1,
+        "id_article": 1
+      },
+      {
+        "id_notation": 5,
+        "note": 5,
+        "avis": "Parfait !",
+        "id_client": 5,
+        "id_article": 9
+      },
+      {
+        "id_notation": 8,
+        "note": 5,
+        "avis": "Excellent produit",
+        "id_client": 8,
+        "id_article": 15
+      },
+      {
+        "id_notation": 11,
+        "note": 5,
+        "avis": "Incroyable, je recommande",
+        "id_client": 1,
+        "id_article": 4
+      },
+      {
+        "id_notation": 15,
+        "note": 5,
+        "avis": "J adore !",
+        "id_client": 5,
+        "id_article": 12
+      },
+      {
+        "id_notation": 19,
+        "note": 5,
+        "avis": "Un must-have",
+        "id_client": 9,
+        "id_article": 5
+      }
+    ],
+    "description": "Permis d'afficher les notes supérieurs à 4 avec les colonnes avis et notes",
+    "complexity": 3
+  },
+  {
+    "query": "SELECT clients.nom , notation.note , notation.avis FROM clients JOIN notation ON clients.id_client = notation.id_client",
+    "results": [
+      {
+        "nom": "Martin",
+        "note": 5,
+        "avis": "Superbe produit !"
+      },
+      {
+        "nom": "Martin",
+        "note": 5,
+        "avis": "Incroyable, je recommande"
+      },
+      {
+        "nom": "Durand",
+        "note": 4,
+        "avis": "Très satisfait"
+      },
+      {
+        "nom": "Durand",
+        "note": 3,
+        "avis": "Mouais, pas terrible"
+      },
+      {
+        "nom": "Bernard",
+        "note": 3,
+        "avis": "Correct mais pourrait être mieux"
+      },
+      {
+        "nom": "Bernard",
+        "note": 4,
+        "avis": "Fait le job"
+      },
+      {
+        "nom": "Dubois",
+        "note": 2,
+        "avis": "Déçu par la qualité"
+      },
+      {
+        "nom": "Dubois",
+        "note": 1,
+        "avis": "Nul, je suis déçu"
+      },
+      {
+        "nom": "Thomas",
+        "note": 5,
+        "avis": "Parfait !"
+      },
+      {
+        "nom": "Thomas",
+        "note": 5,
+        "avis": "J adore !"
+      },
+      {
+        "nom": "Morel",
+        "note": 4,
+        "avis": "Bon rapport qualité/prix"
+      },
+      {
+        "nom": "Morel",
+        "note": 3,
+        "avis": "Assez bon mais peut mieux faire"
+      },
+      {
+        "nom": "Lemoine",
+        "note": 3,
+        "avis": "Moyen, sans plus"
+      },
+      {
+        "nom": "Lemoine",
+        "note": 4,
+        "avis": "Satisfait globalement"
+      },
+      {
+        "nom": "Garcia",
+        "note": 5,
+        "avis": "Excellent produit"
+      },
+      {
+        "nom": "Garcia",
+        "note": 2,
+        "avis": "Je ne rachèterai pas"
+      },
+      {
+        "nom": "Meunier",
+        "note": 2,
+        "avis": "Pas à la hauteur"
+      },
+      {
+        "nom": "Meunier",
+        "note": 5,
+        "avis": "Un must-have"
+      },
+      {
+        "nom": "Rousseau",
+        "note": 4,
+        "avis": "Bien conçu"
+      },
+      {
+        "nom": "Rousseau",
+        "note": 4,
+        "avis": "Plutôt bon rapport qualité/prix"
+      }
+    ],
+    "description": "on a permis d'avoir quels clients a publié quel avis et quelle note",
+    "complexity": 6
+  },
+  {
+    "query": "SELECT articles.produit , articles.prix FROM articles WHERE articles.prix > 100 ORDER BY articles.produit",
+    "results": [
+      {
+        "produit": "Canapé moderne",
+        "prix": 599.99
+      },
+      {
+        "produit": "Casque audio",
+        "prix": 149.99
+      },
+      {
+        "produit": "Mon produit",
+        "prix": 12000
+      },
+      {
+        "produit": "Ordinateur portable",
+        "prix": 1200.5
+      },
+      {
+        "produit": "Smartphone X",
+        "prix": 799.99
+      },
+      {
+        "produit": "Table en bois",
+        "prix": 299.99
+      },
+      {
+        "produit": "Tondeuse gazon",
+        "prix": 249.99
+      }
+    ],
+    "description": "prends les prix supérieurs à  100 et trie les produits par ordre alphabétique",
+    "complexity": 5
+  },
+  {
+    "query": "SELECT articles.prix FROM articles WHERE articles.prix < 100",
+    "results": [
+      {
+        "prix": 49.99
+      },
+      {
+        "prix": 19.99
+      },
+      {
+        "prix": 2.5
+      },
+      {
+        "prix": 3.99
+      },
+      {
+        "prix": 89.99
+      },
+      {
+        "prix": 24.99
+      },
+      {
+        "prix": 14.99
+      },
+      {
+        "prix": 12.99
+      },
+      {
+        "prix": 15.99
+      },
+      {
+        "prix": 79.99
+      },
+      {
+        "prix": 19.99
+      }
+    ],
+    "description": "affiche les prix inférieurs à 100€",
+    "complexity": 3
+  },
+  {
+    "query": "SELECT articles.prix , articles.produit FROM articles WHERE articles.prix < 100",
+    "results": [
+      {
+        "prix": 49.99,
+        "produit": "Jeans Denim"
+      },
+      {
+        "prix": 19.99,
+        "produit": "T-shirt coton"
+      },
+      {
+        "prix": 2.5,
+        "produit": "Pâtes bio"
+      },
+      {
+        "prix": 3.99,
+        "produit": "Chocolat noir"
+      },
+      {
+        "prix": 89.99,
+        "produit": "Raquette de tennis"
+      },
+      {
+        "prix": 24.99,
+        "produit": "Ballon de football"
+      },
+      {
+        "prix": 14.99,
+        "produit": "Peluche ours"
+      },
+      {
+        "prix": 12.99,
+        "produit": "Livre roman"
+      },
+      {
+        "prix": 15.99,
+        "produit": "BD aventure"
+      },
+      {
+        "prix": 79.99,
+        "produit": "Perceuse électrique"
+      },
+      {
+        "prix": 19.99,
+        "produit": "Crème hydratante"
+      }
+    ],
+    "description": "affiche les prix inférieurs à 100€ et associe à un produit",
+    "complexity": 3
+  },
+  {
+    "query": "SELECT * FROM notation ORDER BY notation.note",
+    "results": [
+      {
+        "id_notation": 14,
+        "note": 1,
+        "avis": "Nul, je suis déçu",
+        "id_client": 4,
+        "id_article": 10
+      },
+      {
+        "id_notation": 4,
+        "note": 2,
+        "avis": "Déçu par la qualité",
+        "id_client": 4,
+        "id_article": 7
+      },
+      {
+        "id_notation": 9,
+        "note": 2,
+        "avis": "Pas à la hauteur",
+        "id_client": 9,
+        "id_article": 17
+      },
+      {
+        "id_notation": 18,
+        "note": 2,
+        "avis": "Je ne rachèterai pas",
+        "id_client": 8,
+        "id_article": 3
+      },
+      {
+        "id_notation": 3,
+        "note": 3,
+        "avis": "Correct mais pourrait être mieux",
+        "id_client": 3,
+        "id_article": 5
+      },
+      {
+        "id_notation": 7,
+        "note": 3,
+        "avis": "Moyen, sans plus",
+        "id_client": 7,
+        "id_article": 13
+      },
+      {
+        "id_notation": 12,
+        "note": 3,
+        "avis": "Mouais, pas terrible",
+        "id_client": 2,
+        "id_article": 6
+      },
+      {
+        "id_notation": 16,
+        "note": 3,
+        "avis": "Assez bon mais peut mieux faire",
+        "id_client": 6,
+        "id_article": 14
+      },
+      {
+        "id_notation": 2,
+        "note": 4,
+        "avis": "Très satisfait",
+        "id_client": 2,
+        "id_article": 3
+      },
+      {
+        "id_notation": 6,
+        "note": 4,
+        "avis": "Bon rapport qualité/prix",
+        "id_client": 6,
+        "id_article": 11
+      },
+      {
+        "id_notation": 10,
+        "note": 4,
+        "avis": "Bien conçu",
+        "id_client": 10,
+        "id_article": 2
+      },
+      {
+        "id_notation": 13,
+        "note": 4,
+        "avis": "Fait le job",
+        "id_client": 3,
+        "id_article": 8
+      },
+      {
+        "id_notation": 17,
+        "note": 4,
+        "avis": "Satisfait globalement",
+        "id_client": 7,
+        "id_article": 16
+      },
+      {
+        "id_notation": 20,
+        "note": 4,
+        "avis": "Plutôt bon rapport qualité/prix",
+        "id_client": 10,
+        "id_article": 7
+      },
+      {
+        "id_notation": 1,
+        "note": 5,
+        "avis": "Superbe produit !",
+        "id_client": 1,
+        "id_article": 1
+      },
+      {
+        "id_notation": 5,
+        "note": 5,
+        "avis": "Parfait !",
+        "id_client": 5,
+        "id_article": 9
+      },
+      {
+        "id_notation": 8,
+        "note": 5,
+        "avis": "Excellent produit",
+        "id_client": 8,
+        "id_article": 15
+      },
+      {
+        "id_notation": 11,
+        "note": 5,
+        "avis": "Incroyable, je recommande",
+        "id_client": 1,
+        "id_article": 4
+      },
+      {
+        "id_notation": 15,
+        "note": 5,
+        "avis": "J adore !",
+        "id_client": 5,
+        "id_article": 12
+      },
+      {
+        "id_notation": 19,
+        "note": 5,
+        "avis": "Un must-have",
+        "id_client": 9,
+        "id_article": 5
+      }
+    ],
+    "description": "trie les notes par ordre croissant",
+    "complexity": 5
+  },
+  {
+    "query": "SELECT clients.id_client , clients.nom , commandes.id_commande , notation.note FROM clients JOIN notation ON clients.id_client = notation.id_client JOIN commandes ON clients.id_client = commandes.id_client",
+    "results": [
+      {
+        "id_client": 1,
+        "nom": "Martin",
+        "id_commande": 1,
+        "note": 5
+      },
+      {
+        "id_client": 1,
+        "nom": "Martin",
+        "id_commande": 1,
+        "note": 5
+      },
+      {
+        "id_client": 1,
+        "nom": "Martin",
+        "id_commande": 14,
+        "note": 5
+      },
+      {
+        "id_client": 1,
+        "nom": "Martin",
+        "id_commande": 14,
+        "note": 5
+      },
+      {
+        "id_client": 2,
+        "nom": "Durand",
+        "id_commande": 2,
+        "note": 4
+      },
+      {
+        "id_client": 2,
+        "nom": "Durand",
+        "id_commande": 2,
+        "note": 3
+      },
+      {
+        "id_client": 3,
+        "nom": "Bernard",
+        "id_commande": 3,
+        "note": 3
+      },
+      {
+        "id_client": 3,
+        "nom": "Bernard",
+        "id_commande": 3,
+        "note": 4
+      },
+      {
+        "id_client": 3,
+        "nom": "Bernard",
+        "id_commande": 11,
+        "note": 3
+      },
+      {
+        "id_client": 3,
+        "nom": "Bernard",
+        "id_commande": 11,
+        "note": 4
+      },
+      {
+        "id_client": 4,
+        "nom": "Dubois",
+        "id_commande": 4,
+        "note": 2
+      },
+      {
+        "id_client": 4,
+        "nom": "Dubois",
+        "id_commande": 4,
+        "note": 1
+      },
+      {
+        "id_client": 5,
+        "nom": "Thomas",
+        "id_commande": 5,
+        "note": 5
+      },
+      {
+        "id_client": 5,
+        "nom": "Thomas",
+        "id_commande": 5,
+        "note": 5
+      },
+      {
+        "id_client": 5,
+        "nom": "Thomas",
+        "id_commande": 15,
+        "note": 5
+      },
+      {
+        "id_client": 5,
+        "nom": "Thomas",
+        "id_commande": 15,
+        "note": 5
+      },
+      {
+        "id_client": 6,
+        "nom": "Morel",
+        "id_commande": 6,
+        "note": 4
+      },
+      {
+        "id_client": 6,
+        "nom": "Morel",
+        "id_commande": 6,
+        "note": 3
+      },
+      {
+        "id_client": 6,
+        "nom": "Morel",
+        "id_commande": 12,
+        "note": 4
+      },
+      {
+        "id_client": 6,
+        "nom": "Morel",
+        "id_commande": 12,
+        "note": 3
+      },
+      {
+        "id_client": 7,
+        "nom": "Lemoine",
+        "id_commande": 7,
+        "note": 3
+      },
+      {
+        "id_client": 7,
+        "nom": "Lemoine",
+        "id_commande": 7,
+        "note": 4
+      },
+      {
+        "id_client": 8,
+        "nom": "Garcia",
+        "id_commande": 8,
+        "note": 5
+      },
+      {
+        "id_client": 8,
+        "nom": "Garcia",
+        "id_commande": 8,
+        "note": 2
+      },
+      {
+        "id_client": 9,
+        "nom": "Meunier",
+        "id_commande": 9,
+        "note": 2
+      },
+      {
+        "id_client": 9,
+        "nom": "Meunier",
+        "id_commande": 9,
+        "note": 5
+      },
+      {
+        "id_client": 9,
+        "nom": "Meunier",
+        "id_commande": 13,
+        "note": 2
+      },
+      {
+        "id_client": 9,
+        "nom": "Meunier",
+        "id_commande": 13,
+        "note": 5
+      },
+      {
+        "id_client": 10,
+        "nom": "Rousseau",
+        "id_commande": 10,
+        "note": 4
+      },
+      {
+        "id_client": 10,
+        "nom": "Rousseau",
+        "id_commande": 10,
+        "note": 4
+      }
+    ],
+    "description": "liaison des tables clients, notation et commandes avec les id_clients",
+    "complexity": 6
+  },
+  {
+    "query": "SELECT clients.id_client , clients.nom , commandes.id_commande , notation.note FROM clients JOIN notation ON clients.id_client = notation.id_client JOIN commandes ON clients.id_client = commandes.id_client ORDER BY clients.nom",
+    "results": [
+      {
+        "id_client": 3,
+        "nom": "Bernard",
+        "id_commande": 3,
+        "note": 3
+      },
+      {
+        "id_client": 3,
+        "nom": "Bernard",
+        "id_commande": 3,
+        "note": 4
+      },
+      {
+        "id_client": 3,
+        "nom": "Bernard",
+        "id_commande": 11,
+        "note": 3
+      },
+      {
+        "id_client": 3,
+        "nom": "Bernard",
+        "id_commande": 11,
+        "note": 4
+      },
+      {
+        "id_client": 4,
+        "nom": "Dubois",
+        "id_commande": 4,
+        "note": 2
+      },
+      {
+        "id_client": 4,
+        "nom": "Dubois",
+        "id_commande": 4,
+        "note": 1
+      },
+      {
+        "id_client": 2,
+        "nom": "Durand",
+        "id_commande": 2,
+        "note": 4
+      },
+      {
+        "id_client": 2,
+        "nom": "Durand",
+        "id_commande": 2,
+        "note": 3
+      },
+      {
+        "id_client": 8,
+        "nom": "Garcia",
+        "id_commande": 8,
+        "note": 5
+      },
+      {
+        "id_client": 8,
+        "nom": "Garcia",
+        "id_commande": 8,
+        "note": 2
+      },
+      {
+        "id_client": 7,
+        "nom": "Lemoine",
+        "id_commande": 7,
+        "note": 3
+      },
+      {
+        "id_client": 7,
+        "nom": "Lemoine",
+        "id_commande": 7,
+        "note": 4
+      },
+      {
+        "id_client": 1,
+        "nom": "Martin",
+        "id_commande": 1,
+        "note": 5
+      },
+      {
+        "id_client": 1,
+        "nom": "Martin",
+        "id_commande": 1,
+        "note": 5
+      },
+      {
+        "id_client": 1,
+        "nom": "Martin",
+        "id_commande": 14,
+        "note": 5
+      },
+      {
+        "id_client": 1,
+        "nom": "Martin",
+        "id_commande": 14,
+        "note": 5
+      },
+      {
+        "id_client": 9,
+        "nom": "Meunier",
+        "id_commande": 9,
+        "note": 2
+      },
+      {
+        "id_client": 9,
+        "nom": "Meunier",
+        "id_commande": 9,
+        "note": 5
+      },
+      {
+        "id_client": 9,
+        "nom": "Meunier",
+        "id_commande": 13,
+        "note": 2
+      },
+      {
+        "id_client": 9,
+        "nom": "Meunier",
+        "id_commande": 13,
+        "note": 5
+      },
+      {
+        "id_client": 6,
+        "nom": "Morel",
+        "id_commande": 6,
+        "note": 4
+      },
+      {
+        "id_client": 6,
+        "nom": "Morel",
+        "id_commande": 6,
+        "note": 3
+      },
+      {
+        "id_client": 6,
+        "nom": "Morel",
+        "id_commande": 12,
+        "note": 4
+      },
+      {
+        "id_client": 6,
+        "nom": "Morel",
+        "id_commande": 12,
+        "note": 3
+      },
+      {
+        "id_client": 10,
+        "nom": "Rousseau",
+        "id_commande": 10,
+        "note": 4
+      },
+      {
+        "id_client": 10,
+        "nom": "Rousseau",
+        "id_commande": 10,
+        "note": 4
+      },
+      {
+        "id_client": 5,
+        "nom": "Thomas",
+        "id_commande": 5,
+        "note": 5
+      },
+      {
+        "id_client": 5,
+        "nom": "Thomas",
+        "id_commande": 5,
+        "note": 5
+      },
+      {
+        "id_client": 5,
+        "nom": "Thomas",
+        "id_commande": 15,
+        "note": 5
+      },
+      {
+        "id_client": 5,
+        "nom": "Thomas",
+        "id_commande": 15,
+        "note": 5
+      }
+    ],
+    "description": "liaison des tables clients, notation et commandes avec les id_clients et trier les noms par odre alphabétiques\n",
+    "complexity": 8
+  },
+  {
+    "query": "SELECT clients.id_client , clients.nom , commandes.id_commande , notation.note FROM clients JOIN notation ON clients.id_client = notation.id_client JOIN commandes ON clients.id_client = commandes.id_client ORDER BY clients.nom AND notation.note",
+    "results": [
+      {
+        "id_client": 1,
+        "nom": "Martin",
+        "id_commande": 1,
+        "note": 5
+      },
+      {
+        "id_client": 1,
+        "nom": "Martin",
+        "id_commande": 1,
+        "note": 5
+      },
+      {
+        "id_client": 1,
+        "nom": "Martin",
+        "id_commande": 14,
+        "note": 5
+      },
+      {
+        "id_client": 1,
+        "nom": "Martin",
+        "id_commande": 14,
+        "note": 5
+      },
+      {
+        "id_client": 2,
+        "nom": "Durand",
+        "id_commande": 2,
+        "note": 4
+      },
+      {
+        "id_client": 2,
+        "nom": "Durand",
+        "id_commande": 2,
+        "note": 3
+      },
+      {
+        "id_client": 3,
+        "nom": "Bernard",
+        "id_commande": 3,
+        "note": 3
+      },
+      {
+        "id_client": 3,
+        "nom": "Bernard",
+        "id_commande": 3,
+        "note": 4
+      },
+      {
+        "id_client": 3,
+        "nom": "Bernard",
+        "id_commande": 11,
+        "note": 3
+      },
+      {
+        "id_client": 3,
+        "nom": "Bernard",
+        "id_commande": 11,
+        "note": 4
+      },
+      {
+        "id_client": 4,
+        "nom": "Dubois",
+        "id_commande": 4,
+        "note": 2
+      },
+      {
+        "id_client": 4,
+        "nom": "Dubois",
+        "id_commande": 4,
+        "note": 1
+      },
+      {
+        "id_client": 5,
+        "nom": "Thomas",
+        "id_commande": 5,
+        "note": 5
+      },
+      {
+        "id_client": 5,
+        "nom": "Thomas",
+        "id_commande": 5,
+        "note": 5
+      },
+      {
+        "id_client": 5,
+        "nom": "Thomas",
+        "id_commande": 15,
+        "note": 5
+      },
+      {
+        "id_client": 5,
+        "nom": "Thomas",
+        "id_commande": 15,
+        "note": 5
+      },
+      {
+        "id_client": 6,
+        "nom": "Morel",
+        "id_commande": 6,
+        "note": 4
+      },
+      {
+        "id_client": 6,
+        "nom": "Morel",
+        "id_commande": 6,
+        "note": 3
+      },
+      {
+        "id_client": 6,
+        "nom": "Morel",
+        "id_commande": 12,
+        "note": 4
+      },
+      {
+        "id_client": 6,
+        "nom": "Morel",
+        "id_commande": 12,
+        "note": 3
+      },
+      {
+        "id_client": 7,
+        "nom": "Lemoine",
+        "id_commande": 7,
+        "note": 3
+      },
+      {
+        "id_client": 7,
+        "nom": "Lemoine",
+        "id_commande": 7,
+        "note": 4
+      },
+      {
+        "id_client": 8,
+        "nom": "Garcia",
+        "id_commande": 8,
+        "note": 5
+      },
+      {
+        "id_client": 8,
+        "nom": "Garcia",
+        "id_commande": 8,
+        "note": 2
+      },
+      {
+        "id_client": 9,
+        "nom": "Meunier",
+        "id_commande": 9,
+        "note": 2
+      },
+      {
+        "id_client": 9,
+        "nom": "Meunier",
+        "id_commande": 9,
+        "note": 5
+      },
+      {
+        "id_client": 9,
+        "nom": "Meunier",
+        "id_commande": 13,
+        "note": 2
+      },
+      {
+        "id_client": 9,
+        "nom": "Meunier",
+        "id_commande": 13,
+        "note": 5
+      },
+      {
+        "id_client": 10,
+        "nom": "Rousseau",
+        "id_commande": 10,
+        "note": 4
+      },
+      {
+        "id_client": 10,
+        "nom": "Rousseau",
+        "id_commande": 10,
+        "note": 4
+      }
+    ],
+    "description": "liaison des tables clients, notation et commandes avec les id_clients et trier les noms par odre alphabétiques en plus de trier par note par ordre décroissant",
+    "complexity": 10
+  },
+  {
+    "query": "SELECT articles.id_article , articles.produit , notation.id_article , notation.note , notation.avis FROM notation JOIN articles ON articles.id_article = notation.id_article",
+    "results": [
+      {
+        "id_article": 1,
+        "produit": "Smartphone X",
+        "note": 5,
+        "avis": "Superbe produit !"
+      },
+      {
+        "id_article": 2,
+        "produit": "Ordinateur portable",
+        "note": 4,
+        "avis": "Bien conçu"
+      },
+      {
+        "id_article": 3,
+        "produit": "Casque audio",
+        "note": 4,
+        "avis": "Très satisfait"
+      },
+      {
+        "id_article": 3,
+        "produit": "Casque audio",
+        "note": 2,
+        "avis": "Je ne rachèterai pas"
+      },
+      {
+        "id_article": 4,
+        "produit": "Jeans Denim",
+        "note": 5,
+        "avis": "Incroyable, je recommande"
+      },
+      {
+        "id_article": 5,
+        "produit": "T-shirt coton",
+        "note": 3,
+        "avis": "Correct mais pourrait être mieux"
+      },
+      {
+        "id_article": 5,
+        "produit": "T-shirt coton",
+        "note": 5,
+        "avis": "Un must-have"
+      },
+      {
+        "id_article": 6,
+        "produit": "Pâtes bio",
+        "note": 3,
+        "avis": "Mouais, pas terrible"
+      },
+      {
+        "id_article": 7,
+        "produit": "Chocolat noir",
+        "note": 2,
+        "avis": "Déçu par la qualité"
+      },
+      {
+        "id_article": 7,
+        "produit": "Chocolat noir",
+        "note": 4,
+        "avis": "Plutôt bon rapport qualité/prix"
+      },
+      {
+        "id_article": 8,
+        "produit": "Canapé moderne",
+        "note": 4,
+        "avis": "Fait le job"
+      },
+      {
+        "id_article": 9,
+        "produit": "Table en bois",
+        "note": 5,
+        "avis": "Parfait !"
+      },
+      {
+        "id_article": 10,
+        "produit": "Raquette de tennis",
+        "note": 1,
+        "avis": "Nul, je suis déçu"
+      },
+      {
+        "id_article": 11,
+        "produit": "Ballon de football",
+        "note": 4,
+        "avis": "Bon rapport qualité/prix"
+      },
+      {
+        "id_article": 12,
+        "produit": "Peluche ours",
+        "note": 5,
+        "avis": "J adore !"
+      },
+      {
+        "id_article": 13,
+        "produit": "Livre roman",
+        "note": 3,
+        "avis": "Moyen, sans plus"
+      },
+      {
+        "id_article": 14,
+        "produit": "BD aventure",
+        "note": 3,
+        "avis": "Assez bon mais peut mieux faire"
+      },
+      {
+        "id_article": 15,
+        "produit": "Perceuse électrique",
+        "note": 5,
+        "avis": "Excellent produit"
+      },
+      {
+        "id_article": 16,
+        "produit": "Tondeuse gazon",
+        "note": 4,
+        "avis": "Satisfait globalement"
+      },
+      {
+        "id_article": 17,
+        "produit": "Crème hydratante",
+        "note": 2,
+        "avis": "Pas à la hauteur"
+      }
+    ],
+    "description": "associe les produits à leurs notations et leurs avis",
+    "complexity": 6
+  },
+  {
+    "query": "SELECT articles.id_article , articles.produit , articles.prix , notation.id_article , notation.note , notation.avis FROM notation JOIN articles ON articles.id_article = notation.id_article WHERE articles.prix > 100 ORDER BY notation.note",
+    "results": [
+      {
+        "id_article": 3,
+        "produit": "Casque audio",
+        "prix": 149.99,
+        "note": 2,
+        "avis": "Je ne rachèterai pas"
+      },
+      {
+        "id_article": 2,
+        "produit": "Ordinateur portable",
+        "prix": 1200.5,
+        "note": 4,
+        "avis": "Bien conçu"
+      },
+      {
+        "id_article": 3,
+        "produit": "Casque audio",
+        "prix": 149.99,
+        "note": 4,
+        "avis": "Très satisfait"
+      },
+      {
+        "id_article": 8,
+        "produit": "Canapé moderne",
+        "prix": 599.99,
+        "note": 4,
+        "avis": "Fait le job"
+      },
+      {
+        "id_article": 16,
+        "produit": "Tondeuse gazon",
+        "prix": 249.99,
+        "note": 4,
+        "avis": "Satisfait globalement"
+      },
+      {
+        "id_article": 1,
+        "produit": "Smartphone X",
+        "prix": 799.99,
+        "note": 5,
+        "avis": "Superbe produit !"
+      },
+      {
+        "id_article": 9,
+        "produit": "Table en bois",
+        "prix": 299.99,
+        "note": 5,
+        "avis": "Parfait !"
+      }
+    ],
+    "description": "associe les produits à leurs notations et leurs avis par ordre croissant des notes, et prix supérieur à 100€",
+    "complexity": 8
+  },
+  {
+    "query": "SELECT articles.id_article , articles.produit , articles.prix , notation.id_article , notation.note , notation.avis FROM notation JOIN articles ON articles.id_article = notation.id_article WHERE articles.prix > 100 ORDER BY notation.note AND articles.prix",
+    "results": [
+      {
+        "id_article": 1,
+        "produit": "Smartphone X",
+        "prix": 799.99,
+        "note": 5,
+        "avis": "Superbe produit !"
+      },
+      {
+        "id_article": 2,
+        "produit": "Ordinateur portable",
+        "prix": 1200.5,
+        "note": 4,
+        "avis": "Bien conçu"
+      },
+      {
+        "id_article": 3,
+        "produit": "Casque audio",
+        "prix": 149.99,
+        "note": 4,
+        "avis": "Très satisfait"
+      },
+      {
+        "id_article": 3,
+        "produit": "Casque audio",
+        "prix": 149.99,
+        "note": 2,
+        "avis": "Je ne rachèterai pas"
+      },
+      {
+        "id_article": 8,
+        "produit": "Canapé moderne",
+        "prix": 599.99,
+        "note": 4,
+        "avis": "Fait le job"
+      },
+      {
+        "id_article": 9,
+        "produit": "Table en bois",
+        "prix": 299.99,
+        "note": 5,
+        "avis": "Parfait !"
+      },
+      {
+        "id_article": 16,
+        "produit": "Tondeuse gazon",
+        "prix": 249.99,
+        "note": 4,
+        "avis": "Satisfait globalement"
+      }
+    ],
+    "description": "associe les produits à leurs notations et leurs avis par ordre croissant des notes, et prix supérieur à 100€ trier par ordre croissant",
+    "complexity": 10
+  },
+  {
+    "query": "SELECT * FROM fournisseurs JOIN articles ON fournisseurs.id_fournisseur = articles.id_fournisseur",
+    "results": [
+      {
+        "id_fournisseur": 1,
+        "nom": "Tech Supply",
+        "lieu": "Paris",
+        "id_article": 1,
+        "produit": "Smartphone X",
+        "prix": 799.99,
+        "id_categorie": 1
+      },
+      {
+        "id_fournisseur": 1,
+        "nom": "Tech Supply",
+        "lieu": "Paris",
+        "id_article": 2,
+        "produit": "Ordinateur portable",
+        "prix": 1200.5,
+        "id_categorie": 1
+      },
+      {
+        "id_fournisseur": 1,
+        "nom": "Tech Supply",
+        "lieu": "Paris",
+        "id_article": 3,
+        "produit": "Casque audio",
+        "prix": 149.99,
+        "id_categorie": 1
+      },
+      {
+        "id_fournisseur": 2,
+        "nom": "Mode & Co",
+        "lieu": "Lyon",
+        "id_article": 4,
+        "produit": "Jeans Denim",
+        "prix": 49.99,
+        "id_categorie": 2
+      },
+      {
+        "id_fournisseur": 2,
+        "nom": "Mode & Co",
+        "lieu": "Lyon",
+        "id_article": 5,
+        "produit": "T-shirt coton",
+        "prix": 19.99,
+        "id_categorie": 2
+      },
+      {
+        "id_fournisseur": 3,
+        "nom": "Food Market",
+        "lieu": "Marseille",
+        "id_article": 6,
+        "produit": "Pâtes bio",
+        "prix": 2.5,
+        "id_categorie": 3
+      },
+      {
+        "id_fournisseur": 3,
+        "nom": "Food Market",
+        "lieu": "Marseille",
+        "id_article": 7,
+        "produit": "Chocolat noir",
+        "prix": 3.99,
+        "id_categorie": 3
+      },
+      {
+        "id_fournisseur": 4,
+        "nom": "Home Deco",
+        "lieu": "Bordeaux",
+        "id_article": 8,
+        "produit": "Canapé moderne",
+        "prix": 599.99,
+        "id_categorie": 4
+      },
+      {
+        "id_fournisseur": 4,
+        "nom": "Home Deco",
+        "lieu": "Bordeaux",
+        "id_article": 9,
+        "produit": "Table en bois",
+        "prix": 299.99,
+        "id_categorie": 4
+      },
+      {
+        "id_fournisseur": 5,
+        "nom": "Sportive",
+        "lieu": "Toulouse",
+        "id_article": 10,
+        "produit": "Raquette de tennis",
+        "prix": 89.99,
+        "id_categorie": 5
+      },
+      {
+        "id_fournisseur": 5,
+        "nom": "Sportive",
+        "lieu": "Toulouse",
+        "id_article": 11,
+        "produit": "Ballon de football",
+        "prix": 24.99,
+        "id_categorie": 5
+      },
+      {
+        "id_fournisseur": 6,
+        "nom": "Kids World",
+        "lieu": "Nice",
+        "id_article": 12,
+        "produit": "Peluche ours",
+        "prix": 14.99,
+        "id_categorie": 6
+      },
+      {
+        "id_fournisseur": 7,
+        "nom": "Book Haven",
+        "lieu": "Strasbourg",
+        "id_article": 13,
+        "produit": "Livre roman",
+        "prix": 12.99,
+        "id_categorie": 7
+      },
+      {
+        "id_fournisseur": 7,
+        "nom": "Book Haven",
+        "lieu": "Strasbourg",
+        "id_article": 14,
+        "produit": "BD aventure",
+        "prix": 15.99,
+        "id_categorie": 7
+      },
+      {
+        "id_fournisseur": 8,
+        "nom": "DIY Pro",
+        "lieu": "Lille",
+        "id_article": 15,
+        "produit": "Perceuse électrique",
+        "prix": 79.99,
+        "id_categorie": 8
+      },
+      {
+        "id_fournisseur": 9,
+        "nom": "Green Thumb",
+        "lieu": "Rennes",
+        "id_article": 16,
+        "produit": "Tondeuse gazon",
+        "prix": 249.99,
+        "id_categorie": 9
+      },
+      {
+        "id_fournisseur": 10,
+        "nom": "Beauty Hub",
+        "lieu": "Nantes",
+        "id_article": 17,
+        "produit": "Crème hydratante",
+        "prix": 19.99,
+        "id_categorie": 10
+      }
+    ],
+    "description": "ce code sert à trier le nom des fournisseurs et de savoir quelle article vient de quelle fournisseur. ",
+    "complexity": 6
+  },
+  {
+    "query": "SELECT clients.nom , notation.avis FROM clients JOIN notation ON clients.id_client = notation.id_client",
+    "results": [
+      {
+        "nom": "Martin",
+        "note": 5,
+        "avis": "Superbe produit !"
+      },
+      {
+        "nom": "Martin",
+        "note": 5,
+        "avis": "Incroyable, je recommande"
+      },
+      {
+        "nom": "Durand",
+        "note": 4,
+        "avis": "Très satisfait"
+      },
+      {
+        "nom": "Durand",
+        "note": 3,
+        "avis": "Mouais, pas terrible"
+      },
+      {
+        "nom": "Bernard",
+        "note": 3,
+        "avis": "Correct mais pourrait être mieux"
+      },
+      {
+        "nom": "Bernard",
+        "note": 4,
+        "avis": "Fait le job"
+      },
+      {
+        "nom": "Dubois",
+        "note": 2,
+        "avis": "Déçu par la qualité"
+      },
+      {
+        "nom": "Dubois",
+        "note": 1,
+        "avis": "Nul, je suis déçu"
+      },
+      {
+        "nom": "Thomas",
+        "note": 5,
+        "avis": "Parfait !"
+      },
+      {
+        "nom": "Thomas",
+        "note": 5,
+        "avis": "J adore !"
+      },
+      {
+        "nom": "Morel",
+        "note": 4,
+        "avis": "Bon rapport qualité/prix"
+      },
+      {
+        "nom": "Morel",
+        "note": 3,
+        "avis": "Assez bon mais peut mieux faire"
+      },
+      {
+        "nom": "Lemoine",
+        "note": 3,
+        "avis": "Moyen, sans plus"
+      },
+      {
+        "nom": "Lemoine",
+        "note": 4,
+        "avis": "Satisfait globalement"
+      },
+      {
+        "nom": "Garcia",
+        "note": 5,
+        "avis": "Excellent produit"
+      },
+      {
+        "nom": "Garcia",
+        "note": 2,
+        "avis": "Je ne rachèterai pas"
+      },
+      {
+        "nom": "Meunier",
+        "note": 2,
+        "avis": "Pas à la hauteur"
+      },
+      {
+        "nom": "Meunier",
+        "note": 5,
+        "avis": "Un must-have"
+      },
+      {
+        "nom": "Rousseau",
+        "note": 4,
+        "avis": "Bien conçu"
+      },
+      {
+        "nom": "Rousseau",
+        "note": 4,
+        "avis": "Plutôt bon rapport qualité/prix"
+      }
+    ],
+    "description": "on a permis d'avoir quels clients a publié quel avis",
+    "complexity": 6
+  },
+  {
+    "query": "SELECT * FROM categories ORDER BY categories.nom",
+    "results": [
+      {
+        "id_categorie": 3,
+        "nom": "Alimentation"
+      },
+      {
+        "id_categorie": 10,
+        "nom": "Beauté"
+      },
+      {
+        "id_categorie": 8,
+        "nom": "Bricolage"
+      },
+      {
+        "id_categorie": 1,
+        "nom": "Électronique"
+      },
+      {
+        "id_categorie": 9,
+        "nom": "Jardinage"
+      },
+      {
+        "id_categorie": 6,
+        "nom": "Jouets"
+      },
+      {
+        "id_categorie": 7,
+        "nom": "Livres"
+      },
+      {
+        "id_categorie": 4,
+        "nom": "Meubles"
+      },
+      {
+        "id_categorie": 5,
+        "nom": "Sports"
+      },
+      {
+        "id_categorie": 2,
+        "nom": "Vêtements"
+      }
+    ],
+    "description": "ranger les noms de catégories par ordre alphabétique",
+    "complexity": 5
+  },
+  {
+    "query": "SELECT categories.nom , articles.produit , articles.prix FROM categories JOIN articles ON categories.id_categorie = articles.id_categorie ORDER BY articles.prix AND articles.produit",
+    "results": [
+      {
+        "nom": "Électronique",
+        "produit": "Smartphone X",
+        "prix": 799.99
+      },
+      {
+        "nom": "Électronique",
+        "produit": "Ordinateur portable",
+        "prix": 1200.5
+      },
+      {
+        "nom": "Électronique",
+        "produit": "Casque audio",
+        "prix": 149.99
+      },
+      {
+        "nom": "Vêtements",
+        "produit": "Jeans Denim",
+        "prix": 49.99
+      },
+      {
+        "nom": "Vêtements",
+        "produit": "T-shirt coton",
+        "prix": 19.99
+      },
+      {
+        "nom": "Alimentation",
+        "produit": "Pâtes bio",
+        "prix": 2.5
+      },
+      {
+        "nom": "Alimentation",
+        "produit": "Chocolat noir",
+        "prix": 3.99
+      },
+      {
+        "nom": "Meubles",
+        "produit": "Canapé moderne",
+        "prix": 599.99
+      },
+      {
+        "nom": "Meubles",
+        "produit": "Table en bois",
+        "prix": 299.99
+      },
+      {
+        "nom": "Sports",
+        "produit": "Raquette de tennis",
+        "prix": 89.99
+      },
+      {
+        "nom": "Sports",
+        "produit": "Ballon de football",
+        "prix": 24.99
+      },
+      {
+        "nom": "Jouets",
+        "produit": "Peluche ours",
+        "prix": 14.99
+      },
+      {
+        "nom": "Livres",
+        "produit": "Livre roman",
+        "prix": 12.99
+      },
+      {
+        "nom": "Livres",
+        "produit": "BD aventure",
+        "prix": 15.99
+      },
+      {
+        "nom": "Bricolage",
+        "produit": "Perceuse électrique",
+        "prix": 79.99
+      },
+      {
+        "nom": "Jardinage",
+        "produit": "Tondeuse gazon",
+        "prix": 249.99
+      },
+      {
+        "nom": "Beauté",
+        "produit": "Crème hydratante",
+        "prix": 19.99
+      }
+    ],
+    "description": "intégrer les noms de catégories à la table des articles articles en utilisant produit et prix, puis en triant les prix par ordre croissant et les produits par ordre alphabétique",
+    "complexity": 10
+  },
+  {
+    "query": "SELECT clients.nom , notation.avis FROM notation JOIN clients ON notation.id_client = clients.id_client ORDER BY notation.avis AND clients.nom",
+    "results": [
+      {
+        "nom": "Martin",
+        "avis": "Superbe produit !"
+      },
+      {
+        "nom": "Martin",
+        "avis": "Incroyable, je recommande"
+      },
+      {
+        "nom": "Durand",
+        "avis": "Très satisfait"
+      },
+      {
+        "nom": "Durand",
+        "avis": "Mouais, pas terrible"
+      },
+      {
+        "nom": "Bernard",
+        "avis": "Correct mais pourrait être mieux"
+      },
+      {
+        "nom": "Bernard",
+        "avis": "Fait le job"
+      },
+      {
+        "nom": "Dubois",
+        "avis": "Déçu par la qualité"
+      },
+      {
+        "nom": "Dubois",
+        "avis": "Nul, je suis déçu"
+      },
+      {
+        "nom": "Thomas",
+        "avis": "Parfait !"
+      },
+      {
+        "nom": "Thomas",
+        "avis": "J adore !"
+      },
+      {
+        "nom": "Morel",
+        "avis": "Bon rapport qualité/prix"
+      },
+      {
+        "nom": "Morel",
+        "avis": "Assez bon mais peut mieux faire"
+      },
+      {
+        "nom": "Lemoine",
+        "avis": "Moyen, sans plus"
+      },
+      {
+        "nom": "Lemoine",
+        "avis": "Satisfait globalement"
+      },
+      {
+        "nom": "Garcia",
+        "avis": "Excellent produit"
+      },
+      {
+        "nom": "Garcia",
+        "avis": "Je ne rachèterai pas"
+      },
+      {
+        "nom": "Meunier",
+        "avis": "Pas à la hauteur"
+      },
+      {
+        "nom": "Meunier",
+        "avis": "Un must-have"
+      },
+      {
+        "nom": "Rousseau",
+        "avis": "Bien conçu"
+      },
+      {
+        "nom": "Rousseau",
+        "avis": "Plutôt bon rapport qualité/prix"
+      }
+    ],
+    "description": "Associé les avis à la colonne nom des clients, en triant les avis et les noms par ordre alphabétique",
+    "complexity": 10
+  },
+  {
+    "query": "SELECT COUNT( * )FROM clients",
+    "results": [
+      {
+        "COUNT( * )": 10
+      }
+    ],
+    "description": "compte le nombre de lignes de la table cleints",
+    "complexity": 6
+  },
+  {
+    "query": "SELECT AVG( articles.prix )FROM articles",
+    "results": [
+      {
+        "AVG( articles.prix )": 868.6583320962059
+      }
+    ],
+    "description": "calcule la moyenne des prix des artricles",
+    "complexity": 6
+  },
+  {
+    "query": "SELECT clients.id_client , clients.nom , clients.email , commandes.id_commande FROM clients JOIN commandes ON clients.id_client = commandes.id_client ORDER BY commandes.id_commande",
+    "results": [
+      {
+        "id_client": 1,
+        "nom": "Martin",
+        "email": "martin@example.com",
+        "id_commande": 1
+      },
+      {
+        "id_client": 2,
+        "nom": "Durand",
+        "email": "durand@example.net",
+        "id_commande": 2
+      },
+      {
+        "id_client": 3,
+        "nom": "Bernard",
+        "email": "bernard@example.org",
+        "id_commande": 3
+      },
+      {
+        "id_client": 4,
+        "nom": "Dubois",
+        "email": "dubois@example.io",
+        "id_commande": 4
+      },
+      {
+        "id_client": 5,
+        "nom": "Thomas",
+        "email": "thomas@example.edu",
+        "id_commande": 5
+      },
+      {
+        "id_client": 6,
+        "nom": "Morel",
+        "email": "morel@example.com",
+        "id_commande": 6
+      },
+      {
+        "id_client": 7,
+        "nom": "Lemoine",
+        "email": "lemoine@example.net",
+        "id_commande": 7
+      },
+      {
+        "id_client": 8,
+        "nom": "Garcia",
+        "email": "garcia@example.org",
+        "id_commande": 8
+      },
+      {
+        "id_client": 9,
+        "nom": "Meunier",
+        "email": "meunier@example.io",
+        "id_commande": 9
+      },
+      {
+        "id_client": 10,
+        "nom": "Rousseau",
+        "email": "rousseau@example.edu",
+        "id_commande": 10
+      },
+      {
+        "id_client": 3,
+        "nom": "Bernard",
+        "email": "bernard@example.org",
+        "id_commande": 11
+      },
+      {
+        "id_client": 6,
+        "nom": "Morel",
+        "email": "morel@example.com",
+        "id_commande": 12
+      },
+      {
+        "id_client": 9,
+        "nom": "Meunier",
+        "email": "meunier@example.io",
+        "id_commande": 13
+      },
+      {
+        "id_client": 1,
+        "nom": "Martin",
+        "email": "martin@example.com",
+        "id_commande": 14
+      },
+      {
+        "id_client": 5,
+        "nom": "Thomas",
+        "email": "thomas@example.edu",
+        "id_commande": 15
+      }
+    ],
+    "description": "joint l'ID commande à la table client en triant les id commandes par ordre croissant. en gardant l'id client, le nom l'email et l'id commande",
+    "complexity": 8
+  },
+  {
+    "query": "SELECT MIN( articles.prix )FROM articles",
+    "results": [
+      {
+        "MIN( articles.prix )": 2.5
+      }
+    ],
+    "description": "trouve le  prix minimal des articles",
+    "complexity": 6
+  },
+  {
+    "query": "SELECT SUM( notation.note )FROM notation",
+    "results": [
+      {
+        "SUM( notation.note )": 73
+      }
+    ],
+    "description": "trouve la somme des notes dans notation",
+    "complexity": 6
+  },
+  {
+    "query": "SELECT * FROM commandes WHERE commandes.statut_livraison = 'Livré'",
+    "results": [
+      {
+        "id_commande": 3,
+        "date": 20250217,
+        "statut_livraison": "Livré",
+        "id_client": 3
+      },
+      {
+        "id_commande": 8,
+        "date": 20250222,
+        "statut_livraison": "Livré",
+        "id_client": 8
+      },
+      {
+        "id_commande": 11,
+        "date": 20250225,
+        "statut_livraison": "Livré",
+        "id_client": 3
+      }
+    ],
+    "description": "afficher uniquement les commandes livrés",
+    "complexity": 3
+  }
+]

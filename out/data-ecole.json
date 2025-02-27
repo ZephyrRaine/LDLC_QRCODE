@@ -1,0 +1,544 @@
+[
+  {
+    "query": "SELECT * FROM diplomes ;",
+    "results": [
+      {
+        "id_diplome": 1,
+        "titre": "Licence en Mathématiques"
+      },
+      {
+        "id_diplome": 2,
+        "titre": "Master en Physique"
+      },
+      {
+        "id_diplome": 3,
+        "titre": "Doctorat en Chimie"
+      },
+      {
+        "id_diplome": 4,
+        "titre": "Licence en Informatique"
+      },
+      {
+        "id_diplome": 5,
+        "titre": "Master en Littérature"
+      },
+      {
+        "id_diplome": 6,
+        "titre": "Doctorat en Histoire"
+      },
+      {
+        "id_diplome": 7,
+        "titre": "Licence en Biologie"
+      },
+      {
+        "id_diplome": 8,
+        "titre": "Master en Droit"
+      },
+      {
+        "id_diplome": 9,
+        "titre": "Licence en Marketing"
+      }
+    ],
+    "description": "selectionne tous les éléments de la table diplomes\n",
+    "complexity": 3,
+    "solvedBy": [0]
+  },
+  {
+    "query": "SELECT FROM cours.date matieres.intitule",
+    "results": [
+      {
+        "id_diplome": 1,
+        "titre": "Licence en Mathématiques"
+      },
+      {
+        "id_diplome": 2,
+        "titre": "Master en Physique"
+      },
+      {
+        "id_diplome": 3,
+        "titre": "Doctorat en Chimie"
+      },
+      {
+        "id_diplome": 4,
+        "titre": "Licence en Informatique"
+      },
+      {
+        "id_diplome": 5,
+        "titre": "Master en Littérature"
+      },
+      {
+        "id_diplome": 6,
+        "titre": "Doctorat en Histoire"
+      },
+      {
+        "id_diplome": 7,
+        "titre": "Licence en Biologie"
+      },
+      {
+        "id_diplome": 8,
+        "titre": "Master en Droit"
+      },
+      {
+        "id_diplome": 9,
+        "titre": "Licence en Marketing"
+      }
+    ],
+    "description": "selectionne tous les éléments de la table diplomes\n",
+    "complexity": 3
+  },
+  {
+    "query": "SELECT cours.date , matieres.intitule FROM cours JOIN matieres ON cours.id_matiere = matieres.id_matiere ;",
+    "results": [
+      {
+        "date": "2024-03-09T23:00:00.000Z",
+        "intitule": "Mathématiques"
+      },
+      {
+        "date": "2024-04-14T22:00:00.000Z",
+        "intitule": "Mathématiques"
+      },
+      {
+        "date": "2024-05-19T22:00:00.000Z",
+        "intitule": "Physique"
+      },
+      {
+        "date": "2024-06-24T22:00:00.000Z",
+        "intitule": "Physique"
+      },
+      {
+        "date": "2024-07-11T22:00:00.000Z",
+        "intitule": "Chimie"
+      },
+      {
+        "date": "2024-08-04T22:00:00.000Z",
+        "intitule": "Informatique"
+      },
+      {
+        "date": "2024-09-17T22:00:00.000Z",
+        "intitule": "Littérature"
+      },
+      {
+        "date": "2024-10-21T22:00:00.000Z",
+        "intitule": "Histoire"
+      },
+      {
+        "date": "2024-11-10T23:00:00.000Z",
+        "intitule": "Philosophie"
+      },
+      {
+        "date": "2024-11-30T23:00:00.000Z",
+        "intitule": "Économie"
+      },
+      {
+        "date": "2025-01-06T23:00:00.000Z",
+        "intitule": "Biologie"
+      },
+      {
+        "date": "2025-02-13T23:00:00.000Z",
+        "intitule": "Droit"
+      }
+    ],
+    "description": "séléctionnez les intitulés de matières correspondants aux dates de cours ",
+    "complexity": 6
+  },
+  {
+    "query": "SELECT diplomes.titre , profs.nom FROM profs JOIN diplomes_profs ON profs.id_prof = diplomes_profs.id_prof JOIN diplomes ON diplomes.id_diplome = diplomes_profs.id_diplome",
+    "results": [
+      {
+        "titre": "Licence en Mathématiques",
+        "nom": "Durand"
+      },
+      {
+        "titre": "Licence en Mathématiques",
+        "nom": "Lemoine"
+      },
+      {
+        "titre": "Master en Physique",
+        "nom": "Martin"
+      },
+      {
+        "titre": "Master en Physique",
+        "nom": "Petit"
+      },
+      {
+        "titre": "Doctorat en Chimie",
+        "nom": "Dubois"
+      },
+      {
+        "titre": "Licence en Informatique",
+        "nom": "Leroy"
+      },
+      {
+        "titre": "Master en Littérature",
+        "nom": "Morel"
+      },
+      {
+        "titre": "Doctorat en Histoire",
+        "nom": "Garcia"
+      },
+      {
+        "titre": "Licence en Biologie",
+        "nom": "Rousseau"
+      },
+      {
+        "titre": "Master en Droit",
+        "nom": "Blanc"
+      }
+    ],
+    "description": "joindre le nom des professeurs avec leurs diplômes ",
+    "complexity": 6
+  },
+  {
+    "query": "SELECT cours.date , etudiants.nom , etudiants.prenom , cours.intitule FROM cours JOIN cours_etudiants ON cours_etudiants.id_cours = cours.id_cours JOIN etudiants ON etudiants.id_etudiant = cours_etudiants.id_etudiant ;",
+    "results": [
+      {
+        "date": "2024-03-09T23:00:00.000Z",
+        "nom": "Luc Bernard",
+        "prenom": "Luc",
+        "intitule": "Algebra linéaire"
+      },
+      {
+        "date": "2024-03-09T23:00:00.000Z",
+        "nom": "Dupont",
+        "prenom": "Elodie",
+        "intitule": "Algebra linéaire"
+      },
+      {
+        "date": "2024-04-14T22:00:00.000Z",
+        "nom": "Moreau",
+        "prenom": "Antoine",
+        "intitule": "Analyse mathématique"
+      },
+      {
+        "date": "2024-05-19T22:00:00.000Z",
+        "nom": "Fournier",
+        "prenom": "Sophie",
+        "intitule": "Mécanique classique"
+      },
+      {
+        "date": "2024-05-19T22:00:00.000Z",
+        "nom": "Girard",
+        "prenom": "Thomas",
+        "intitule": "Mécanique classique"
+      },
+      {
+        "date": "2024-06-24T22:00:00.000Z",
+        "nom": "Lambert",
+        "prenom": "Camille",
+        "intitule": "Physique quantique"
+      },
+      {
+        "date": "2024-07-11T22:00:00.000Z",
+        "nom": "Luc Bernard",
+        "prenom": "Luc",
+        "intitule": "Chimie organique"
+      },
+      {
+        "date": "2024-07-11T22:00:00.000Z",
+        "nom": "Moreau",
+        "prenom": "Antoine",
+        "intitule": "Chimie organique"
+      },
+      {
+        "date": "2024-08-04T22:00:00.000Z",
+        "nom": "Girard",
+        "prenom": "Thomas",
+        "intitule": "Programmation Python"
+      },
+      {
+        "date": "2024-09-17T22:00:00.000Z",
+        "nom": "Dupont",
+        "prenom": "Elodie",
+        "intitule": "Analyse littéraire"
+      },
+      {
+        "date": "2024-09-17T22:00:00.000Z",
+        "nom": "Fournier",
+        "prenom": "Sophie",
+        "intitule": "Analyse littéraire"
+      },
+      {
+        "date": "2024-10-21T22:00:00.000Z",
+        "nom": "Lambert",
+        "prenom": "Camille",
+        "intitule": "Histoire médiévale"
+      },
+      {
+        "date": "2024-11-10T23:00:00.000Z",
+        "nom": "Luc Bernard",
+        "prenom": "Luc",
+        "intitule": "Introduction à la philosophie"
+      },
+      {
+        "date": "2024-11-30T23:00:00.000Z",
+        "nom": "Moreau",
+        "prenom": "Antoine",
+        "intitule": "Économie politique"
+      },
+      {
+        "date": "2024-11-30T23:00:00.000Z",
+        "nom": "Girard",
+        "prenom": "Thomas",
+        "intitule": "Économie politique"
+      },
+      {
+        "date": "2025-01-06T23:00:00.000Z",
+        "nom": "Dupont",
+        "prenom": "Elodie",
+        "intitule": "Biologie cellulaire"
+      },
+      {
+        "date": "2025-02-13T23:00:00.000Z",
+        "nom": "Fournier",
+        "prenom": "Sophie",
+        "intitule": "Droit international"
+      }
+    ],
+    "description": "Joindre le prenom et nom de l'élève avec l'intitulé du cours et la date ",
+    "complexity": 6
+  },
+  {
+    "query": "SELECT cours.date, profs.nom FROM cours JOIN profs ON cours.id_prof = profs.id_prof WHERE cours.date <  '2024-07-12'",
+    "results": [
+      {
+        "date": "2024-03-09T23:00:00.000Z",
+        "nom": "Durand"
+      },
+      {
+        "date": "2024-04-14T22:00:00.000Z",
+        "nom": "Martin"
+      },
+      {
+        "date": "2024-05-19T22:00:00.000Z",
+        "nom": "Martin"
+      },
+      {
+        "date": "2024-06-24T22:00:00.000Z",
+        "nom": "Dubois"
+      }
+    ],
+    "description": "Récupère la date du cours et le nom du professeur pour les cours dont la date commence avant le 12 juillet 2024",
+    "complexity": 7
+  },
+  {
+    "query": "SELECT cours.intitule , profs.nom FROM cours JOIN profs ON cours.id_prof = profs.id_prof ORDER BY profs.nom ;",
+    "results": [
+      {
+        "intitule": "Physique quantique",
+        "nom": "Dubois"
+      },
+      {
+        "intitule": "Chimie organique",
+        "nom": "Dubois"
+      },
+      {
+        "intitule": "Algebra linéaire",
+        "nom": "Durand"
+      },
+      {
+        "intitule": "Biologie cellulaire",
+        "nom": "Durand"
+      },
+      {
+        "intitule": "Histoire médiévale",
+        "nom": "Lemoine"
+      },
+      {
+        "intitule": "Économie politique",
+        "nom": "Lemoine"
+      },
+      {
+        "intitule": "Droit international",
+        "nom": "Leroy"
+      },
+      {
+        "intitule": "Analyse mathématique",
+        "nom": "Martin"
+      },
+      {
+        "intitule": "Mécanique classique",
+        "nom": "Martin"
+      },
+      {
+        "intitule": "Programmation Python",
+        "nom": "Morel"
+      },
+      {
+        "intitule": "Analyse littéraire",
+        "nom": "Rousseau"
+      },
+      {
+        "intitule": "Introduction à la philosophie",
+        "nom": "Rousseau"
+      }
+    ],
+    "description": "Associez les intitulés des cours avec le nom des professeurs en triant leur nom par ordre alphabétique ",
+    "complexity": 8
+  },
+  {
+    "query": "SELECT diplomes.titre , profs.nom FROM diplomes JOIN diplomes_profs ON diplomes_profs.id_diplome = diplomes.id_diplome JOIN profs ON profs.id_prof = diplomes_profs.id_prof WHERE diplomes.titre LIKE '%Master%' OR diplomes.titre LIKE '%Doctorat%'",
+    "results": [
+      {
+        "titre": "Master en Physique",
+        "nom": "Martin"
+      },
+      {
+        "titre": "Master en Physique",
+        "nom": "Petit"
+      },
+      {
+        "titre": "Doctorat en Chimie",
+        "nom": "Dubois"
+      },
+      {
+        "titre": "Master en Littérature",
+        "nom": "Morel"
+      },
+      {
+        "titre": "Doctorat en Histoire",
+        "nom": "Garcia"
+      },
+      {
+        "titre": "Master en Droit",
+        "nom": "Blanc"
+      }
+    ],
+    "description": "On prend tous les noms des professeurs ayant un master ou un doctorat avec l'intitulé de leur diplôme.",
+    "complexity": 8
+  },
+  {
+    "query": "SELECT cours.date , etudiants.nom FROM etudiants JOIN cours_etudiants ON etudiants.id_etudiant = cours_etudiants.id_etudiant JOIN cours ON cours_etudiants.id_cours = cours.id_cours WHERE cours.date >= '2024-07-12' AND cours.date <= '2024-12-31' ;",
+    "results": [
+      {
+        "date": "2024-07-11T22:00:00.000Z",
+        "nom": "Luc Bernard"
+      },
+      {
+        "date": "2024-07-11T22:00:00.000Z",
+        "nom": "Moreau"
+      },
+      {
+        "date": "2024-08-04T22:00:00.000Z",
+        "nom": "Girard"
+      },
+      {
+        "date": "2024-09-17T22:00:00.000Z",
+        "nom": "Dupont"
+      },
+      {
+        "date": "2024-09-17T22:00:00.000Z",
+        "nom": "Fournier"
+      },
+      {
+        "date": "2024-10-21T22:00:00.000Z",
+        "nom": "Lambert"
+      },
+      {
+        "date": "2024-11-10T23:00:00.000Z",
+        "nom": "Luc Bernard"
+      },
+      {
+        "date": "2024-11-30T23:00:00.000Z",
+        "nom": "Moreau"
+      },
+      {
+        "date": "2024-11-30T23:00:00.000Z",
+        "nom": "Girard"
+      }
+    ],
+    "description": "On sélectionne tous les cours proposés entre début juillet et fin décembre, en affichant en face les noms des élèves qui ont choisit ce cours.",
+    "complexity": 9
+  },
+  {
+    "query": "SELECT profs.nom , etudiants.nom , etudiants.prenom FROM profs JOIN cours ON profs.id_prof = cours.id_prof JOIN cours_etudiants ON cours_etudiants.id_cours = cours.id_cours JOIN etudiants ON etudiants.id_etudiant = cours_etudiants.id_etudiant ORDER BY profs.nom ;",
+    "results": [
+      {
+        "nom": "Dubois",
+        "etudiants_nom": "Luc Bernard",
+        "prenom": "Luc"
+      },
+      {
+        "nom": "Dubois",
+        "etudiants_nom": "Moreau",
+        "prenom": "Antoine"
+      },
+      {
+        "nom": "Dubois",
+        "etudiants_nom": "Lambert",
+        "prenom": "Camille"
+      },
+      {
+        "nom": "Durand",
+        "etudiants_nom": "Luc Bernard",
+        "prenom": "Luc"
+      },
+      {
+        "nom": "Durand",
+        "etudiants_nom": "Dupont",
+        "prenom": "Elodie"
+      },
+      {
+        "nom": "Durand",
+        "etudiants_nom": "Dupont",
+        "prenom": "Elodie"
+      },
+      {
+        "nom": "Lemoine",
+        "etudiants_nom": "Moreau",
+        "prenom": "Antoine"
+      },
+      {
+        "nom": "Lemoine",
+        "etudiants_nom": "Girard",
+        "prenom": "Thomas"
+      },
+      {
+        "nom": "Lemoine",
+        "etudiants_nom": "Lambert",
+        "prenom": "Camille"
+      },
+      {
+        "nom": "Leroy",
+        "etudiants_nom": "Fournier",
+        "prenom": "Sophie"
+      },
+      {
+        "nom": "Martin",
+        "etudiants_nom": "Moreau",
+        "prenom": "Antoine"
+      },
+      {
+        "nom": "Martin",
+        "etudiants_nom": "Fournier",
+        "prenom": "Sophie"
+      },
+      {
+        "nom": "Martin",
+        "etudiants_nom": "Girard",
+        "prenom": "Thomas"
+      },
+      {
+        "nom": "Morel",
+        "etudiants_nom": "Girard",
+        "prenom": "Thomas"
+      },
+      {
+        "nom": "Rousseau",
+        "etudiants_nom": "Luc Bernard",
+        "prenom": "Luc"
+      },
+      {
+        "nom": "Rousseau",
+        "etudiants_nom": "Dupont",
+        "prenom": "Elodie"
+      },
+      {
+        "nom": "Rousseau",
+        "etudiants_nom": "Fournier",
+        "prenom": "Sophie"
+      }
+    ],
+    "description": "On constitue une liste des étudiants avec le professeur auquel ils ont affaire, en triant les noms de professeurs par ordre alphabétique.",
+    "complexity": 8
+  }
+]

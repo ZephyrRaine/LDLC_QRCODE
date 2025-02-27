@@ -1,0 +1,1991 @@
+[
+  {
+    "query": "SELECT * FROM auteurs",
+    "results": [
+      {
+        "id_auteur": 1,
+        "nom": "Hugo",
+        "prenom": "Victor",
+        "date_naissance": "1802-02-25T23:50:39.000Z"
+      },
+      {
+        "id_auteur": 2,
+        "nom": "Camus",
+        "prenom": "Albert",
+        "date_naissance": "1913-11-07T00:00:00.000Z"
+      },
+      {
+        "id_auteur": 3,
+        "nom": "Orwell",
+        "prenom": "George",
+        "date_naissance": "1903-06-24T23:50:39.000Z"
+      },
+      {
+        "id_auteur": 4,
+        "nom": "Dumas",
+        "prenom": "Alexandre",
+        "date_naissance": "1802-07-23T23:50:39.000Z"
+      },
+      {
+        "id_auteur": 5,
+        "nom": "Christie",
+        "prenom": "Agatha",
+        "date_naissance": "1890-09-14T23:50:39.000Z"
+      },
+      {
+        "id_auteur": 6,
+        "nom": "Sartre",
+        "prenom": "Jean-Paul",
+        "date_naissance": "1905-06-20T23:50:39.000Z"
+      },
+      {
+        "id_auteur": 7,
+        "nom": "Proust",
+        "prenom": "Marcel",
+        "date_naissance": "1871-07-09T23:50:39.000Z"
+      },
+      {
+        "id_auteur": 8,
+        "nom": "Verne",
+        "prenom": "Jules",
+        "date_naissance": "1828-02-07T23:50:39.000Z"
+      },
+      {
+        "id_auteur": 9,
+        "nom": "Lemoine",
+        "prenom": "Arthur",
+        "date_naissance": "1980-03-14T23:00:00.000Z"
+      },
+      {
+        "id_auteur": 10,
+        "nom": "Durand",
+        "prenom": "Sophie",
+        "date_naissance": "1975-09-21T23:00:00.000Z"
+      }
+    ],
+    "description": "Séléctionne les auteurs avec toute les infos (id_auteur, nom, date de naissance...)",
+    "complexity": 3
+  },
+  {
+    "query": "SELECT * FROM livres WHERE livres.titre = 'Les Miserables'",
+    "results": [
+      {
+        "id_livre": 1,
+        "titre": "Les Miserables",
+        "annee": 1862,
+        "id_genre": 3,
+        "prix": null
+      }
+    ],
+    "description": "Séléctionne seulement le titre Les Misérables avec toute ses informations",
+    "complexity": 3
+  },
+  {
+    "query": "SELECT * FROM emprunts JOIN clients ON clients.id_client = emprunts.id_client",
+    "results": [
+      {
+        "id_client": 1,
+        "id_livre": 1,
+        "date_emprunt": "2025-01-14T23:00:00.000Z",
+        "duree_emprunt": 14,
+        "nom": "Dubois",
+        "prenom": "Marc",
+        "email": "marc.dubois@example.com"
+      },
+      {
+        "id_client": 1,
+        "id_livre": 3,
+        "date_emprunt": "2025-01-17T23:00:00.000Z",
+        "duree_emprunt": 21,
+        "nom": "Dubois",
+        "prenom": "Marc",
+        "email": "marc.dubois@example.com"
+      },
+      {
+        "id_client": 1,
+        "id_livre": 10,
+        "date_emprunt": "2025-01-19T23:00:00.000Z",
+        "duree_emprunt": 30,
+        "nom": "Dubois",
+        "prenom": "Marc",
+        "email": "marc.dubois@example.com"
+      },
+      {
+        "id_client": 2,
+        "id_livre": 2,
+        "date_emprunt": "2025-01-31T23:00:00.000Z",
+        "duree_emprunt": 30,
+        "nom": "Leroy",
+        "prenom": "Anna",
+        "email": "anna.leroy@example.net"
+      },
+      {
+        "id_client": 2,
+        "id_livre": 4,
+        "date_emprunt": "2025-02-04T23:00:00.000Z",
+        "duree_emprunt": 15,
+        "nom": "Leroy",
+        "prenom": "Anna",
+        "email": "anna.leroy@example.net"
+      },
+      {
+        "id_client": 2,
+        "id_livre": 12,
+        "date_emprunt": "2025-02-07T23:00:00.000Z",
+        "duree_emprunt": 21,
+        "nom": "Leroy",
+        "prenom": "Anna",
+        "email": "anna.leroy@example.net"
+      },
+      {
+        "id_client": 3,
+        "id_livre": 5,
+        "date_emprunt": "2025-01-24T23:00:00.000Z",
+        "duree_emprunt": 20,
+        "nom": "Simon",
+        "prenom": "Paul",
+        "email": "paul.simon@example.org"
+      },
+      {
+        "id_client": 3,
+        "id_livre": 7,
+        "date_emprunt": "2025-01-27T23:00:00.000Z",
+        "duree_emprunt": 10,
+        "nom": "Simon",
+        "prenom": "Paul",
+        "email": "paul.simon@example.org"
+      },
+      {
+        "id_client": 3,
+        "id_livre": 9,
+        "date_emprunt": "2025-01-29T23:00:00.000Z",
+        "duree_emprunt": 14,
+        "nom": "Simon",
+        "prenom": "Paul",
+        "email": "paul.simon@example.org"
+      },
+      {
+        "id_client": 4,
+        "id_livre": 6,
+        "date_emprunt": "2025-02-09T23:00:00.000Z",
+        "duree_emprunt": 7,
+        "nom": "Chevalier",
+        "prenom": "Claire",
+        "email": "claire.chevalier@example.io"
+      },
+      {
+        "id_client": 4,
+        "id_livre": 8,
+        "date_emprunt": "2025-02-11T23:00:00.000Z",
+        "duree_emprunt": 14,
+        "nom": "Chevalier",
+        "prenom": "Claire",
+        "email": "claire.chevalier@example.io"
+      },
+      {
+        "id_client": 4,
+        "id_livre": 13,
+        "date_emprunt": "2025-02-13T23:00:00.000Z",
+        "duree_emprunt": 10,
+        "nom": "Chevalier",
+        "prenom": "Claire",
+        "email": "claire.chevalier@example.io"
+      },
+      {
+        "id_client": 5,
+        "id_livre": 1,
+        "date_emprunt": "2025-02-13T23:00:00.000Z",
+        "duree_emprunt": 14,
+        "nom": "Renaud",
+        "prenom": "Jean",
+        "email": "jean.renaud@example.edu"
+      },
+      {
+        "id_client": 5,
+        "id_livre": 2,
+        "date_emprunt": "2025-02-15T23:00:00.000Z",
+        "duree_emprunt": 10,
+        "nom": "Renaud",
+        "prenom": "Jean",
+        "email": "jean.renaud@example.edu"
+      },
+      {
+        "id_client": 5,
+        "id_livre": 9,
+        "date_emprunt": "2025-02-11T23:00:00.000Z",
+        "duree_emprunt": 21,
+        "nom": "Renaud",
+        "prenom": "Jean",
+        "email": "jean.renaud@example.edu"
+      },
+      {
+        "id_client": 5,
+        "id_livre": 14,
+        "date_emprunt": "2025-02-17T23:00:00.000Z",
+        "duree_emprunt": 14,
+        "nom": "Renaud",
+        "prenom": "Jean",
+        "email": "jean.renaud@example.edu"
+      },
+      {
+        "id_client": 6,
+        "id_livre": 3,
+        "date_emprunt": "2025-02-13T23:00:00.000Z",
+        "duree_emprunt": 21,
+        "nom": "Gautier",
+        "prenom": "Nathalie",
+        "email": "nathalie.gautier@example.com"
+      },
+      {
+        "id_client": 6,
+        "id_livre": 5,
+        "date_emprunt": "2025-02-15T23:00:00.000Z",
+        "duree_emprunt": 14,
+        "nom": "Gautier",
+        "prenom": "Nathalie",
+        "email": "nathalie.gautier@example.com"
+      },
+      {
+        "id_client": 6,
+        "id_livre": 7,
+        "date_emprunt": "2025-02-17T23:00:00.000Z",
+        "duree_emprunt": 20,
+        "nom": "Gautier",
+        "prenom": "Nathalie",
+        "email": "nathalie.gautier@example.com"
+      },
+      {
+        "id_client": 6,
+        "id_livre": 11,
+        "date_emprunt": "2025-02-19T23:00:00.000Z",
+        "duree_emprunt": 25,
+        "nom": "Gautier",
+        "prenom": "Nathalie",
+        "email": "nathalie.gautier@example.com"
+      }
+    ],
+    "description": "Séléctionne dans les emprunts les clients et leurs infos",
+    "complexity": 6
+  },
+  {
+    "query": "SELECT clients.nom , livres.titre , clients.prenom FROM emprunts JOIN clients ON emprunts.id_client = clients.id_client JOIN livres ON emprunts.id_livre = livres.id_livre",
+    "results": [
+      {
+        "nom": "Dubois",
+        "titre": "Les Miserables",
+        "prenom": "Marc"
+      },
+      {
+        "nom": "Dubois",
+        "titre": "Le Comte de Monte Cristo",
+        "prenom": "Marc"
+      },
+      {
+        "nom": "Dubois",
+        "titre": "L Heritage des Anciens",
+        "prenom": "Marc"
+      },
+      {
+        "nom": "Leroy",
+        "titre": "1984",
+        "prenom": "Anna"
+      },
+      {
+        "nom": "Leroy",
+        "titre": "Meurtre sur le Nil",
+        "prenom": "Anna"
+      },
+      {
+        "nom": "Leroy",
+        "titre": "Le Mystere du Manuscrit",
+        "prenom": "Anna"
+      },
+      {
+        "nom": "Simon",
+        "titre": "Huis Clos",
+        "prenom": "Paul"
+      },
+      {
+        "nom": "Simon",
+        "titre": "Vingt Mille Lieues sous les Mers",
+        "prenom": "Paul"
+      },
+      {
+        "nom": "Simon",
+        "titre": "Le Dernier Secret",
+        "prenom": "Paul"
+      },
+      {
+        "nom": "Chevalier",
+        "titre": "A la Recherche du Temps Perdu",
+        "prenom": "Claire"
+      },
+      {
+        "nom": "Chevalier",
+        "titre": "Les Ombres du Futur",
+        "prenom": "Claire"
+      },
+      {
+        "nom": "Chevalier",
+        "titre": "Les Voyages Inattendus",
+        "prenom": "Claire"
+      },
+      {
+        "nom": "Renaud",
+        "titre": "Les Miserables",
+        "prenom": "Jean"
+      },
+      {
+        "nom": "Renaud",
+        "titre": "1984",
+        "prenom": "Jean"
+      },
+      {
+        "nom": "Renaud",
+        "titre": "Le Dernier Secret",
+        "prenom": "Jean"
+      },
+      {
+        "nom": "Renaud",
+        "titre": "Chroniques du Temps Perdu",
+        "prenom": "Jean"
+      },
+      {
+        "nom": "Gautier",
+        "titre": "Le Comte de Monte Cristo",
+        "prenom": "Nathalie"
+      },
+      {
+        "nom": "Gautier",
+        "titre": "Huis Clos",
+        "prenom": "Nathalie"
+      },
+      {
+        "nom": "Gautier",
+        "titre": "Vingt Mille Lieues sous les Mers",
+        "prenom": "Nathalie"
+      },
+      {
+        "nom": "Gautier",
+        "titre": "La Revolution Silencieuse",
+        "prenom": "Nathalie"
+      }
+    ],
+    "description": "Sélectionne dans emprunts les noms des clients avec les livres qu'ils ont empruntés et leur prénoms.",
+    "complexity": 6
+  },
+  {
+    "query": "SELECT livres.annee , livres.titre FROM livres WHERE livres.annee > 1944",
+    "results": [
+      {
+        "annee": 1949,
+        "titre": "1984"
+      },
+      {
+        "annee": 2024,
+        "titre": "Les Ombres du Futur"
+      },
+      {
+        "annee": 2023,
+        "titre": "Le Dernier Secret"
+      },
+      {
+        "annee": 2022,
+        "titre": "L Heritage des Anciens"
+      },
+      {
+        "annee": 2021,
+        "titre": "La Revolution Silencieuse"
+      },
+      {
+        "annee": 2020,
+        "titre": "Le Mystere du Manuscrit"
+      },
+      {
+        "annee": 2019,
+        "titre": "Les Voyages Inattendus"
+      },
+      {
+        "annee": 2018,
+        "titre": "Chroniques du Temps Perdu"
+      }
+    ],
+    "description": "Sélectionne les titres et années des livres paru après 1944 ",
+    "complexity": 3
+  },
+  {
+    "query": "SELECT emprunts.duree_emprunt , clients.nom , clients.prenom FROM emprunts JOIN clients ON emprunts.id_client = clients.id_client WHERE emprunts.duree_emprunt IS NOT NULL",
+    "results": [
+      {
+        "duree_emprunt": 14,
+        "nom": "Dubois",
+        "prenom": "Marc"
+      },
+      {
+        "duree_emprunt": 21,
+        "nom": "Dubois",
+        "prenom": "Marc"
+      },
+      {
+        "duree_emprunt": 30,
+        "nom": "Dubois",
+        "prenom": "Marc"
+      },
+      {
+        "duree_emprunt": 30,
+        "nom": "Leroy",
+        "prenom": "Anna"
+      },
+      {
+        "duree_emprunt": 15,
+        "nom": "Leroy",
+        "prenom": "Anna"
+      },
+      {
+        "duree_emprunt": 21,
+        "nom": "Leroy",
+        "prenom": "Anna"
+      },
+      {
+        "duree_emprunt": 20,
+        "nom": "Simon",
+        "prenom": "Paul"
+      },
+      {
+        "duree_emprunt": 10,
+        "nom": "Simon",
+        "prenom": "Paul"
+      },
+      {
+        "duree_emprunt": 14,
+        "nom": "Simon",
+        "prenom": "Paul"
+      },
+      {
+        "duree_emprunt": 7,
+        "nom": "Chevalier",
+        "prenom": "Claire"
+      },
+      {
+        "duree_emprunt": 14,
+        "nom": "Chevalier",
+        "prenom": "Claire"
+      },
+      {
+        "duree_emprunt": 10,
+        "nom": "Chevalier",
+        "prenom": "Claire"
+      },
+      {
+        "duree_emprunt": 14,
+        "nom": "Renaud",
+        "prenom": "Jean"
+      },
+      {
+        "duree_emprunt": 10,
+        "nom": "Renaud",
+        "prenom": "Jean"
+      },
+      {
+        "duree_emprunt": 21,
+        "nom": "Renaud",
+        "prenom": "Jean"
+      },
+      {
+        "duree_emprunt": 14,
+        "nom": "Renaud",
+        "prenom": "Jean"
+      },
+      {
+        "duree_emprunt": 21,
+        "nom": "Gautier",
+        "prenom": "Nathalie"
+      },
+      {
+        "duree_emprunt": 14,
+        "nom": "Gautier",
+        "prenom": "Nathalie"
+      },
+      {
+        "duree_emprunt": 20,
+        "nom": "Gautier",
+        "prenom": "Nathalie"
+      },
+      {
+        "duree_emprunt": 25,
+        "nom": "Gautier",
+        "prenom": "Nathalie"
+      }
+    ],
+    "description": "Sélectionne la durée des emprunts ainsi que le nom et le prénom des clients qui ont une date d'emprunt non nul.",
+    "complexity": 8
+  },
+  {
+    "query": "SELECT auteurs.nom , auteurs.prenom , auteurs.date_naissance , livres.titre FROM auteurs JOIN auteurs_livres ON auteurs.id_auteur = auteurs_livres.id_auteur JOIN livres ON auteurs_livres.id_livre = livres.id_livre",
+    "results": [
+      {
+        "nom": "Hugo",
+        "prenom": "Victor",
+        "date_naissance": "1802-02-25T23:50:39.000Z",
+        "titre": "Les Miserables"
+      },
+      {
+        "nom": "Hugo",
+        "prenom": "Victor",
+        "date_naissance": "1802-02-25T23:50:39.000Z",
+        "titre": "L Heritage des Anciens"
+      },
+      {
+        "nom": "Hugo",
+        "prenom": "Victor",
+        "date_naissance": "1802-02-25T23:50:39.000Z",
+        "titre": "Chroniques du Temps Perdu"
+      },
+      {
+        "nom": "Camus",
+        "prenom": "Albert",
+        "date_naissance": "1913-11-07T00:00:00.000Z",
+        "titre": "Les Miserables"
+      },
+      {
+        "nom": "Camus",
+        "prenom": "Albert",
+        "date_naissance": "1913-11-07T00:00:00.000Z",
+        "titre": "La Revolution Silencieuse"
+      },
+      {
+        "nom": "Orwell",
+        "prenom": "George",
+        "date_naissance": "1903-06-24T23:50:39.000Z",
+        "titre": "1984"
+      },
+      {
+        "nom": "Orwell",
+        "prenom": "George",
+        "date_naissance": "1903-06-24T23:50:39.000Z",
+        "titre": "Les Ombres du Futur"
+      },
+      {
+        "nom": "Dumas",
+        "prenom": "Alexandre",
+        "date_naissance": "1802-07-23T23:50:39.000Z",
+        "titre": "Le Comte de Monte Cristo"
+      },
+      {
+        "nom": "Dumas",
+        "prenom": "Alexandre",
+        "date_naissance": "1802-07-23T23:50:39.000Z",
+        "titre": "L Heritage des Anciens"
+      },
+      {
+        "nom": "Christie",
+        "prenom": "Agatha",
+        "date_naissance": "1890-09-14T23:50:39.000Z",
+        "titre": "Meurtre sur le Nil"
+      },
+      {
+        "nom": "Christie",
+        "prenom": "Agatha",
+        "date_naissance": "1890-09-14T23:50:39.000Z",
+        "titre": "Le Mystere du Manuscrit"
+      },
+      {
+        "nom": "Sartre",
+        "prenom": "Jean-Paul",
+        "date_naissance": "1905-06-20T23:50:39.000Z",
+        "titre": "Huis Clos"
+      },
+      {
+        "nom": "Sartre",
+        "prenom": "Jean-Paul",
+        "date_naissance": "1905-06-20T23:50:39.000Z",
+        "titre": "La Revolution Silencieuse"
+      },
+      {
+        "nom": "Proust",
+        "prenom": "Marcel",
+        "date_naissance": "1871-07-09T23:50:39.000Z",
+        "titre": "A la Recherche du Temps Perdu"
+      },
+      {
+        "nom": "Proust",
+        "prenom": "Marcel",
+        "date_naissance": "1871-07-09T23:50:39.000Z",
+        "titre": "Le Dernier Secret"
+      },
+      {
+        "nom": "Proust",
+        "prenom": "Marcel",
+        "date_naissance": "1871-07-09T23:50:39.000Z",
+        "titre": "Chroniques du Temps Perdu"
+      },
+      {
+        "nom": "Verne",
+        "prenom": "Jules",
+        "date_naissance": "1828-02-07T23:50:39.000Z",
+        "titre": "Vingt Mille Lieues sous les Mers"
+      },
+      {
+        "nom": "Verne",
+        "prenom": "Jules",
+        "date_naissance": "1828-02-07T23:50:39.000Z",
+        "titre": "Les Voyages Inattendus"
+      },
+      {
+        "nom": "Lemoine",
+        "prenom": "Arthur",
+        "date_naissance": "1980-03-14T23:00:00.000Z",
+        "titre": "Les Ombres du Futur"
+      },
+      {
+        "nom": "Lemoine",
+        "prenom": "Arthur",
+        "date_naissance": "1980-03-14T23:00:00.000Z",
+        "titre": "Le Mystere du Manuscrit"
+      },
+      {
+        "nom": "Durand",
+        "prenom": "Sophie",
+        "date_naissance": "1975-09-21T23:00:00.000Z",
+        "titre": "Le Dernier Secret"
+      },
+      {
+        "nom": "Durand",
+        "prenom": "Sophie",
+        "date_naissance": "1975-09-21T23:00:00.000Z",
+        "titre": "Les Voyages Inattendus"
+      }
+    ],
+    "description": "Sélectionne le nom, le prénom, et la date de naissance des auteurs, ainsi que le titre des livres qu'ils ont écrits",
+    "complexity": 6
+  },
+  {
+    "query": "SELECT emprunts.duree_emprunt , clients.nom , clients.prenom , clients.email FROM clients JOIN emprunts ON clients.id_client = emprunts.id_client WHERE emprunts.duree_emprunt > 25",
+    "results": [
+      {
+        "duree_emprunt": 30,
+        "nom": "Dubois",
+        "prenom": "Marc",
+        "email": "marc.dubois@example.com"
+      },
+      {
+        "duree_emprunt": 30,
+        "nom": "Leroy",
+        "prenom": "Anna",
+        "email": "anna.leroy@example.net"
+      }
+    ],
+    "description": "Sélectionne le nom, le prénom, et l'email des clients qui ont une durée d'emprunt supérieur à 25 jours.",
+    "complexity": 6
+  },
+  {
+    "query": "SELECT auteurs.nom , auteurs.prenom , auteurs.date_naissance , livres.titre FROM auteurs JOIN auteurs_livres ON auteurs.id_auteur = auteurs_livres.id_auteur JOIN livres ON auteurs_livres.id_livre = livres.id_livre ORDER BY auteurs.nom ASC , auteurs.date_naissance DESC",
+    "results": [
+      {
+        "nom": "Camus",
+        "prenom": "Albert",
+        "date_naissance": "1913-11-07T00:00:00.000Z",
+        "titre": "Les Miserables"
+      },
+      {
+        "nom": "Camus",
+        "prenom": "Albert",
+        "date_naissance": "1913-11-07T00:00:00.000Z",
+        "titre": "La Revolution Silencieuse"
+      },
+      {
+        "nom": "Christie",
+        "prenom": "Agatha",
+        "date_naissance": "1890-09-14T23:50:39.000Z",
+        "titre": "Meurtre sur le Nil"
+      },
+      {
+        "nom": "Christie",
+        "prenom": "Agatha",
+        "date_naissance": "1890-09-14T23:50:39.000Z",
+        "titre": "Le Mystere du Manuscrit"
+      },
+      {
+        "nom": "Dumas",
+        "prenom": "Alexandre",
+        "date_naissance": "1802-07-23T23:50:39.000Z",
+        "titre": "Le Comte de Monte Cristo"
+      },
+      {
+        "nom": "Dumas",
+        "prenom": "Alexandre",
+        "date_naissance": "1802-07-23T23:50:39.000Z",
+        "titre": "L Heritage des Anciens"
+      },
+      {
+        "nom": "Durand",
+        "prenom": "Sophie",
+        "date_naissance": "1975-09-21T23:00:00.000Z",
+        "titre": "Le Dernier Secret"
+      },
+      {
+        "nom": "Durand",
+        "prenom": "Sophie",
+        "date_naissance": "1975-09-21T23:00:00.000Z",
+        "titre": "Les Voyages Inattendus"
+      },
+      {
+        "nom": "Hugo",
+        "prenom": "Victor",
+        "date_naissance": "1802-02-25T23:50:39.000Z",
+        "titre": "Les Miserables"
+      },
+      {
+        "nom": "Hugo",
+        "prenom": "Victor",
+        "date_naissance": "1802-02-25T23:50:39.000Z",
+        "titre": "L Heritage des Anciens"
+      },
+      {
+        "nom": "Hugo",
+        "prenom": "Victor",
+        "date_naissance": "1802-02-25T23:50:39.000Z",
+        "titre": "Chroniques du Temps Perdu"
+      },
+      {
+        "nom": "Lemoine",
+        "prenom": "Arthur",
+        "date_naissance": "1980-03-14T23:00:00.000Z",
+        "titre": "Les Ombres du Futur"
+      },
+      {
+        "nom": "Lemoine",
+        "prenom": "Arthur",
+        "date_naissance": "1980-03-14T23:00:00.000Z",
+        "titre": "Le Mystere du Manuscrit"
+      },
+      {
+        "nom": "Orwell",
+        "prenom": "George",
+        "date_naissance": "1903-06-24T23:50:39.000Z",
+        "titre": "1984"
+      },
+      {
+        "nom": "Orwell",
+        "prenom": "George",
+        "date_naissance": "1903-06-24T23:50:39.000Z",
+        "titre": "Les Ombres du Futur"
+      },
+      {
+        "nom": "Proust",
+        "prenom": "Marcel",
+        "date_naissance": "1871-07-09T23:50:39.000Z",
+        "titre": "A la Recherche du Temps Perdu"
+      },
+      {
+        "nom": "Proust",
+        "prenom": "Marcel",
+        "date_naissance": "1871-07-09T23:50:39.000Z",
+        "titre": "Le Dernier Secret"
+      },
+      {
+        "nom": "Proust",
+        "prenom": "Marcel",
+        "date_naissance": "1871-07-09T23:50:39.000Z",
+        "titre": "Chroniques du Temps Perdu"
+      },
+      {
+        "nom": "Sartre",
+        "prenom": "Jean-Paul",
+        "date_naissance": "1905-06-20T23:50:39.000Z",
+        "titre": "Huis Clos"
+      },
+      {
+        "nom": "Sartre",
+        "prenom": "Jean-Paul",
+        "date_naissance": "1905-06-20T23:50:39.000Z",
+        "titre": "La Revolution Silencieuse"
+      },
+      {
+        "nom": "Verne",
+        "prenom": "Jules",
+        "date_naissance": "1828-02-07T23:50:39.000Z",
+        "titre": "Vingt Mille Lieues sous les Mers"
+      },
+      {
+        "nom": "Verne",
+        "prenom": "Jules",
+        "date_naissance": "1828-02-07T23:50:39.000Z",
+        "titre": "Les Voyages Inattendus"
+      }
+    ],
+    "description": "sélectionne le nom, prénom, date de naissance des auteurs et les titres de leurs livres. Les résultats sont trié par le nom des auteurs (ordre alphabétique croissant) et, en cas d'égalité, par leur date de naissance.",
+    "complexity": 8
+  },
+  {
+    "query": "SELECT livres.titre , livres.annee , genres.intitule FROM livres JOIN genres ON livres.id_genre = genres.id_genre",
+    "results": [
+      {
+        "titre": "Les Miserables",
+        "annee": 1862,
+        "intitule": "Roman historique"
+      },
+      {
+        "titre": "1984",
+        "annee": 1949,
+        "intitule": "Science-fiction"
+      },
+      {
+        "titre": "Le Comte de Monte Cristo",
+        "annee": 1844,
+        "intitule": "Roman historique"
+      },
+      {
+        "titre": "Meurtre sur le Nil",
+        "annee": 1937,
+        "intitule": "Policier"
+      },
+      {
+        "titre": "Huis Clos",
+        "annee": 1944,
+        "intitule": "Théâtre"
+      },
+      {
+        "titre": "A la Recherche du Temps Perdu",
+        "annee": 1913,
+        "intitule": "Poésie"
+      },
+      {
+        "titre": "Vingt Mille Lieues sous les Mers",
+        "annee": 1870,
+        "intitule": "Science-fiction"
+      },
+      {
+        "titre": "Les Ombres du Futur",
+        "annee": 2024,
+        "intitule": "Science-fiction"
+      },
+      {
+        "titre": "Le Dernier Secret",
+        "annee": 2023,
+        "intitule": "Fantastique"
+      },
+      {
+        "titre": "L Heritage des Anciens",
+        "annee": 2022,
+        "intitule": "Roman historique"
+      },
+      {
+        "titre": "La Revolution Silencieuse",
+        "annee": 2021,
+        "intitule": "Philosophie"
+      },
+      {
+        "titre": "Le Mystere du Manuscrit",
+        "annee": 2020,
+        "intitule": "Policier"
+      },
+      {
+        "titre": "Les Voyages Inattendus",
+        "annee": 2019,
+        "intitule": "Science-fiction"
+      },
+      {
+        "titre": "Chroniques du Temps Perdu",
+        "annee": 2018,
+        "intitule": "Poésie"
+      }
+    ],
+    "description": "Sélectionne le titre et l'année des livres ainsi que l'intitulé de leur genre.",
+    "complexity": 6
+  },
+  {
+    "query": "SELECT clients.nom , clients.prenom , auteurs.nom , auteurs.prenom FROM auteurs JOIN auteurs_livres ON auteurs.id_auteur = auteurs_livres.id_auteur JOIN livres ON auteurs_livres.id_livre = livres.id_livre JOIN emprunts ON livres.id_livre = emprunts.id_livre JOIN clients ON emprunts.id_client = clients.id_client",
+    "results": [
+      {
+        "nom": "Dubois",
+        "prenom": "Marc",
+        "auteurs_nom": "Hugo",
+        "auteurs_prenom": "Victor"
+      },
+      {
+        "nom": "Dubois",
+        "prenom": "Marc",
+        "auteurs_nom": "Camus",
+        "auteurs_prenom": "Albert"
+      },
+      {
+        "nom": "Dubois",
+        "prenom": "Marc",
+        "auteurs_nom": "Dumas",
+        "auteurs_prenom": "Alexandre"
+      },
+      {
+        "nom": "Dubois",
+        "prenom": "Marc",
+        "auteurs_nom": "Hugo",
+        "auteurs_prenom": "Victor"
+      },
+      {
+        "nom": "Dubois",
+        "prenom": "Marc",
+        "auteurs_nom": "Dumas",
+        "auteurs_prenom": "Alexandre"
+      },
+      {
+        "nom": "Leroy",
+        "prenom": "Anna",
+        "auteurs_nom": "Orwell",
+        "auteurs_prenom": "George"
+      },
+      {
+        "nom": "Leroy",
+        "prenom": "Anna",
+        "auteurs_nom": "Christie",
+        "auteurs_prenom": "Agatha"
+      },
+      {
+        "nom": "Leroy",
+        "prenom": "Anna",
+        "auteurs_nom": "Christie",
+        "auteurs_prenom": "Agatha"
+      },
+      {
+        "nom": "Leroy",
+        "prenom": "Anna",
+        "auteurs_nom": "Lemoine",
+        "auteurs_prenom": "Arthur"
+      },
+      {
+        "nom": "Simon",
+        "prenom": "Paul",
+        "auteurs_nom": "Sartre",
+        "auteurs_prenom": "Jean-Paul"
+      },
+      {
+        "nom": "Simon",
+        "prenom": "Paul",
+        "auteurs_nom": "Verne",
+        "auteurs_prenom": "Jules"
+      },
+      {
+        "nom": "Simon",
+        "prenom": "Paul",
+        "auteurs_nom": "Proust",
+        "auteurs_prenom": "Marcel"
+      },
+      {
+        "nom": "Simon",
+        "prenom": "Paul",
+        "auteurs_nom": "Durand",
+        "auteurs_prenom": "Sophie"
+      },
+      {
+        "nom": "Chevalier",
+        "prenom": "Claire",
+        "auteurs_nom": "Proust",
+        "auteurs_prenom": "Marcel"
+      },
+      {
+        "nom": "Chevalier",
+        "prenom": "Claire",
+        "auteurs_nom": "Orwell",
+        "auteurs_prenom": "George"
+      },
+      {
+        "nom": "Chevalier",
+        "prenom": "Claire",
+        "auteurs_nom": "Lemoine",
+        "auteurs_prenom": "Arthur"
+      },
+      {
+        "nom": "Chevalier",
+        "prenom": "Claire",
+        "auteurs_nom": "Verne",
+        "auteurs_prenom": "Jules"
+      },
+      {
+        "nom": "Chevalier",
+        "prenom": "Claire",
+        "auteurs_nom": "Durand",
+        "auteurs_prenom": "Sophie"
+      },
+      {
+        "nom": "Renaud",
+        "prenom": "Jean",
+        "auteurs_nom": "Hugo",
+        "auteurs_prenom": "Victor"
+      },
+      {
+        "nom": "Renaud",
+        "prenom": "Jean",
+        "auteurs_nom": "Camus",
+        "auteurs_prenom": "Albert"
+      },
+      {
+        "nom": "Renaud",
+        "prenom": "Jean",
+        "auteurs_nom": "Orwell",
+        "auteurs_prenom": "George"
+      },
+      {
+        "nom": "Renaud",
+        "prenom": "Jean",
+        "auteurs_nom": "Proust",
+        "auteurs_prenom": "Marcel"
+      },
+      {
+        "nom": "Renaud",
+        "prenom": "Jean",
+        "auteurs_nom": "Durand",
+        "auteurs_prenom": "Sophie"
+      },
+      {
+        "nom": "Renaud",
+        "prenom": "Jean",
+        "auteurs_nom": "Hugo",
+        "auteurs_prenom": "Victor"
+      },
+      {
+        "nom": "Renaud",
+        "prenom": "Jean",
+        "auteurs_nom": "Proust",
+        "auteurs_prenom": "Marcel"
+      },
+      {
+        "nom": "Gautier",
+        "prenom": "Nathalie",
+        "auteurs_nom": "Dumas",
+        "auteurs_prenom": "Alexandre"
+      },
+      {
+        "nom": "Gautier",
+        "prenom": "Nathalie",
+        "auteurs_nom": "Sartre",
+        "auteurs_prenom": "Jean-Paul"
+      },
+      {
+        "nom": "Gautier",
+        "prenom": "Nathalie",
+        "auteurs_nom": "Verne",
+        "auteurs_prenom": "Jules"
+      },
+      {
+        "nom": "Gautier",
+        "prenom": "Nathalie",
+        "auteurs_nom": "Camus",
+        "auteurs_prenom": "Albert"
+      },
+      {
+        "nom": "Gautier",
+        "prenom": "Nathalie",
+        "auteurs_nom": "Sartre",
+        "auteurs_prenom": "Jean-Paul"
+      }
+    ],
+    "description": "Affiche le nom et le prénom des clients avec le nom et le prénom des auteurs des livres qu'ils ont pris ",
+    "complexity": 6
+  },
+  {
+    "query": "SELECT auteurs.nom , auteurs.prenom , livres.titre , livres.annee FROM auteurs JOIN auteurs_livres ON auteurs.id_auteur = auteurs_livres.id_auteur JOIN livres ON auteurs_livres.id_livre = livres.id_livre ORDER BY livres.annee",
+    "results": [
+      {
+        "nom": "Dumas",
+        "prenom": "Alexandre",
+        "titre": "Le Comte de Monte Cristo",
+        "annee": 1844
+      },
+      {
+        "nom": "Hugo",
+        "prenom": "Victor",
+        "titre": "Les Miserables",
+        "annee": 1862
+      },
+      {
+        "nom": "Camus",
+        "prenom": "Albert",
+        "titre": "Les Miserables",
+        "annee": 1862
+      },
+      {
+        "nom": "Verne",
+        "prenom": "Jules",
+        "titre": "Vingt Mille Lieues sous les Mers",
+        "annee": 1870
+      },
+      {
+        "nom": "Proust",
+        "prenom": "Marcel",
+        "titre": "A la Recherche du Temps Perdu",
+        "annee": 1913
+      },
+      {
+        "nom": "Christie",
+        "prenom": "Agatha",
+        "titre": "Meurtre sur le Nil",
+        "annee": 1937
+      },
+      {
+        "nom": "Sartre",
+        "prenom": "Jean-Paul",
+        "titre": "Huis Clos",
+        "annee": 1944
+      },
+      {
+        "nom": "Orwell",
+        "prenom": "George",
+        "titre": "1984",
+        "annee": 1949
+      },
+      {
+        "nom": "Hugo",
+        "prenom": "Victor",
+        "titre": "Chroniques du Temps Perdu",
+        "annee": 2018
+      },
+      {
+        "nom": "Proust",
+        "prenom": "Marcel",
+        "titre": "Chroniques du Temps Perdu",
+        "annee": 2018
+      },
+      {
+        "nom": "Verne",
+        "prenom": "Jules",
+        "titre": "Les Voyages Inattendus",
+        "annee": 2019
+      },
+      {
+        "nom": "Durand",
+        "prenom": "Sophie",
+        "titre": "Les Voyages Inattendus",
+        "annee": 2019
+      },
+      {
+        "nom": "Christie",
+        "prenom": "Agatha",
+        "titre": "Le Mystere du Manuscrit",
+        "annee": 2020
+      },
+      {
+        "nom": "Lemoine",
+        "prenom": "Arthur",
+        "titre": "Le Mystere du Manuscrit",
+        "annee": 2020
+      },
+      {
+        "nom": "Camus",
+        "prenom": "Albert",
+        "titre": "La Revolution Silencieuse",
+        "annee": 2021
+      },
+      {
+        "nom": "Sartre",
+        "prenom": "Jean-Paul",
+        "titre": "La Revolution Silencieuse",
+        "annee": 2021
+      },
+      {
+        "nom": "Hugo",
+        "prenom": "Victor",
+        "titre": "L Heritage des Anciens",
+        "annee": 2022
+      },
+      {
+        "nom": "Dumas",
+        "prenom": "Alexandre",
+        "titre": "L Heritage des Anciens",
+        "annee": 2022
+      },
+      {
+        "nom": "Proust",
+        "prenom": "Marcel",
+        "titre": "Le Dernier Secret",
+        "annee": 2023
+      },
+      {
+        "nom": "Durand",
+        "prenom": "Sophie",
+        "titre": "Le Dernier Secret",
+        "annee": 2023
+      },
+      {
+        "nom": "Orwell",
+        "prenom": "George",
+        "titre": "Les Ombres du Futur",
+        "annee": 2024
+      },
+      {
+        "nom": "Lemoine",
+        "prenom": "Arthur",
+        "titre": "Les Ombres du Futur",
+        "annee": 2024
+      }
+    ],
+    "description": "Affiche le nom et le prénom des auteurs ainsi que le titre et l'année de parution de la sortie de leurs oeuvres dans l'ordre chronologique",
+    "complexity": 8
+  },
+  {
+    "query": "SELECT clients.nom , clients.prenom , auteurs.nom , auteurs.prenom , emprunts.duree_emprunt FROM auteurs JOIN auteurs_livres ON auteurs.id_auteur = auteurs_livres.id_auteur JOIN livres ON auteurs_livres.id_livre = livres.id_livre JOIN emprunts ON livres.id_livre = emprunts.id_livre JOIN clients ON emprunts.id_client = clients.id_client GROUP BY clients.id_client , auteurs.id_auteur ORDER BY clients.nom ASC , auteurs.nom ASC",
+    "results": [
+      {
+        "nom": "Chevalier",
+        "prenom": "Claire",
+        "auteurs_nom": "Durand",
+        "auteurs_prenom": "Sophie",
+        "duree_emprunt": 10
+      },
+      {
+        "nom": "Chevalier",
+        "prenom": "Claire",
+        "auteurs_nom": "Lemoine",
+        "auteurs_prenom": "Arthur",
+        "duree_emprunt": 14
+      },
+      {
+        "nom": "Chevalier",
+        "prenom": "Claire",
+        "auteurs_nom": "Orwell",
+        "auteurs_prenom": "George",
+        "duree_emprunt": 14
+      },
+      {
+        "nom": "Chevalier",
+        "prenom": "Claire",
+        "auteurs_nom": "Proust",
+        "auteurs_prenom": "Marcel",
+        "duree_emprunt": 7
+      },
+      {
+        "nom": "Chevalier",
+        "prenom": "Claire",
+        "auteurs_nom": "Verne",
+        "auteurs_prenom": "Jules",
+        "duree_emprunt": 10
+      },
+      {
+        "nom": "Dubois",
+        "prenom": "Marc",
+        "auteurs_nom": "Camus",
+        "auteurs_prenom": "Albert",
+        "duree_emprunt": 14
+      },
+      {
+        "nom": "Dubois",
+        "prenom": "Marc",
+        "auteurs_nom": "Dumas",
+        "auteurs_prenom": "Alexandre",
+        "duree_emprunt": 21
+      },
+      {
+        "nom": "Dubois",
+        "prenom": "Marc",
+        "auteurs_nom": "Hugo",
+        "auteurs_prenom": "Victor",
+        "duree_emprunt": 14
+      },
+      {
+        "nom": "Gautier",
+        "prenom": "Nathalie",
+        "auteurs_nom": "Camus",
+        "auteurs_prenom": "Albert",
+        "duree_emprunt": 25
+      },
+      {
+        "nom": "Gautier",
+        "prenom": "Nathalie",
+        "auteurs_nom": "Dumas",
+        "auteurs_prenom": "Alexandre",
+        "duree_emprunt": 21
+      },
+      {
+        "nom": "Gautier",
+        "prenom": "Nathalie",
+        "auteurs_nom": "Sartre",
+        "auteurs_prenom": "Jean-Paul",
+        "duree_emprunt": 14
+      },
+      {
+        "nom": "Gautier",
+        "prenom": "Nathalie",
+        "auteurs_nom": "Verne",
+        "auteurs_prenom": "Jules",
+        "duree_emprunt": 20
+      },
+      {
+        "nom": "Leroy",
+        "prenom": "Anna",
+        "auteurs_nom": "Christie",
+        "auteurs_prenom": "Agatha",
+        "duree_emprunt": 15
+      },
+      {
+        "nom": "Leroy",
+        "prenom": "Anna",
+        "auteurs_nom": "Lemoine",
+        "auteurs_prenom": "Arthur",
+        "duree_emprunt": 21
+      },
+      {
+        "nom": "Leroy",
+        "prenom": "Anna",
+        "auteurs_nom": "Orwell",
+        "auteurs_prenom": "George",
+        "duree_emprunt": 30
+      },
+      {
+        "nom": "Renaud",
+        "prenom": "Jean",
+        "auteurs_nom": "Camus",
+        "auteurs_prenom": "Albert",
+        "duree_emprunt": 14
+      },
+      {
+        "nom": "Renaud",
+        "prenom": "Jean",
+        "auteurs_nom": "Durand",
+        "auteurs_prenom": "Sophie",
+        "duree_emprunt": 21
+      },
+      {
+        "nom": "Renaud",
+        "prenom": "Jean",
+        "auteurs_nom": "Hugo",
+        "auteurs_prenom": "Victor",
+        "duree_emprunt": 14
+      },
+      {
+        "nom": "Renaud",
+        "prenom": "Jean",
+        "auteurs_nom": "Orwell",
+        "auteurs_prenom": "George",
+        "duree_emprunt": 10
+      },
+      {
+        "nom": "Renaud",
+        "prenom": "Jean",
+        "auteurs_nom": "Proust",
+        "auteurs_prenom": "Marcel",
+        "duree_emprunt": 21
+      },
+      {
+        "nom": "Simon",
+        "prenom": "Paul",
+        "auteurs_nom": "Durand",
+        "auteurs_prenom": "Sophie",
+        "duree_emprunt": 14
+      },
+      {
+        "nom": "Simon",
+        "prenom": "Paul",
+        "auteurs_nom": "Proust",
+        "auteurs_prenom": "Marcel",
+        "duree_emprunt": 14
+      },
+      {
+        "nom": "Simon",
+        "prenom": "Paul",
+        "auteurs_nom": "Sartre",
+        "auteurs_prenom": "Jean-Paul",
+        "duree_emprunt": 20
+      },
+      {
+        "nom": "Simon",
+        "prenom": "Paul",
+        "auteurs_nom": "Verne",
+        "auteurs_prenom": "Jules",
+        "duree_emprunt": 10
+      }
+    ],
+    "description": "Ce code récupère les noms et prénoms des clients et des auteurs, ainsi que la durée des emprunts, en regroupant les résultats par client et auteur, et en triant les résultats par le nom des clients puis des auteurs par ordre alphabétique croissant.",
+    "complexity": 8
+  },
+  {
+    "query": "SELECT clients.nom , clients.prenom , livres.titre , livres.annee FROM clients JOIN emprunts ON emprunts.id_client = clients.id_client JOIN livres ON emprunts.id_livre = livres.id_livre WHERE livres.annee > 1949 AND emprunts.duree_emprunt > 10 ORDER BY clients.nom ASC",
+    "results": [
+      {
+        "nom": "Chevalier",
+        "prenom": "Claire",
+        "titre": "Les Ombres du Futur",
+        "annee": 2024
+      },
+      {
+        "nom": "Dubois",
+        "prenom": "Marc",
+        "titre": "L Heritage des Anciens",
+        "annee": 2022
+      },
+      {
+        "nom": "Gautier",
+        "prenom": "Nathalie",
+        "titre": "La Revolution Silencieuse",
+        "annee": 2021
+      },
+      {
+        "nom": "Leroy",
+        "prenom": "Anna",
+        "titre": "Le Mystere du Manuscrit",
+        "annee": 2020
+      },
+      {
+        "nom": "Renaud",
+        "prenom": "Jean",
+        "titre": "Le Dernier Secret",
+        "annee": 2023
+      },
+      {
+        "nom": "Renaud",
+        "prenom": "Jean",
+        "titre": "Chroniques du Temps Perdu",
+        "annee": 2018
+      },
+      {
+        "nom": "Simon",
+        "prenom": "Paul",
+        "titre": "Le Dernier Secret",
+        "annee": 2023
+      }
+    ],
+    "description": "Cette requête sélectionne les clients ayant emprunté des livres publiés après 1950 pour une durée supérieure à 10 jours, et trie les résultats par le nom des clients en affichant le nom et prénom des clients ainsi que le titre et l'année de publication des livres",
+    "complexity": 10
+  },
+  {
+    "query": "SELECT clients.nom , clients.prenom , livres.titre , livres.annee , emprunts.date_emprunt FROM clients JOIN emprunts ON clients.id_client = emprunts.id_client JOIN livres ON emprunts.id_livre = livres.id_livre JOIN auteurs_livres ON livres.id_livre = auteurs_livres.id_livre JOIN auteurs ON auteurs_livres.id_auteur = auteurs.id_auteur WHERE livres.annee > 1949 AND emprunts.duree_emprunt > 10 ORDER BY clients.nom ASC , livres.titre ASC",
+    "results": [
+      {
+        "nom": "Chevalier",
+        "prenom": "Claire",
+        "titre": "Les Ombres du Futur",
+        "annee": 2024,
+        "date_emprunt": "2025-02-11T23:00:00.000Z"
+      },
+      {
+        "nom": "Chevalier",
+        "prenom": "Claire",
+        "titre": "Les Ombres du Futur",
+        "annee": 2024,
+        "date_emprunt": "2025-02-11T23:00:00.000Z"
+      },
+      {
+        "nom": "Dubois",
+        "prenom": "Marc",
+        "titre": "L Heritage des Anciens",
+        "annee": 2022,
+        "date_emprunt": "2025-01-19T23:00:00.000Z"
+      },
+      {
+        "nom": "Dubois",
+        "prenom": "Marc",
+        "titre": "L Heritage des Anciens",
+        "annee": 2022,
+        "date_emprunt": "2025-01-19T23:00:00.000Z"
+      },
+      {
+        "nom": "Gautier",
+        "prenom": "Nathalie",
+        "titre": "La Revolution Silencieuse",
+        "annee": 2021,
+        "date_emprunt": "2025-02-19T23:00:00.000Z"
+      },
+      {
+        "nom": "Gautier",
+        "prenom": "Nathalie",
+        "titre": "La Revolution Silencieuse",
+        "annee": 2021,
+        "date_emprunt": "2025-02-19T23:00:00.000Z"
+      },
+      {
+        "nom": "Leroy",
+        "prenom": "Anna",
+        "titre": "Le Mystere du Manuscrit",
+        "annee": 2020,
+        "date_emprunt": "2025-02-07T23:00:00.000Z"
+      },
+      {
+        "nom": "Leroy",
+        "prenom": "Anna",
+        "titre": "Le Mystere du Manuscrit",
+        "annee": 2020,
+        "date_emprunt": "2025-02-07T23:00:00.000Z"
+      },
+      {
+        "nom": "Renaud",
+        "prenom": "Jean",
+        "titre": "Chroniques du Temps Perdu",
+        "annee": 2018,
+        "date_emprunt": "2025-02-17T23:00:00.000Z"
+      },
+      {
+        "nom": "Renaud",
+        "prenom": "Jean",
+        "titre": "Chroniques du Temps Perdu",
+        "annee": 2018,
+        "date_emprunt": "2025-02-17T23:00:00.000Z"
+      },
+      {
+        "nom": "Renaud",
+        "prenom": "Jean",
+        "titre": "Le Dernier Secret",
+        "annee": 2023,
+        "date_emprunt": "2025-02-11T23:00:00.000Z"
+      },
+      {
+        "nom": "Renaud",
+        "prenom": "Jean",
+        "titre": "Le Dernier Secret",
+        "annee": 2023,
+        "date_emprunt": "2025-02-11T23:00:00.000Z"
+      },
+      {
+        "nom": "Simon",
+        "prenom": "Paul",
+        "titre": "Le Dernier Secret",
+        "annee": 2023,
+        "date_emprunt": "2025-01-29T23:00:00.000Z"
+      },
+      {
+        "nom": "Simon",
+        "prenom": "Paul",
+        "titre": "Le Dernier Secret",
+        "annee": 2023,
+        "date_emprunt": "2025-01-29T23:00:00.000Z"
+      }
+    ],
+    "description": "Affiche les clients ayant emprunté des livres publiés aapprréss 1950 pour une durée sup de 10 jours,  elle affiche le nom et prénom des clients, le titre et l'année de publication des livres, ainsi que la date d'emprunt, et trie les résultats par le nom des clients et le titre des livres",
+    "complexity": 10
+  },
+  {
+    "query": "SELECT clients.nom , clients.prenom , emprunts.date_emprunt FROM clients JOIN emprunts ON clients.id_client = emprunts.id_client JOIN livres ON emprunts.id_livre = livres.id_livre JOIN genres ON livres.id_genre = genres.id_genre WHERE genres.intitule = 'Roman historique' GROUP BY clients.id_client , emprunts.date_emprunt HAVING COUNT( livres.id_livre )>= 1 ORDER BY clients.nom ASC , emprunts.date_emprunt ASC",
+    "results": [
+      {
+        "nom": "Dubois",
+        "prenom": "Marc",
+        "date_emprunt": "2025-01-14T23:00:00.000Z"
+      },
+      {
+        "nom": "Dubois",
+        "prenom": "Marc",
+        "date_emprunt": "2025-01-17T23:00:00.000Z"
+      },
+      {
+        "nom": "Dubois",
+        "prenom": "Marc",
+        "date_emprunt": "2025-01-19T23:00:00.000Z"
+      },
+      {
+        "nom": "Gautier",
+        "prenom": "Nathalie",
+        "date_emprunt": "2025-02-13T23:00:00.000Z"
+      },
+      {
+        "nom": "Renaud",
+        "prenom": "Jean",
+        "date_emprunt": "2025-02-13T23:00:00.000Z"
+      }
+    ],
+    "description": "Cette requête sélectionne les clients ayant emprunté au moins 1 livres historiques, et affiche pour chaque client la date de l'emprunt des livres. Les résultats sont triés par nom des clients et date d'emprunt",
+    "complexity": 11
+  },
+  {
+    "query": "SELECT auteurs.nom , auteurs.prenom , auteurs.date_naissance , livres.titre FROM auteurs JOIN auteurs_livres ON auteurs.id_auteur = auteurs_livres.id_auteur JOIN livres ON livres.id_livre = auteurs_livres.id_livre ORDER BY auteurs.date_naissance",
+    "results": [
+      {
+        "nom": "Hugo",
+        "prenom": "Victor",
+        "date_naissance": "1802-02-25T23:50:39.000Z",
+        "titre": "Les Miserables"
+      },
+      {
+        "nom": "Hugo",
+        "prenom": "Victor",
+        "date_naissance": "1802-02-25T23:50:39.000Z",
+        "titre": "L Heritage des Anciens"
+      },
+      {
+        "nom": "Hugo",
+        "prenom": "Victor",
+        "date_naissance": "1802-02-25T23:50:39.000Z",
+        "titre": "Chroniques du Temps Perdu"
+      },
+      {
+        "nom": "Dumas",
+        "prenom": "Alexandre",
+        "date_naissance": "1802-07-23T23:50:39.000Z",
+        "titre": "Le Comte de Monte Cristo"
+      },
+      {
+        "nom": "Dumas",
+        "prenom": "Alexandre",
+        "date_naissance": "1802-07-23T23:50:39.000Z",
+        "titre": "L Heritage des Anciens"
+      },
+      {
+        "nom": "Verne",
+        "prenom": "Jules",
+        "date_naissance": "1828-02-07T23:50:39.000Z",
+        "titre": "Vingt Mille Lieues sous les Mers"
+      },
+      {
+        "nom": "Verne",
+        "prenom": "Jules",
+        "date_naissance": "1828-02-07T23:50:39.000Z",
+        "titre": "Les Voyages Inattendus"
+      },
+      {
+        "nom": "Proust",
+        "prenom": "Marcel",
+        "date_naissance": "1871-07-09T23:50:39.000Z",
+        "titre": "A la Recherche du Temps Perdu"
+      },
+      {
+        "nom": "Proust",
+        "prenom": "Marcel",
+        "date_naissance": "1871-07-09T23:50:39.000Z",
+        "titre": "Le Dernier Secret"
+      },
+      {
+        "nom": "Proust",
+        "prenom": "Marcel",
+        "date_naissance": "1871-07-09T23:50:39.000Z",
+        "titre": "Chroniques du Temps Perdu"
+      },
+      {
+        "nom": "Christie",
+        "prenom": "Agatha",
+        "date_naissance": "1890-09-14T23:50:39.000Z",
+        "titre": "Meurtre sur le Nil"
+      },
+      {
+        "nom": "Christie",
+        "prenom": "Agatha",
+        "date_naissance": "1890-09-14T23:50:39.000Z",
+        "titre": "Le Mystere du Manuscrit"
+      },
+      {
+        "nom": "Orwell",
+        "prenom": "George",
+        "date_naissance": "1903-06-24T23:50:39.000Z",
+        "titre": "1984"
+      },
+      {
+        "nom": "Orwell",
+        "prenom": "George",
+        "date_naissance": "1903-06-24T23:50:39.000Z",
+        "titre": "Les Ombres du Futur"
+      },
+      {
+        "nom": "Sartre",
+        "prenom": "Jean-Paul",
+        "date_naissance": "1905-06-20T23:50:39.000Z",
+        "titre": "Huis Clos"
+      },
+      {
+        "nom": "Sartre",
+        "prenom": "Jean-Paul",
+        "date_naissance": "1905-06-20T23:50:39.000Z",
+        "titre": "La Revolution Silencieuse"
+      },
+      {
+        "nom": "Camus",
+        "prenom": "Albert",
+        "date_naissance": "1913-11-07T00:00:00.000Z",
+        "titre": "Les Miserables"
+      },
+      {
+        "nom": "Camus",
+        "prenom": "Albert",
+        "date_naissance": "1913-11-07T00:00:00.000Z",
+        "titre": "La Revolution Silencieuse"
+      },
+      {
+        "nom": "Durand",
+        "prenom": "Sophie",
+        "date_naissance": "1975-09-21T23:00:00.000Z",
+        "titre": "Le Dernier Secret"
+      },
+      {
+        "nom": "Durand",
+        "prenom": "Sophie",
+        "date_naissance": "1975-09-21T23:00:00.000Z",
+        "titre": "Les Voyages Inattendus"
+      },
+      {
+        "nom": "Lemoine",
+        "prenom": "Arthur",
+        "date_naissance": "1980-03-14T23:00:00.000Z",
+        "titre": "Les Ombres du Futur"
+      },
+      {
+        "nom": "Lemoine",
+        "prenom": "Arthur",
+        "date_naissance": "1980-03-14T23:00:00.000Z",
+        "titre": "Le Mystere du Manuscrit"
+      }
+    ],
+    "description": "Affiche le nom, prénom date de naissance de l'auteur ainsi que le titre de son livre, trié par la date de naissance des auteurs  ",
+    "complexity": 8
+  },
+  {
+    "query": "SELECT clients.prenom , clients.nom , emprunts.date_emprunt FROM clients JOIN emprunts ON clients.id_client = emprunts.id_client JOIN livres ON emprunts.id_livre = livres.id_livre JOIN genres ON livres.id_genre = genres.id_genre WHERE genres.intitule = 'Policier' GROUP BY clients.id_client HAVING COUNT( livres.id_livre )>= 1 ORDER BY clients.nom",
+    "results": [
+      {
+        "prenom": "Anna",
+        "nom": "Leroy",
+        "date_emprunt": "2025-02-04T23:00:00.000Z"
+      }
+    ],
+    "description": "les clients ayant emprunté au moins 1 livre de genre policier et affiche la date d'emprunt des livres, le nom et le prénom des clients et cela trie par le nom des clients ",
+    "complexity": 11
+  },
+  {
+    "query": "SELECT auteurs.nom , auteurs.prenom , livres.titre , genres.intitule FROM auteurs JOIN auteurs_livres ON auteurs.id_auteur = auteurs_livres.id_auteur JOIN livres ON auteurs_livres.id_livre = livres.id_livre JOIN genres ON livres.id_genre = genres.id_genre",
+    "results": [
+      {
+        "nom": "Hugo",
+        "prenom": "Victor",
+        "titre": "Les Miserables",
+        "intitule": "Roman historique"
+      },
+      {
+        "nom": "Camus",
+        "prenom": "Albert",
+        "titre": "Les Miserables",
+        "intitule": "Roman historique"
+      },
+      {
+        "nom": "Orwell",
+        "prenom": "George",
+        "titre": "1984",
+        "intitule": "Science-fiction"
+      },
+      {
+        "nom": "Dumas",
+        "prenom": "Alexandre",
+        "titre": "Le Comte de Monte Cristo",
+        "intitule": "Roman historique"
+      },
+      {
+        "nom": "Christie",
+        "prenom": "Agatha",
+        "titre": "Meurtre sur le Nil",
+        "intitule": "Policier"
+      },
+      {
+        "nom": "Sartre",
+        "prenom": "Jean-Paul",
+        "titre": "Huis Clos",
+        "intitule": "Théâtre"
+      },
+      {
+        "nom": "Proust",
+        "prenom": "Marcel",
+        "titre": "A la Recherche du Temps Perdu",
+        "intitule": "Poésie"
+      },
+      {
+        "nom": "Verne",
+        "prenom": "Jules",
+        "titre": "Vingt Mille Lieues sous les Mers",
+        "intitule": "Science-fiction"
+      },
+      {
+        "nom": "Orwell",
+        "prenom": "George",
+        "titre": "Les Ombres du Futur",
+        "intitule": "Science-fiction"
+      },
+      {
+        "nom": "Lemoine",
+        "prenom": "Arthur",
+        "titre": "Les Ombres du Futur",
+        "intitule": "Science-fiction"
+      },
+      {
+        "nom": "Proust",
+        "prenom": "Marcel",
+        "titre": "Le Dernier Secret",
+        "intitule": "Fantastique"
+      },
+      {
+        "nom": "Durand",
+        "prenom": "Sophie",
+        "titre": "Le Dernier Secret",
+        "intitule": "Fantastique"
+      },
+      {
+        "nom": "Hugo",
+        "prenom": "Victor",
+        "titre": "L Heritage des Anciens",
+        "intitule": "Roman historique"
+      },
+      {
+        "nom": "Dumas",
+        "prenom": "Alexandre",
+        "titre": "L Heritage des Anciens",
+        "intitule": "Roman historique"
+      },
+      {
+        "nom": "Camus",
+        "prenom": "Albert",
+        "titre": "La Revolution Silencieuse",
+        "intitule": "Philosophie"
+      },
+      {
+        "nom": "Sartre",
+        "prenom": "Jean-Paul",
+        "titre": "La Revolution Silencieuse",
+        "intitule": "Philosophie"
+      },
+      {
+        "nom": "Christie",
+        "prenom": "Agatha",
+        "titre": "Le Mystere du Manuscrit",
+        "intitule": "Policier"
+      },
+      {
+        "nom": "Lemoine",
+        "prenom": "Arthur",
+        "titre": "Le Mystere du Manuscrit",
+        "intitule": "Policier"
+      },
+      {
+        "nom": "Verne",
+        "prenom": "Jules",
+        "titre": "Les Voyages Inattendus",
+        "intitule": "Science-fiction"
+      },
+      {
+        "nom": "Durand",
+        "prenom": "Sophie",
+        "titre": "Les Voyages Inattendus",
+        "intitule": "Science-fiction"
+      },
+      {
+        "nom": "Hugo",
+        "prenom": "Victor",
+        "titre": "Chroniques du Temps Perdu",
+        "intitule": "Poésie"
+      },
+      {
+        "nom": "Proust",
+        "prenom": "Marcel",
+        "titre": "Chroniques du Temps Perdu",
+        "intitule": "Poésie"
+      }
+    ],
+    "description": "affiche le nom et le prénom de l'auteur ainsi que le titre de son livre et son  intitulé ",
+    "complexity": 6
+  },
+  {
+    "query": "SELECT genres.intitule , auteurs.nom , auteurs.prenom FROM auteurs JOIN auteurs_livres ON auteurs.id_auteur = auteurs_livres.id_auteur JOIN livres ON auteurs_livres.id_livre = livres.id_livre JOIN genres ON livres.id_genre = genres.id_genre",
+    "results": [
+      {
+        "intitule": "Science-fiction",
+        "nom": "Orwell",
+        "prenom": "George"
+      },
+      {
+        "intitule": "Science-fiction",
+        "nom": "Verne",
+        "prenom": "Jules"
+      },
+      {
+        "intitule": "Science-fiction",
+        "nom": "Orwell",
+        "prenom": "George"
+      },
+      {
+        "intitule": "Science-fiction",
+        "nom": "Lemoine",
+        "prenom": "Arthur"
+      },
+      {
+        "intitule": "Science-fiction",
+        "nom": "Verne",
+        "prenom": "Jules"
+      },
+      {
+        "intitule": "Science-fiction",
+        "nom": "Durand",
+        "prenom": "Sophie"
+      },
+      {
+        "intitule": "Fantastique",
+        "nom": "Proust",
+        "prenom": "Marcel"
+      },
+      {
+        "intitule": "Fantastique",
+        "nom": "Durand",
+        "prenom": "Sophie"
+      },
+      {
+        "intitule": "Roman historique",
+        "nom": "Hugo",
+        "prenom": "Victor"
+      },
+      {
+        "intitule": "Roman historique",
+        "nom": "Camus",
+        "prenom": "Albert"
+      },
+      {
+        "intitule": "Roman historique",
+        "nom": "Dumas",
+        "prenom": "Alexandre"
+      },
+      {
+        "intitule": "Roman historique",
+        "nom": "Hugo",
+        "prenom": "Victor"
+      },
+      {
+        "intitule": "Roman historique",
+        "nom": "Dumas",
+        "prenom": "Alexandre"
+      },
+      {
+        "intitule": "Policier",
+        "nom": "Christie",
+        "prenom": "Agatha"
+      },
+      {
+        "intitule": "Policier",
+        "nom": "Christie",
+        "prenom": "Agatha"
+      },
+      {
+        "intitule": "Policier",
+        "nom": "Lemoine",
+        "prenom": "Arthur"
+      },
+      {
+        "intitule": "Philosophie",
+        "nom": "Camus",
+        "prenom": "Albert"
+      },
+      {
+        "intitule": "Philosophie",
+        "nom": "Sartre",
+        "prenom": "Jean-Paul"
+      },
+      {
+        "intitule": "Poésie",
+        "nom": "Proust",
+        "prenom": "Marcel"
+      },
+      {
+        "intitule": "Poésie",
+        "nom": "Hugo",
+        "prenom": "Victor"
+      },
+      {
+        "intitule": "Poésie",
+        "nom": "Proust",
+        "prenom": "Marcel"
+      },
+      {
+        "intitule": "Théâtre",
+        "nom": "Sartre",
+        "prenom": "Jean-Paul"
+      }
+    ],
+    "description": "Sélectionne le nom et prénom de l'auteur avec le l'intitulé du genre.",
+    "complexity": 6
+  }
+]

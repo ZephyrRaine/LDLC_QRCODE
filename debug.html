@@ -38,6 +38,14 @@
             color: #2196F3;
             text-decoration: underline;
         }
+        .solve-button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
@@ -54,8 +62,9 @@
 
         async function fetchQueries() {
             const id = getQueryParam('id');
-            if (!id) {
-                console.error('No id parameter found in the URL');
+            const solveBy = getQueryParam('solveBy');
+            if ((!id || !solveBy) || (id===solveBy)) {
+                window.location.href = '/';
                 return;
             }
 
@@ -68,16 +77,24 @@
                 const data = await response.json();
                 console.log(data);
                 const queriesContainer = document.getElementById('queries');
-                data.forEach(query => {
+                data.forEach((query, index) => {
                     const queryDiv = document.createElement('div');
                     queryDiv.className = 'query';
                     queryDiv.innerHTML = `
-                        <strong>Query:</strong> ${query.query}<br>
                         <strong>Description:</strong> ${query.description}<br>
                         <strong>Complexity:</strong> ${query.complexity}<br>
                         <span class="toggle-button" onclick="toggleResults(this)">Show Results</span>
                         <div class="results"><pre>${JSON.stringify(query.results, null, 2)}</pre></div>
                     `;
+                    console.log(solveBy);
+                    console.log(query.solvedBy);
+                    if(query.solvedBy.indexOf((solveBy)) == -1) {
+                        const solveButton = document.createElement('button');
+                        solveButton.className = 'solve-button';
+                        solveButton.textContent = 'Solve';
+                        solveButton.onclick = () => solveQuery(index, solveBy);
+                        queryDiv.appendChild(solveButton);
+                    }
                     queriesContainer.appendChild(queryDiv);
                 });
             } catch (error) {
@@ -94,6 +111,11 @@
                 resultsDiv.style.display = 'none';
                 button.textContent = 'Show Results';
             }
+        }
+
+        function solveQuery(solveId, solveBy) {
+            const id = getQueryParam('id');
+            window.location.href = `/?id=${id}&solveId=${solveId}&solveBy=${solveBy}`;
         }
 
         fetchQueries();
